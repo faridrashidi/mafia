@@ -40,10 +40,10 @@
         "discordVoteResultText": "🏳️ Vote Report for alive people in game : "
     },
     "general":{
-        "name": "MafiaBuzz",
-        "welcomeToMafiabuzz": "💜🔔 Welcome to MafiaBuzz Web Application 🔔💜",
-        "alt": "MafiaBuzz Logo",
-        "url": "https://www.mafiabuzz.app",
+        "name": "MafiaDealer",
+        "welcomeToMafiabuzz": "💜🔔 Welcome to MafiaDealer Web Application 🔔💜",
+        "alt": "MafiaDealer Logo",
+        "url": "https://www.mafiadealer.app",
         "currency": "T",
         "infoIcon": "Info Icon",
         "notValidIcon": "Not Valid Icon",
@@ -132,13 +132,13 @@
     },
     "meta":{
         "home": {
-            "title": "MafiaBuzz is a web application for playing The Mafia party game",
-            "description": "MafiaBuzz is a web application to set up and manage the 'Mafia Party Game' easily. People can set up their game and choose multiple roles as a creator to start playing the game in a group of friends or family",
+            "title": "MafiaDealer is a web application for playing The Mafia party game",
+            "description": "MafiaDealer is a web application to set up and manage the 'Mafia Party Game' easily. People can set up their game and choose multiple roles as a creator to start playing the game in a group of friends or family",
             "url": "/"
         },
         "howtoplay": {
             "title": "How To Play",
-            "description": "We explained everything you need to know to play MafiaBuzz Party Game",
+            "description": "We explained everything you need to know to play MafiaDealer Party Game",
             "url": "how-to-play"
         },
         "about": {
@@ -158,7 +158,7 @@
         },
         "characters": {
             "title": "Characters",
-            "description": "Meet all MafiaBuzz characters and their abilities"
+            "description": "Meet all MafiaDealer characters and their abilities"
         }
     },
     "navigation": [
@@ -172,7 +172,7 @@
         },
         {
             "name": "About us",
-            "alt": "MafiaBuzz Logo"
+            "alt": "MafiaDealer Logo"
         },
         {
             "name": "Characters",
@@ -259,7 +259,7 @@
                 }
             ],
             "contactText": "Do you want to report a <i>Bug</i> or give us <strong>Feedback</strong>?",
-            "contactEmail": "mafiabuzzgame@gmail.com",
+            "contactEmail": "mafiadealergame@gmail.com",
             "supportText": "Contact us :",
             "supportTel": "+989038996930",
             "thanksForSupport": "Thanks for supporting our team so we can keep developing new tools and features to the application for you 🙏",
@@ -280,7 +280,7 @@
                 },
                 {
                     "name": "Linkedin",
-                    "url": "https://www.linkedin.com/company/mafiabuzz",
+                    "url": "https://www.linkedin.com/company/mafiadealer",
                     "icon": "linkedin.svg",
                     "alt": "Linkedin Icon"
                 }
@@ -298,8 +298,8 @@
                 },
                 {
                     "icon": "0.png",
-                    "titl1": "What is MafiaBuzz?",
-                    "desc1": "Mafia is a popular and interesting party game, but always it is hard to control and manage the game by the game moderator ( <span class='creator-color'>God</span> ) when you want to play it with a large group of people. <br /><strong>MafiaBuzz</strong> is a web application created by a team of developers and gamers. With the help of the application, you just have to select players and characters to start the game. Write the name of each person and give the phone to them to see their roles. After that <span class='creator-color'>God</span> can start the game and app will tell him what to do, calculate possibilities and show the result. <br /><strong>MafiaBuzz</strong> team will add new characters to the game in a small period of time."
+                    "titl1": "What is MafiaDealer?",
+                    "desc1": "Mafia is a popular and interesting party game, but always it is hard to control and manage the game by the game moderator ( <span class='creator-color'>God</span> ) when you want to play it with a large group of people. <br /><strong>MafiaDealer</strong> is a web application created by a team of developers and gamers. With the help of the application, you just have to select players and characters to start the game. Write the name of each person and give the phone to them to see their roles. After that <span class='creator-color'>God</span> can start the game and app will tell him what to do, calculate possibilities and show the result. <br /><strong>MafiaDealer</strong> team will add new characters to the game in a small period of time."
                 },
                 {
                     "icon": "2.svg",
@@ -309,7 +309,7 @@
                 {
                     "icon": "3.svg",
                     "titl1": "Know more about Roles",
-                    "desc1": "Different characters and roles are making <strong>MafiaBuzz</strong> much funnier and more enjoyable. In below we are explaining about each character seperately:",
+                    "desc1": "Different characters and roles are making <strong>MafiaDealer</strong> much funnier and more enjoyable. In below we are explaining about each character seperately:",
                     "roles": true
                 }
             ]
