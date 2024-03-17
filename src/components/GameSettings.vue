@@ -22,6 +22,12 @@
         </span>
       </button>
     </nav>
+    <GameCharacterWakeUp
+      :class="{
+        'active': wakeup
+      }"
+      @close="closeSettings"
+    />
     <!-- History Log -->
     <HistoryLog
       :class="{
@@ -51,13 +57,15 @@
 import HistoryLog from '@/components/HistoryLog.vue';
 import GameInquiry from '@/components/GameInquiry.vue';
 import FinalCards from '@/components/FinalCards.vue';
+import GameCharacterWakeUp from '@/components/GameCharacterWakeUp.vue';
 
 export default {
   name: 'GameSettings',
   components: {
     HistoryLog,
     GameInquiry,
-    FinalCards
+    FinalCards,
+    GameCharacterWakeUp
   },
   data() {
     return {
@@ -65,6 +73,7 @@ export default {
       safemode: false,
       inquiry: false,
       cards: false,
+      wakeup: false,
       settings: [
         // {
         //   name: this.$t('god.gameSettings.showHistoryLog'),
@@ -76,6 +85,11 @@ export default {
         //   value: 'safemode',
         //   active: false
         // },
+        {
+          name: this.$t('god.gameSettings.wakeup'),
+          value: 'wakeup',
+          active: false
+        },
         {
           name: this.$t('god.gameSettings.inquiry'),
           value: 'inquiry',
