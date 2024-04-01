@@ -251,6 +251,8 @@ export default {
     },
     randomFunc () {
       this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
+      this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
+      this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
     },
     changeGameSettings () {
       this.startGameEngine('roles-selected-create')
