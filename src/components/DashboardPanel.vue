@@ -249,9 +249,21 @@ export default {
     toggleAlertBox (value) {
       this.alertBox = value
     },
+    shuffleArray(array) {
+      let first,
+        second,
+        temp,
+        count = array.length;
+      for (let i = 0; i < 10; i++) {
+        first = Math.floor(Math.random() * count);
+        second = Math.floor(Math.random() * count);
+        temp = array[first];
+        array[first] = array[second];
+        array[second] = temp;
+      }
+    },
     randomFunc () {
-      this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
-      this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
+      this.shuffleArray(this.gameSettings.selectedRoles)
       this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
     },
     changeGameSettings () {
