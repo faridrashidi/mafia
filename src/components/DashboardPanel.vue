@@ -141,6 +141,7 @@
 import GodPanel from '@/components/GodPanel.vue';
 import ShowBox from '@/components/ShowBox.vue';
 import PageTitle from '@/components/PageTitle.vue';
+import Random from 'random-js';
 
 export default {
   data() {
@@ -254,9 +255,10 @@ export default {
         second,
         temp,
         count = array.length;
+      const random = new Random(Random.engines.mt19937().autoSeed());
       for (let i = 0; i < 10; i++) {
-        first = Math.floor(Math.random() * count);
-        second = Math.floor(Math.random() * count);
+        first = Math.floor(random.real(0, 1) * count);
+        second = Math.floor(random.real(0, 1) * count);
         temp = array[first];
         array[first] = array[second];
         array[second] = temp;
@@ -264,7 +266,9 @@ export default {
     },
     randomFunc () {
       this.shuffleArray(this.gameSettings.selectedRoles)
-      this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
+      const random = new Random(Random.engines.mt19937().autoSeed());
+      this.gameSettings.selectedRoles.sort(() => 0.5 - random.real(0, 1))
+      // this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
     },
     changeGameSettings () {
       this.startGameEngine('roles-selected-create')
