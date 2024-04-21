@@ -250,28 +250,55 @@ export default {
     toggleAlertBox (value) {
       this.alertBox = value
     },
-    shuffleArray(array) {
-      let first,
-        second,
-        temp,
-        count = array.length;
-      const random = new Random(Random.engines.mt19937().autoSeed());
-      for (let i = 0; i < 10; i++) {
-        first = Math.floor(random.real(0, 1) * count);
-        second = Math.floor(random.real(0, 1) * count);
-        temp = array[first];
-        array[first] = array[second];
-        array[second] = temp;
-      }
-    },
-    randomFunc () {
-      this.shuffleArray(this.gameSettings.selectedRoles)
-      const random = new Random(Random.engines.mt19937().autoSeed());
-      this.gameSettings.selectedRoles.sort(() => 0.5 - random.real(0, 1))
-      // this.gameSettings.selectedRoles.sort(() => 0.5 - Math.random())
-    },
     changeGameSettings () {
       this.startGameEngine('roles-selected-create')
+    },
+    fisherYatesShuffle(array) {
+      const random = new Random(Random.engines.mt19937().autoSeed())
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(random.real(0, 1) * (i + 1))
+        [array[i], array[j]] = [array[j], array[i]]
+      }
+    },
+    checkConsecutiveElements(array) {
+      const length = array.length
+      for (let i = 0; i < length - 2; i++) {
+        const elem1 = array[i].id
+        const elem2 = array[i + 1].id
+        const elem3 = array[i + 2].id
+        if (
+          elem1 >= 1 && elem1 <= 16 &&
+          elem2 >= 1 && elem2 <= 16 &&
+          elem3 >= 1 && elem3 <= 16 && 
+          Math.abs(elem1 - elem2) === 1 && 
+          Math.abs(elem2 - elem3) === 1
+        ) {
+          return true
+        }
+      }
+      return false
+    },
+    downloadArrayValues(array, fileName) {
+      const content = array.map(item => item.info.fa.name).join('\n')
+      const blob = new Blob([content], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = fileName
+      link.click()
+      URL.revokeObjectURL(url)
+    },
+    randomFunc () {
+      // this.fisherYatesShuffle(this.gameSettings.selectedRoles)
+      const random = new Random(Random.engines.mt19937().autoSeed())
+      let isConsecutive
+      let i = 0
+      do {
+        random.shuffle(this.gameSettings.selectedRoles)
+        isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles)
+        i += 1
+      } while (isConsecutive)
+      // this.downloadArrayValues(this.gameSettings.selectedRoles, i + ".txt")
     }
   }
 }
