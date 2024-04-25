@@ -4,7 +4,7 @@
     class="last-night-log"
   >
     <img
-      src="@/assets/images/roles/people.svg"
+      src="@/assets/images/icons/people.svg"
       :alt="$t('god.peopleIconAlt')"
     >
     <h2>

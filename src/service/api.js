@@ -1,8 +1,8 @@
-const { BASE_URL } = process.env
+const { BASE_URL } = process.env;
 export default {
   // Characters
-  getRoles: { method: 'GET', url: `${BASE_URL}/api/characters.v3.0.json` },
-  getReplacingRoles: { method: 'GET', url: `${BASE_URL}/api/replacingRoles.v2.5.json` },
+  getRoles: { method: "GET", url: `${BASE_URL}/api/characters.json` },
+  getReplacingRoles: { method: "GET", url: `${BASE_URL}/api/replacingRoles.json` },
   // Third Party
-  postToDiscord: { method: 'POST' }
-}
+  postToDiscord: { method: "POST" }
+};

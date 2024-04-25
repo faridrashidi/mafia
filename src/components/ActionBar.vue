@@ -18,7 +18,7 @@
             class="table-cell-display"
           >
             <img
-              src="@/assets/images/roles/mafiaparty.svg"
+              src="@/assets/images/game/mafiaparty.svg"
               :alt="$t('god.mafiaPartyIconAlt')"
             >
             <p
@@ -117,7 +117,7 @@
                 class="table-cell-display"
               >
                 <img
-                  src="@/assets/images/roles/hacked.svg"
+                  src="@/assets/images/icons/hacked.svg"
                   :alt="$t('god.hackedIconAlt')"
                 >
                 <p><span>{{ player.info[currentLang].name }} </span> <strong v-html="$t('god.hackedPerson')" /></p>
@@ -197,7 +197,7 @@
                   class="has-clear-fix"
                 >
                   <img
-                    src="@/assets/images/roles/grave.svg"
+                    src="@/assets/images/icons/grave.svg"
                     :alt="$t('god.deadIconAlt')"
                   >
                   <img

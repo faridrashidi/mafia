@@ -3,7 +3,7 @@
     class="dark-inside saved-game-alert center-aligned has-small-top-margin"
   >
     <img
-      src="@/assets/images/savedgame.svg"
+      src="@/assets/images/icons/savedgame.svg"
       :alt="$t('general.loadFromLastgameMessage')"
       class="max-width-image"
     >

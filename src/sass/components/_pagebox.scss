@@ -73,24 +73,24 @@
         &.day{
             padding-top:10px;
             padding-bottom: 10px;
-            // background:url('~@/assets/images/day.jpg') no-repeat;
+            // background:url('~@/assets/images/game/day.jpg') no-repeat;
             background-size: cover;
             animation:horizontalMove 25s ease-out forwards;
             // &::after{
             //     top:25px;
-            //     background-image: url('~@/assets/images/sun.svg');
+            //     background-image: url('~@/assets/images/game/sun.svg');
             //     background-size: 64px;
             // }
         }
         &.night{
             padding-top:10px;
             padding-bottom: 10px;
-            // background:url('~@/assets/images/night.jpg') no-repeat;
+            // background:url('~@/assets/images/game/night.jpg') no-repeat;
             background-size: cover;
             animation:horizontalMoveReverse 25s ease-out forwards;
             // &::before{
             //     top:25px;
-            //     background-image: url('~@/assets/images/moon.svg');
+            //     background-image: url('~@/assets/images/game/moon.svg');
             //     background-size: 64px;
             // }
         }

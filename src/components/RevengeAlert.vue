@@ -16,7 +16,7 @@
       :alt="$t('god.revengeIconAlt')"
     >
     <img
-      src="@/assets/images/roles/revenge.svg"
+      src="@/assets/images/icons/revenge.svg"
       class="default-image-size"
       :alt="$t('god.revengeIconAlt')"
     >

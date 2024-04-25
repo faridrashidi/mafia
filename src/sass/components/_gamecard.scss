@@ -21,7 +21,7 @@
         height: 100%;
         padding: 1rem;
         cursor: pointer;
-        background: url('~@/assets/images/main-city.jpg') no-repeat center $black_color;
+        background: url('~@/assets/images/game/main-city.jpg') no-repeat center $black_color;
         background-size: cover;
         border:1px solid $color_5;
         border-radius: $site_radius;
@@ -33,7 +33,7 @@
     }
     &.active{
         .card-front{
-            background-image: url('~@/assets/images/main-city.jpg');
+            background-image: url('~@/assets/images/game/main-city.jpg');
             border-color: $primary;
         }
     }

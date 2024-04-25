@@ -130,14 +130,14 @@
     }
     &.day{
         padding:13px 10px;
-        background: url('~@/assets/images/moon.svg') no-repeat 10px -5px $night !important;
+        background: url('~@/assets/images/game/moon.svg') no-repeat 10px -5px $night !important;
         background-size: 64px !important;
         border-radius: $site_radius;
         box-shadow: 0 0 7px $black_color;
     }
     &.night{
         padding:13px 10px;
-        background: url('~@/assets/images/sun.svg') no-repeat 10px -5px $day !important;
+        background: url('~@/assets/images/game/sun.svg') no-repeat 10px -5px $day !important;
         background-size: 64px !important;
         border-radius: $site_radius;
         box-shadow: 0 0 7px $black_color;

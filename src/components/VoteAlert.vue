@@ -7,7 +7,7 @@
       class="justice-used"
     >
       <img
-        src="@/assets/images/roles/judge.svg"
+        src="@/assets/images/icons/judge.svg"
         class="default-image-size"
         :alt="$t('god.justiceAlt')"
       >
@@ -25,7 +25,7 @@
       class="default-vote"
     >
       <img
-        src="@/assets/images/roles/vote.svg"
+        src="@/assets/images/icons/vote.svg"
         :alt="$t('god.voteIconAlt')"
       >
       <p>

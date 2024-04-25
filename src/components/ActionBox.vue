@@ -67,7 +67,7 @@
           v-else
         >
           <img
-            src="@/assets/images/roles/loader.svg"
+            src="@/assets/images/icons/loader.svg"
             alt="Loader"
           >
         </template>
