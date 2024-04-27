@@ -26,7 +26,7 @@ export default {
   name: 'NotFound',
   metaInfo () {
     return {
-      title: `${this.$t('general.name')} * ${this.$t('meta.notfound.title')}`
+      title: `${this.$t('meta.notfound.title')}`
     }
   }
 }

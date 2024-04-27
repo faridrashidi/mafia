@@ -46,7 +46,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: `${this.$t('general.name')} * ${this.$t('meta.home.title')}`,
+      title: `${this.$t('meta.home.title')}`,
       meta: []
     }
   }
