@@ -263,16 +263,10 @@ export default {
     checkConsecutiveElements(array) {
       const length = array.length
       for (let i = 0; i < length - 2; i++) {
-        const elem1 = array[i].id
-        const elem2 = array[i + 1].id
-        const elem3 = array[i + 2].id
-        if (
-          elem1 >= 1 && elem1 <= 15 &&
-          elem2 >= 1 && elem2 <= 15 &&
-          elem3 >= 1 && elem3 <= 15 && 
-          Math.abs(elem1 - elem2) === 1 && 
-          Math.abs(elem2 - elem3) === 1
-        ) {
+        const elem1 = array[i].mafia
+        const elem2 = array[i + 1].mafia
+        const elem3 = array[i + 2].mafia
+        if (elem1 == true && elem1 == true && elem3 == true) {
           return true
         }
       }
