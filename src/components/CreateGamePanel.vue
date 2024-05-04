@@ -4,6 +4,9 @@
   >
     <!-- Setup Game Settings -->
     <PageBox>
+      <SelectScenario />
+    </PageBox>
+    <PageBox>
       <SelectNumbers
         total-players
       />
@@ -90,6 +93,7 @@ import NoteBox from '@/components/NoteBox.vue';
 import PowerMeter from '@/components/PowerMeter.vue';
 import AllCharacters from '@/components/AllCharacters.vue';
 import SelectNumbers from '@/components/SelectNumbers.vue';
+import SelectScenario from '@/components/SelectScenario.vue';
 import Table from '@/components/Table.vue';
 
 export default {
@@ -108,6 +112,7 @@ export default {
     NoteBox,
     PowerMeter,
     AllCharacters,
+    SelectScenario,
     SelectNumbers,
     Table
   },

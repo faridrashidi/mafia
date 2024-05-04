@@ -93,28 +93,28 @@ export default {
   },
   computed: {
     getRoles() {
-      const rarityOrder = ['uncommon', 'rare', 'epic', 'legendary', 'mythical']
+      // const rarityOrder = ['uncommon', 'rare', 'epic', 'legendary', 'mythical']
       let roles = JSON.parse(JSON.stringify(this.Roles))
-      roles = roles.sort(function(a, b) {
-        return rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity)
-      })
+      // roles = roles.sort(function(a, b) {
+      //   return rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity)
+      // })
+      roles.sort((a, b) => {
+        const hasSearchStringA = a.scenario.includes(this.gameSettings.scenario);
+        const hasSearchStringB = b.scenario.includes(this.gameSettings.scenario);
+
+        if (hasSearchStringA && !hasSearchStringB) {
+          return -1;
+        } else if (!hasSearchStringA && hasSearchStringB) {
+          return 1;
+        }
+        return 0;
+      });
       // const sortedRoles = []
       // roles.forEach((role) => {
-      //   if (role.mafia) {
+      //   if (role.scenario.includes(this.gameSettings.scenario)) {
       //     sortedRoles.push(role)
       //   }
       // })
-      // roles.forEach((role) => {
-      //   if (!role.mafia && !role.solo) {
-      //     sortedRoles.push(role)
-      //   }
-      // })
-      // roles.forEach((role) => {
-      //   if (!role.mafia && role.solo) {
-      //     sortedRoles.push(role)
-      //   }
-      // })
-      // return sortedRoles
       return roles
     }
   },

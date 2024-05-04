@@ -71,15 +71,6 @@ export default {
       }
     }
   },
-  computed: {
-    currentBannerImage () {
-      let output = 'woman-life-freedom.png'
-      if (this.imageCounter) {
-        output = 'woman-life-freedom-2.png'
-      }
-      return output
-    }
-  },
   created() {
     // Get Default Language from localStorage
     const savedLocale = JSON.parse(localStorage.getItem('locale'))
@@ -130,25 +121,6 @@ export default {
     el.classList.add('rtl')
     html.setAttribute('dir', 'rtl')
     html.setAttribute('lang', 'fa')
-  },
-  methods: {
-    trackEvent () {
-      // Track Banner click event for Analytics
-      if (!this.trackOnce) {
-        const platform = navigator.platform || 'none'
-        gtag('event', 'click', {
-          'event_category': 'Woman, Life and Freedom',
-          'event_label': platform,
-          'value': 1
-        })
-        this.trackOnce = true
-      }
-    },
-    changeImage () {
-      // Change Banner image on click
-      this.imageCounter = !this.imageCounter
-      this.trackEvent()
-    }
   }
 }
 </script>

@@ -267,9 +267,9 @@ export default {
         const elem2 = array[i + 1].id
         const elem3 = array[i + 2].id
         if (
-          elem1 >= 1 && elem1 <= 16 &&
-          elem2 >= 1 && elem2 <= 16 &&
-          elem3 >= 1 && elem3 <= 16 && 
+          elem1 >= 1 && elem1 <= 15 &&
+          elem2 >= 1 && elem2 <= 15 &&
+          elem3 >= 1 && elem3 <= 15 && 
           Math.abs(elem1 - elem2) === 1 && 
           Math.abs(elem2 - elem3) === 1
         ) {
