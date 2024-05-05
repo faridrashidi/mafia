@@ -93,15 +93,10 @@ export default {
   },
   computed: {
     getRoles() {
-      // const rarityOrder = ['uncommon', 'rare', 'epic', 'legendary', 'mythical']
       let roles = JSON.parse(JSON.stringify(this.Roles))
-      // roles = roles.sort(function(a, b) {
-      //   return rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity)
-      // })
       roles.sort((a, b) => {
         const hasSearchStringA = a.scenario.includes(this.gameSettings.scenario);
         const hasSearchStringB = b.scenario.includes(this.gameSettings.scenario);
-
         if (hasSearchStringA && !hasSearchStringB) {
           return -1;
         } else if (!hasSearchStringA && hasSearchStringB) {
