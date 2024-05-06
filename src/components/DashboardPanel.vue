@@ -253,13 +253,6 @@ export default {
     changeGameSettings () {
       this.startGameEngine('roles-selected-create')
     },
-    fisherYatesShuffle(array) {
-      const random = new Random(Random.engines.mt19937().autoSeed())
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(random.real(0, 1) * (i + 1))
-        [array[i], array[j]] = [array[j], array[i]]
-      }
-    },
     checkConsecutiveElements(array) {
       const length = array.length
       for (let i = 0; i < length - 2; i++) {
@@ -272,27 +265,13 @@ export default {
       }
       return false
     },
-    downloadArrayValues(array, fileName) {
-      const content = array.map(item => item.info.fa.name).join('\n')
-      const blob = new Blob([content], { type: 'text/plain' })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = fileName
-      link.click()
-      URL.revokeObjectURL(url)
-    },
     randomFunc () {
-      // this.fisherYatesShuffle(this.gameSettings.selectedRoles)
       const random = new Random(Random.engines.mt19937().autoSeed())
       let isConsecutive
-      let i = 0
       do {
         random.shuffle(this.gameSettings.selectedRoles)
         isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles)
-        i += 1
       } while (isConsecutive)
-      // this.downloadArrayValues(this.gameSettings.selectedRoles, i + ".txt")
     }
   }
 }

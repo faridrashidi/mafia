@@ -191,9 +191,9 @@
             "image": "creator.svg",
             "title": "سلام گاد",
             "subtitle": "🎮 برای شروع بازی گزینه‌های زیر رو انتخاب کن",
-            "scenario": "مرتب‌سازی نقش‌ها بر اساس <span class='secondary-color'>سناریو</span> بازی:",
+            "scenario": "<span class='secondary-color'>سناریو</span> بازی:",
             "step1": "تعداد کل <span class='primary-color'>بازیکنان</span>:",
-            "step2": " چه تعداد از بازیکنان <span class='mafia-role'>مافیا</span> باشند؟ ",
+            "step2": " چه تعداد از بازیکنان <span class='mafia-role'>مافیا</span> باشند:",
             "start": "برو مرحله بعد!",
             "changeSettings": "بازگشت به تنظیمات بازی",
             "errorText1": "باید <span class='text-underline'>{number}</span> کاراکتر از گروه <strong class='mafia-role'> {role} </strong> رو انتخاب کنی ، ولی <span class='text-underline'>{chosen}</span> کاراکتر انتخاب کردی",

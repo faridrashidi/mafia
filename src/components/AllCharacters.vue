@@ -12,6 +12,7 @@
     >
       <li
         v-for="(role, index) in getRoles"
+        v-if="role.scenario.includes(gameSettings.scenario)"
         :key="index"
         :class="{
           'mafia': role.mafia,
@@ -94,22 +95,6 @@ export default {
   computed: {
     getRoles() {
       let roles = JSON.parse(JSON.stringify(this.Roles))
-      roles.sort((a, b) => {
-        const hasSearchStringA = a.scenario.includes(this.gameSettings.scenario);
-        const hasSearchStringB = b.scenario.includes(this.gameSettings.scenario);
-        if (hasSearchStringA && !hasSearchStringB) {
-          return -1;
-        } else if (!hasSearchStringA && hasSearchStringB) {
-          return 1;
-        }
-        return 0;
-      });
-      // const sortedRoles = []
-      // roles.forEach((role) => {
-      //   if (role.scenario.includes(this.gameSettings.scenario)) {
-      //     sortedRoles.push(role)
-      //   }
-      // })
       return roles
     }
   },
@@ -134,6 +119,25 @@ export default {
       }
       this.gameSettings.selectedMafia = this.gameSettings.selectedRoles.filter(role => role.mafia).length
       this.gameSettings.selectedCitizen = this.gameSettings.selectedRoles.filter(role => !role.mafia).length
+    },
+    writeToHumanReadableFile(variable, fileName) {
+      let content = '';
+      if (typeof variable === 'string') {
+        content = variable;
+      } else if (typeof variable === 'number' || typeof variable === 'boolean') {
+        content = variable.toString();
+      } else if (Array.isArray(variable)) {
+        content = variable.map(item => item.info.fa.name).join('\n');
+      } else {
+        content = 'Unsupported variable type. Only strings and arrays are supported.';
+      } 
+      const blob = new Blob([content], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = fileName
+      link.click()
+      URL.revokeObjectURL(url)
     },
     checkNumbers (selectedRole) {
       if (this.gameSettings.multipleRoles.normalMafia > 0 && selectedRole.status.mafia) {
@@ -222,8 +226,8 @@ export default {
       this.SetGameSettings(this.gameSettings)
     },
     openInfoBox (selectedRole) {
-      this.roleInfo = selectedRole
-      this.showInfo = !this.showInfo
+      // this.roleInfo = selectedRole
+      // this.showInfo = !this.showInfo
     },
     hideInfoBox () {
       this.showInfo = false
