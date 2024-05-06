@@ -1,10 +1,6 @@
 <template>
-  <div
-    class="select-numbers step-box"
-  >
-    <p
-      v-html="$t(`pages.home.step${selectIndex}`)"
-    />
+  <div class="select-numbers step-box">
+    <p style="margin-bottom: 0px;" v-html="$t(`pages.home.step${selectIndex}`)" />
     <select
       v-model.number="selectValue"
       name="quantity"

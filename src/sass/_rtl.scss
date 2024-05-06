@@ -4,13 +4,21 @@ body.rtl{
     font-size: $font_size_4;
 }
 
+.select-numbers{
+    display: flex;
+    align-items: center;
+}
+
 .rtl{
     p{
+        flex: 1;
+        margin-left:auto;
         line-height: 2;
         font-size: $font_size_3;
     }
     input{font-family: $font_rtl;}
     select{
+        width: 60%;
         line-height: 32px;
         font-family: $font_rtl;
         background-position-x: 15px;

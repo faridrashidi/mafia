@@ -1,6 +1,6 @@
 <template>
   <div class="select-numbers step-box">
-    <p v-html="$t('pages.home.scenario')" />
+    <p style="margin-bottom: 0px;" v-html="$t('pages.home.scenario')" />
     <select v-model.number="selectSenario" name="quantity" id="quantity" @change="calcSen">
       <option value="null" disabled>
         {{ $t("general.selectPlaceholder") }}
