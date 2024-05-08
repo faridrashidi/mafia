@@ -1,22 +1,14 @@
 <template>
-  <div
-    class="roles all-characters"
-  >
-    <InfoBox
-      :role="roleInfo"
-      :show="showInfo"
-      @hideInfo="hideInfoBox()"
-    />
-    <ul
-      class="has-clear-fix"
-    >
+  <div class="roles all-characters">
+    <InfoBox :role="roleInfo" :show="showInfo" @hideInfo="hideInfoBox()" />
+    <ul class="has-clear-fix">
       <li
         v-for="(role, index) in getRoles"
         v-if="role.scenario.includes(gameSettings.scenario)"
         :key="index"
         :class="{
-          'mafia': role.mafia,
-          'solo': role.solo
+          mafia: role.mafia,
+          solo: role.solo
         }"
         :id="'character_' + role.id"
       >
@@ -26,67 +18,50 @@
           name="roles"
           :id="'id_' + role.id"
           :class="{
-            'active': role.selected
+            active: role.selected
           }"
           :value="role"
           @change="checkRoles(role, index)"
-        >
-        <label
-          :for="'id_' + role.id"
-        >
-          <div
-            class="inner-label"
-          >
-            <div
-              class="new-character number-control"
-            >
-            <span
-              v-if="checkNumbers(role)"
-            >{{ role.status.mafia ? gameSettings.multipleRoles.normalMafia : gameSettings.multipleRoles.normalCitizen }}</span>
+        />
+        <label :for="'id_' + role.id">
+          <div class="inner-label">
+            <div class="new-character number-control">
+              <span v-if="checkNumbers(role)">{{
+                role.status.mafia
+                  ? gameSettings.multipleRoles.normalMafia
+                  : gameSettings.multipleRoles.normalCitizen
+              }}</span>
             </div>
             <img
               :src="getImg('/roles', role.icon)"
               :alt="role.info[currentLang].name"
               :title="role.info[currentLang].name"
-            >
+            />
           </div>
         </label>
-        <transition
-          name="scale"
-        >
-          <div
-            v-if="checkNumbers(role)"
-            class="number-control"
-          >
-            <span
-              @click="decrNumber(role)"
-            >-</span>
-            <span
-              @click="incrNumber(role)"
-            >+</span>
+        <transition name="scale">
+          <div v-if="checkNumbers(role)" class="number-control">
+            <span @click="decrNumber(role)">-</span>
+            <span @click="incrNumber(role)">+</span>
           </div>
         </transition>
-        <a
-          @click="openInfoBox(role)"
-          class="info"
-          href="javascript:void(0)"
-        />
+        <a @click="openInfoBox(role)" class="info" href="javascript:void(0)" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import CharacterPower from '@/components/CharacterPower.vue';
-import InfoBox from '@/components/InfoBox.vue';
+import CharacterPower from "@/components/CharacterPower.vue";
+import InfoBox from "@/components/InfoBox.vue";
 
 export default {
-  name: 'AllCharacters',
+  name: "AllCharacters",
   data() {
     return {
       showInfo: false,
       roleInfo: {}
-    }
+    };
   },
   components: {
     CharacterPower,
@@ -94,144 +69,163 @@ export default {
   },
   computed: {
     getRoles() {
-      let roles = JSON.parse(JSON.stringify(this.Roles))
-      return roles
+      let roles = JSON.parse(JSON.stringify(this.Roles));
+      return roles;
     }
   },
   methods: {
-    calcPower () {
-      const $powerControl = this.gameSettings.powerControl
-      $powerControl.power = 0
-      $powerControl.mafiaPower = 0
-      $powerControl.citizenPower = 0
-      this.gameSettings.selectedRoles.forEach((role) => {
-        $powerControl.power += role.power
+    calcPower() {
+      const $powerControl = this.gameSettings.powerControl;
+      $powerControl.power = 0;
+      $powerControl.mafiaPower = 0;
+      $powerControl.citizenPower = 0;
+      this.gameSettings.selectedRoles.forEach(role => {
+        $powerControl.power += role.power;
         if (role.mafia) {
-          $powerControl.mafiaPower += Math.abs(role.power)
+          $powerControl.mafiaPower += Math.abs(role.power);
         } else {
-          $powerControl.citizenPower += role.power
+          $powerControl.citizenPower += role.power;
         }
-      })
+      });
       if ($powerControl.power >= 95) {
-        $powerControl.power = 95
+        $powerControl.power = 95;
       } else if ($powerControl.power <= -95) {
-        $powerControl.power = -95
+        $powerControl.power = -95;
       }
-      this.gameSettings.selectedMafia = this.gameSettings.selectedRoles.filter(role => role.mafia).length
-      this.gameSettings.selectedCitizen = this.gameSettings.selectedRoles.filter(role => !role.mafia).length
+      this.gameSettings.selectedMafia = this.gameSettings.selectedRoles.filter(
+        role => role.mafia
+      ).length;
+      this.gameSettings.selectedCitizen = this.gameSettings.selectedRoles.filter(
+        role => !role.mafia
+      ).length;
     },
     writeToHumanReadableFile(variable, fileName) {
-      let content = '';
-      if (typeof variable === 'string') {
+      let content = "";
+      if (typeof variable === "string") {
         content = variable;
-      } else if (typeof variable === 'number' || typeof variable === 'boolean') {
+      } else if (typeof variable === "number" || typeof variable === "boolean") {
         content = variable.toString();
       } else if (Array.isArray(variable)) {
-        content = variable.map(item => item.info.fa.name).join('\n');
+        content = variable.map(item => item.info.fa.name).join("\n");
       } else {
-        content = 'Unsupported variable type. Only strings and arrays are supported.';
-      } 
-      const blob = new Blob([content], { type: 'text/plain' })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = fileName
-      link.click()
-      URL.revokeObjectURL(url)
+        content = "Unsupported variable type. Only strings and arrays are supported.";
+      }
+      const blob = new Blob([content], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      link.click();
+      URL.revokeObjectURL(url);
     },
-    checkNumbers (selectedRole) {
+    checkNumbers(selectedRole) {
       if (this.gameSettings.multipleRoles.normalMafia > 0 && selectedRole.status.mafia) {
-        return true
-      } if (this.gameSettings.multipleRoles.normalCitizen > 0 && selectedRole.status.citizen) {
-        return true
+        return true;
       }
-      return false
+      if (this.gameSettings.multipleRoles.normalCitizen > 0 && selectedRole.status.citizen) {
+        return true;
+      }
+      return false;
     },
-    checkRoles (selectedRole) {
-      this.getRoles.forEach((role) => {
+    checkRoles(selectedRole) {
+      this.getRoles.forEach(role => {
         if (role.id == selectedRole.id) {
-          role.selected == false ? role.selected = true : role.selected = false
+          role.selected == false ? (role.selected = true) : (role.selected = false);
         }
-      })
+      });
       if (selectedRole.status.mafia && this.gameSettings.multipleRoles.normalMafia == 0) {
-        this.gameSettings.multipleRoles.normalMafia = 1
+        this.gameSettings.multipleRoles.normalMafia = 1;
       } else if (selectedRole.status.mafia && this.gameSettings.multipleRoles.normalMafia >= 1) {
-        this.gameSettings.multipleRoles.normalMafia = 0
-        this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(value => value.id != selectedRole.id)
-      } else if (selectedRole.status.citizen && this.gameSettings.multipleRoles.normalCitizen == 0) {
-        this.gameSettings.multipleRoles.normalCitizen = 1
-      } else if (selectedRole.status.citizen && this.gameSettings.multipleRoles.normalCitizen >= 1) {
-        this.gameSettings.multipleRoles.normalCitizen = 0
-        this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(value => value.id != selectedRole.id)
+        this.gameSettings.multipleRoles.normalMafia = 0;
+        this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(
+          value => value.id != selectedRole.id
+        );
+      } else if (
+        selectedRole.status.citizen &&
+        this.gameSettings.multipleRoles.normalCitizen == 0
+      ) {
+        this.gameSettings.multipleRoles.normalCitizen = 1;
+      } else if (
+        selectedRole.status.citizen &&
+        this.gameSettings.multipleRoles.normalCitizen >= 1
+      ) {
+        this.gameSettings.multipleRoles.normalCitizen = 0;
+        this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(
+          value => value.id != selectedRole.id
+        );
       }
-      this.calcPower()
-      this.SetRoles(this.getRoles)
-      this.SetGameSettings(this.gameSettings)
+      this.calcPower();
+      this.SetRoles(this.getRoles);
+      this.SetGameSettings(this.gameSettings);
     },
-    decrNumber (selectedRole) {
-      const $roles = this.gameSettings.selectedRoles
+    decrNumber(selectedRole) {
+      const $roles = this.gameSettings.selectedRoles;
       if (selectedRole.status.mafia) {
         if (this.gameSettings.multipleRoles.normalMafia > 1) {
           for (const el of $roles) {
             if (el.id == selectedRole.id) {
-              $roles.splice($roles.indexOf(el), 1)
-              break
+              $roles.splice($roles.indexOf(el), 1);
+              break;
             }
           }
         } else {
-          this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(value => value.id != selectedRole.id)
-          this.getRoles.forEach((role) => {
+          this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(
+            value => value.id != selectedRole.id
+          );
+          this.getRoles.forEach(role => {
             if (role.id == selectedRole.id) {
-              role.selected = false
+              role.selected = false;
             }
-          })
+          });
         }
-        this.gameSettings.multipleRoles.normalMafia--
+        this.gameSettings.multipleRoles.normalMafia--;
       }
       if (selectedRole.status.citizen) {
         if (this.gameSettings.multipleRoles.normalCitizen > 1) {
           for (const el of $roles) {
             if (el.id == selectedRole.id) {
-              $roles.splice($roles.indexOf(el), 1)
-              break
+              $roles.splice($roles.indexOf(el), 1);
+              break;
             }
           }
         } else {
-          this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(value => value.id != selectedRole.id)
-          this.getRoles.forEach((role) => {
+          this.gameSettings.selectedRoles = this.gameSettings.selectedRoles.filter(
+            value => value.id != selectedRole.id
+          );
+          this.getRoles.forEach(role => {
             if (role.id == selectedRole.id) {
-              role.selected = false
+              role.selected = false;
             }
-          })
+          });
         }
-        this.gameSettings.multipleRoles.normalCitizen--
+        this.gameSettings.multipleRoles.normalCitizen--;
       }
-      this.calcPower()
-      this.SetRoles(this.getRoles)
-      this.SetGameSettings(this.gameSettings)
+      this.calcPower();
+      this.SetRoles(this.getRoles);
+      this.SetGameSettings(this.gameSettings);
     },
-    incrNumber (selectedRole) {
-      let targetRole
+    incrNumber(selectedRole) {
+      let targetRole;
       if (selectedRole.status.mafia) {
-        targetRole = JSON.parse(JSON.stringify(selectedRole))
-        this.gameSettings.selectedRoles.push(targetRole)
-        this.gameSettings.multipleRoles.normalMafia++
+        targetRole = JSON.parse(JSON.stringify(selectedRole));
+        this.gameSettings.selectedRoles.push(targetRole);
+        this.gameSettings.multipleRoles.normalMafia++;
       } else if (selectedRole.status.citizen) {
-        targetRole = JSON.parse(JSON.stringify(selectedRole))
-        this.gameSettings.selectedRoles.push(targetRole)
-        this.gameSettings.multipleRoles.normalCitizen++
+        targetRole = JSON.parse(JSON.stringify(selectedRole));
+        this.gameSettings.selectedRoles.push(targetRole);
+        this.gameSettings.multipleRoles.normalCitizen++;
       }
-      this.calcPower()
-      this.SetRoles(this.getRoles)
-      this.SetGameSettings(this.gameSettings)
+      this.calcPower();
+      this.SetRoles(this.getRoles);
+      this.SetGameSettings(this.gameSettings);
     },
-    openInfoBox (selectedRole) {
+    openInfoBox(selectedRole) {
       // this.roleInfo = selectedRole
       // this.showInfo = !this.showInfo
     },
-    hideInfoBox () {
-      this.showInfo = false
+    hideInfoBox() {
+      this.showInfo = false;
     }
   }
-}
+};
 </script>

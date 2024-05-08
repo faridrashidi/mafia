@@ -1,68 +1,53 @@
 <template>
-  <PageBox
-    class="dark-inside saved-game-alert center-aligned has-small-top-margin"
-  >
+  <PageBox class="dark-inside saved-game-alert center-aligned has-small-top-margin">
     <img
       src="@/assets/images/icons/savedgame.svg"
       :alt="$t('general.loadFromLastgameMessage')"
       class="max-width-image"
-    >
-    <h4
-      v-html="$t('general.loadFromLastgameMessage')"
-      class="has-top-margin has-bottom-margin"
     />
-    <BaseButton
-      class="green disc-bttn"
-      @clicked="loadFromSave()"
-    >
+    <h4 v-html="$t('general.loadFromLastgameMessage')" class="has-top-margin has-bottom-margin" />
+    <BaseButton class="green disc-bttn" @clicked="loadFromSave()">
       <span>
-        {{ $t('common.loadLastGameButton') }}
+        {{ $t("common.loadLastGameButton") }}
       </span>
     </BaseButton>
-    <BaseButton
-      class="secondary start-bttn"
-      @clicked="resetFactory()"
-    >
+    <BaseButton class="secondary start-bttn" @clicked="resetFactory()">
       <span>
-        {{ $t('common.startNewGameButton') }}
+        {{ $t("common.startNewGameButton") }}
       </span>
     </BaseButton>
-    <BaseButton
-      class="primary exit-bttn"
-      @clicked="clearStorage()"
-    >
+    <BaseButton class="primary exit-bttn" @clicked="clearStorage()">
       <span>
-        {{ $t('common.clearStorage') }}
+        {{ $t("common.clearStorage") }}
       </span>
     </BaseButton>
   </PageBox>
 </template>
 
 <script>
-
 export default {
-  name: 'SavedGameAlert',
+  name: "SavedGameAlert",
   methods: {
-    loadFromSave () {
-      this.startGameEngine('autosave')
+    loadFromSave() {
+      this.startGameEngine("autosave");
       this.SetGameSettingsItem({
         hasSavedGame: false
-      })
+      });
     },
-    resetFactory () {
-      this.startGameEngine('roles-selected-create')
+    resetFactory() {
+      this.startGameEngine("roles-selected-create");
       this.SetGameSettingsItem({
         hasSavedGame: false
-      })
+      });
     },
-    clearStorage () {
-      localStorage.removeItem('save-roles-selected-create')
-      localStorage.removeItem('save-roles-selected-dashboard')
-      localStorage.removeItem('save-automatic')
+    clearStorage() {
+      localStorage.removeItem("save-roles-selected-create");
+      localStorage.removeItem("save-roles-selected-dashboard");
+      localStorage.removeItem("save-automatic");
       this.SetGameSettingsItem({
         hasSavedGame: false
-      })
+      });
     }
   }
-}
+};
 </script>

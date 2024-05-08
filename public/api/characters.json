@@ -1748,7 +1748,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 117,
     "mafia": true,
@@ -1850,7 +1850,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 118,
     "mafia": true,
@@ -1952,7 +1952,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 119,
     "mafia": true,
@@ -2054,7 +2054,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 120,
     "mafia": true,
@@ -2156,7 +2156,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 121,
     "mafia": true,
@@ -2258,7 +2258,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 122,
     "mafia": true,
@@ -2360,7 +2360,7 @@
       "targetGroup": "*",
       "actionLimit": "*"
     }
-  }  ,
+  },
   {
     "id": 123,
     "mafia": true,
@@ -10623,7 +10623,7 @@
       "actionLimit": "*"
     }
   },
-    {
+  {
     "id": 528,
     "mafia": false,
     "solo": false,

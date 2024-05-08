@@ -7,11 +7,6 @@
     >
       {{ $t('pages.home.passMobile') }}
     </p>
-    <!-- <p
-      v-else
-    >
-      {{ $t('pages.home.gotMobile') }}
-    </p> -->
     <div
       v-for="(role, index) in gameSettings.selectedRoles"
       :key="index"

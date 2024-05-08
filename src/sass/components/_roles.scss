@@ -1,192 +1,197 @@
-.roles{
-    margin-top: 1rem;
-    li{
-        position: relative;
-        float: left;
-        width:30%;
-        margin:4% 0 0 4%;
-        a.info{
-            position: absolute;
-            top:-3px;
-            right:-3px;
-            display: block;
-            width:28px;
-            height: 28px;
-            visibility: hidden;
-            opacity: 0;
-            background:url('~@/assets/images/assets/checked.svg') no-repeat center $background_color_2;
-            background-size: 33px;
-            border-radius: $circle_radius;
-            z-index: 99;
-            transition:all .2s ease-in-out;
-        }
-        input{
-            display: none;
-        }
-        label{
-            display: table;
-            width: 100%;
-            height: 100px;
-            font-family: $font_mafia;
-            font-size: $font_size_big;
-            color:$color_1;
-            text-align: center;
-            padding:5px 7px;
-            cursor: pointer;
-            background-color: $background_color_citizen;
-            border-radius: $site_radius_lg;
-            box-shadow:0 0 5px $black_color, 0 0 3px $black_color inset;
-            transition:all .3s ease-in-out;
-            > div{
-                display: table-cell;
-                vertical-align: middle;
-                strong{
-                    display: block;
-                    margin-top:5px;
-                    span{
-                        display: inline-block;
-                        vertical-align: middle;
-                        font-family: $font_normal;
-                        font-size: $font_size_6;
-                        color:$color_1;
-                        margin-left: 5px;
-                        transition:all .3s ease-in-out;
-                        i{font-size: $font_size_8;}
-                    }
-                }
-                .new-character{
-                    position: absolute;
-                    top:-8px;
-                    left:-10px;
-                    width:44px;
-                    z-index: 9999;
-                }
-                .hot{
-                    position: absolute;
-                    top:-10px;
-                    right:-10px;
-                    width:44px;
-                    z-index: 9999;
-                }
-                .rarity-icon{
-                    position: absolute;
-                    top:-12px;
-                    left:50%;
-                    width:32px;
-                    margin-left: -16px;
-                    z-index: 9999;
-                }
-            }
-            img{
-                width:100%;
-                transition:all .3s ease-in-out;
-            }
-            &::before{
-                content:'';
-                position: absolute;
-                top:4%;
-                left:4%;
-                width:92%;
-                height: 92%;
-                opacity: 0;
-                visibility: hidden;
-                // border:4px solid $black_color;
-                border-radius: $site_radius_md;
-                transition:all .2s ease-in-out;
-                z-index: 99;
-            }
-        }
-        input.active ~ .character-power{
-            visibility: hidden;
-            opacity: 0;
-        }
-        input.active + label::before,
-        input.active ~ a.info{
-            visibility: visible;
-            opacity: 1;
-        }
-        input.active ~ a.info{transition-delay: 150ms;}
-        input.active + label{
-            color:$black_color;
-            transform: scale(.9, .9);
-            > div{
-                .new-character{
-                    top:20px;
-                    left:15px;
-                }
-                .hot{
-                    top:20px;
-                    right:15px;
-                }
-            }
-        }
-        input.active + label img:not(.new-character):not(.hot):not(.rarity-icon){
-            width: 100%;
-            transform:rotate(360deg);
-        }
-        .number-control span{
-            position:absolute;
-            bottom:-4px;
-            left:-4px;
-            display: block;
-            width:32px;
-            height: 32px;
-            line-height: 28px;
-            font-family: $font_normal;
-            font-size: 24px;
-            color:$black_color;
-            text-align: center;
-            transition:all .2s;
-            cursor: pointer;
-            background-color: $color_1;
-            border-radius: 4px;
-            z-index: 99;
-            &:active{
-                transform: scale(.75,.75);
-                border-color:$black_color;
-            }
-            &:last-child{
-                left:auto;
-                right:-4px;
-            }
-        }
-        .character-power{
-            position: absolute;
-            left: 10px;
-            bottom: 12px;
-            width: calc(100% - 20px);
-            transition:all .2s ease-in-out;
-            background-color: $background_color_2;
-            z-index: 9;
-            &.mafia-pw{
-                background-color: $background_color_middle;
-            }
-        }
-        &:nth-child(3n+1){
-            margin-left:0;
-        }
-        &.mafia label{
-            background-color: $background_color_mafia;
-        }
-        &.solo label{
-            background-color: $background_color_solo;
-        }
-        &.add-character label{
-            background: $awesome;
-            box-shadow: 0 0 10px $primary;
-            &:hover{
-                box-shadow: none;
-            }
-            &:active{
-                transform: scale(.2, .2);
-            }
-        }
-        @media #{$breakpoint_tablet} {
-            width:31%;
-            margin:3.5% 0 0 3.5% !important;
-            &:nth-child(3n+1){
-                margin-left:0 !important;
-            }
-        }
+.roles {
+  margin-top: 1rem;
+  li {
+    position: relative;
+    float: left;
+    width: 30%;
+    margin: 4% 0 0 4%;
+    a.info {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      display: block;
+      width: 28px;
+      height: 28px;
+      visibility: hidden;
+      opacity: 0;
+      background: url("~@/assets/images/assets/checked.svg") no-repeat center
+        $background_color_2;
+      background-size: 33px;
+      border-radius: $circle_radius;
+      z-index: 99;
+      transition: all 0.2s ease-in-out;
     }
+    input {
+      display: none;
+    }
+    label {
+      display: table;
+      width: 100%;
+      height: 100px;
+      font-family: $font_mafia;
+      font-size: $font_size_big;
+      color: $color_1;
+      text-align: center;
+      padding: 5px 7px;
+      cursor: pointer;
+      background-color: $background_color_citizen;
+      border-radius: $site_radius_lg;
+      box-shadow: 0 0 5px $black_color, 0 0 3px $black_color inset;
+      transition: all 0.3s ease-in-out;
+      > div {
+        display: table-cell;
+        vertical-align: middle;
+        strong {
+          display: block;
+          margin-top: 5px;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: $font_normal;
+            font-size: $font_size_6;
+            color: $color_1;
+            margin-left: 5px;
+            transition: all 0.3s ease-in-out;
+            i {
+              font-size: $font_size_8;
+            }
+          }
+        }
+        .new-character {
+          position: absolute;
+          top: -8px;
+          left: -10px;
+          width: 44px;
+          z-index: 9999;
+        }
+        .hot {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 44px;
+          z-index: 9999;
+        }
+        .rarity-icon {
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          width: 32px;
+          margin-left: -16px;
+          z-index: 9999;
+        }
+      }
+      img {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4%;
+        left: 4%;
+        width: 92%;
+        height: 92%;
+        opacity: 0;
+        visibility: hidden;
+        // border:4px solid $black_color;
+        border-radius: $site_radius_md;
+        transition: all 0.2s ease-in-out;
+        z-index: 99;
+      }
+    }
+    input.active ~ .character-power {
+      visibility: hidden;
+      opacity: 0;
+    }
+    input.active + label::before,
+    input.active ~ a.info {
+      visibility: visible;
+      opacity: 1;
+    }
+    input.active ~ a.info {
+      transition-delay: 150ms;
+    }
+    input.active + label {
+      color: $black_color;
+      transform: scale(0.9, 0.9);
+      > div {
+        .new-character {
+          top: 20px;
+          left: 15px;
+        }
+        .hot {
+          top: 20px;
+          right: 15px;
+        }
+      }
+    }
+    input.active + label img:not(.new-character):not(.hot):not(.rarity-icon) {
+      width: 100%;
+      transform: rotate(360deg);
+    }
+    .number-control span {
+      position: absolute;
+      bottom: -4px;
+      left: -4px;
+      display: block;
+      width: 32px;
+      height: 32px;
+      line-height: 28px;
+      font-family: $font_normal;
+      font-size: 24px;
+      color: $black_color;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
+      background-color: $color_1;
+      border-radius: 4px;
+      z-index: 99;
+      &:active {
+        transform: scale(0.75, 0.75);
+        border-color: $black_color;
+      }
+      &:last-child {
+        left: auto;
+        right: -4px;
+      }
+    }
+    .character-power {
+      position: absolute;
+      left: 10px;
+      bottom: 12px;
+      width: calc(100% - 20px);
+      transition: all 0.2s ease-in-out;
+      background-color: $background_color_2;
+      z-index: 9;
+      &.mafia-pw {
+        background-color: $background_color_middle;
+      }
+    }
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+    &.mafia label {
+      background-color: $background_color_mafia;
+    }
+    &.solo label {
+      background-color: $background_color_solo;
+    }
+    &.add-character label {
+      background: $awesome;
+      box-shadow: 0 0 10px $primary;
+      &:hover {
+        box-shadow: none;
+      }
+      &:active {
+        transform: scale(0.2, 0.2);
+      }
+    }
+    @media #{$breakpoint_tablet} {
+      width: 31%;
+      margin: 3.5% 0 0 3.5% !important;
+      &:nth-child(3n + 1) {
+        margin-left: 0 !important;
+      }
+    }
+  }
 }

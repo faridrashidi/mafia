@@ -40,7 +40,7 @@ export default {
     }
   },
   created() {
-    this.selectSenario = this.gameSettings.scenario
+    this.selectSenario = this.gameSettings.scenario;
   },
   methods: {
     calcSen() {
@@ -54,8 +54,8 @@ export default {
       // this.gameSettings.fMafias = []
       // this.gameSettings.fCitizens = []
       // this.SetRoles(JSON.parse(JSON.stringify(this.Roles)))
-      this.gameSettings.scenario = this.selectSenario
-      this.SetGameSettings(this.gameSettings)
+      this.gameSettings.scenario = this.selectSenario;
+      this.SetGameSettings(this.gameSettings);
     }
   }
 };

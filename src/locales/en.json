@@ -1,607 +1,613 @@
 {
-    "patchNotes": [
-        {"text": "New Feature: Added Settings in God Panel for better control over game and events"},
-        {"text": "New Feature: Added History log of nights in Panel Settings"},
-        {"text": "New Feature: Added Safe mode for better security during the game in Panel Settings"},
-        {"text": "New Feature: Added Inquiry of game in Panel Settings"},
-        {"text": "New Feature: Added Final Move Cards in Panel Settings"},
-        {"text": "Update: Improved Reports of the day and night in God Panel"},
-        {"text": "Update: User Interface and User Experience for Web Application"},
-        {"text": "Update: Improved App speed and performance"},
-        {"text": "Fix: All reported bugs and issues"},
-        {"text": "New Character : Shadow for Mafia team"},
-        {"text": "New Character : Gunman for Citizen team"},
-        {"text": "New Character : Khan for Citizen team"},
-        {"text": "New Character : Freemasoner for Citizen team"}
+  "patchNotes": [
+    {
+      "text": "New Feature: Added Settings in God Panel for better control over game and events"
+    },
+    { "text": "New Feature: Added History log of nights in Panel Settings" },
+    {
+      "text": "New Feature: Added Safe mode for better security during the game in Panel Settings"
+    },
+    { "text": "New Feature: Added Inquiry of game in Panel Settings" },
+    { "text": "New Feature: Added Final Move Cards in Panel Settings" },
+    { "text": "Update: Improved Reports of the day and night in God Panel" },
+    {
+      "text": "Update: User Interface and User Experience for Web Application"
+    },
+    { "text": "Update: Improved App speed and performance" },
+    { "text": "Fix: All reported bugs and issues" },
+    { "text": "New Character : Shadow for Mafia team" },
+    { "text": "New Character : Gunman for Citizen team" },
+    { "text": "New Character : Khan for Citizen team" },
+    { "text": "New Character : Freemasoner for Citizen team" }
+  ],
+  "thirdparty": {
+    "discordText": "Do you want to connect Mafiabuzz with your Discord's channel? Enter your <span class='primary-color'>webhook</span> code below",
+    "discordHelp": "View setup instruction in Instagram",
+    "discordConnected": "Mafiabuzz is now connected to your Discord channel",
+    "discordDisconnect": "Disconnect this channel",
+    "discordCodeSubmit": "Submit",
+    "discordDayPhase": "🌞 Starting Day Phase : ",
+    "discordNightPhase": "🌚 Starting Night Phase : ",
+    "discordGameStarted": "🎮 Game Started ...!!!",
+    "discordPlayers": "🕵️‍♂️👨‍👩‍👧‍👦🕵️‍♀️ These players are playing game : ",
+    "discordMafia": "🕵🏼 Mafia Characters : ",
+    "discordCitizen": "👨‍👩‍👧‍👦 Citizen Characters : ",
+    "discordSolo": "🦸‍♂️ Solo Characters : ",
+    "discordMafiaPower": "☢️ Mafia Power : ",
+    "discordCitizenPower": "☢️ Citizen and Solo Power : ",
+    "discordGodGameStarted": "⚔️ Everyone know his/her role now. Let the game begin...",
+    "discordUpdateButton": "Send latest game status to discord",
+    "discordLatestStats": "📜 Latest Game Stats : ",
+    "discordAlivePeople": "💚 Alive People : ",
+    "discordDeadPeople": "💀 Dead People : ",
+    "discordSpentNights": "🌚 Spent Nights : ",
+    "discordMafiaTeam": "Your teammates are : ",
+    "discordSendVoteResult": "Send vote counts to Discord",
+    "discordVoteResultText": "🏳️ Vote Report for alive people in game : "
+  },
+  "general": {
+    "name": "MafiaDealer",
+    "welcomeToMafiabuzz": "💜🔔 Welcome to MafiaDealer Web Application 🔔💜",
+    "alt": "MafiaDealer Logo",
+    "url": "https://www.mafiadealer.app",
+    "currency": "T",
+    "infoIcon": "Info Icon",
+    "notValidIcon": "Not Valid Icon",
+    "warningIcon": "Warning Icon",
+    "correct": "correct.svg",
+    "correctIcon": "Correct Icon",
+    "wrong": "wrong.svg",
+    "wrongIcon": "Wrong Icon",
+    "seeDetails": "Details",
+    "instagramBanner": {
+      "title": "How to work with Mafiabuzz app?",
+      "button": "Open in Instagram"
+    },
+    "selectPlaceholder": "Please select from below",
+    "patchButton": "View Patch Notes",
+    "characters": "Characters",
+    "characterUnlocked": "<strong>Congratz!!!</strong> You unlocked a new character",
+    "loadFromLastgameMessage": "Would you like to resume your <span class='green-color'>Last Game</span> or start a <span class='creator-color'>New Game</span>?",
+    "winner": [
+      {
+        "class": "mafia",
+        "name": "mafia",
+        "image": "mafiaparty.svg",
+        "alt": "Mafia Party Icon",
+        "title": "Congratulation to <strong>The Mafia</strong>",
+        "text": "🕵️‍♀️🕵️‍♂️🎂🎊🎉❤️ Congratulation to the Mafia team"
+      },
+      {
+        "class": "citizen",
+        "name": "citizen",
+        "image": "citizenparty.svg",
+        "alt": "Citizen Party Icon",
+        "title": "Congratulation to <strong>The Citizen</strong>",
+        "text": "👩‍👩‍👧‍👦🎂🎊🎉💙 Congratulation to the Citizen team"
+      },
+      {
+        "class": "solo",
+        "name": "solo",
+        "image": "citizenparty.svg",
+        "alt": "Solo Icon",
+        "title": "Congratulation to The Solo Player",
+        "text": "🦹‍♂️🎂🎊🎉🧡 Congratulation to the Solo player : "
+      }
     ],
-    "thirdparty": {
-        "discordText": "Do you want to connect Mafiabuzz with your Discord's channel? Enter your <span class='primary-color'>webhook</span> code below",
-        "discordHelp": "View setup instruction in Instagram",
-        "discordConnected": "Mafiabuzz is now connected to your Discord channel",
-        "discordDisconnect": "Disconnect this channel",
-        "discordCodeSubmit": "Submit",
-        "discordDayPhase": "🌞 Starting Day Phase : ",
-        "discordNightPhase": "🌚 Starting Night Phase : ",
-        "discordGameStarted": "🎮 Game Started ...!!!",
-        "discordPlayers": "🕵️‍♂️👨‍👩‍👧‍👦🕵️‍♀️ These players are playing game : ",
-        "discordMafia": "🕵🏼 Mafia Characters : ",
-        "discordCitizen": "👨‍👩‍👧‍👦 Citizen Characters : ",
-        "discordSolo": "🦸‍♂️ Solo Characters : ",
-        "discordMafiaPower": "☢️ Mafia Power : ",
-        "discordCitizenPower": "☢️ Citizen and Solo Power : ",
-        "discordGodGameStarted": "⚔️ Everyone know his/her role now. Let the game begin...",
-        "discordUpdateButton": "Send latest game status to discord",
-        "discordLatestStats": "📜 Latest Game Stats : ",
-        "discordAlivePeople": "💚 Alive People : ",
-        "discordDeadPeople": "💀 Dead People : ",
-        "discordSpentNights": "🌚 Spent Nights : ",
-        "discordMafiaTeam": "Your teammates are : ",
-        "discordSendVoteResult": "Send vote counts to Discord",
-        "discordVoteResultText": "🏳️ Vote Report for alive people in game : "
-    },
-    "general":{
-        "name": "MafiaDealer",
-        "welcomeToMafiabuzz": "💜🔔 Welcome to MafiaDealer Web Application 🔔💜",
-        "alt": "MafiaDealer Logo",
-        "url": "https://www.mafiadealer.app",
-        "currency": "T",
-        "infoIcon": "Info Icon",
-        "notValidIcon": "Not Valid Icon",
-        "warningIcon": "Warning Icon",
-        "correct": "correct.svg",
-        "correctIcon": "Correct Icon",
-        "wrong": "wrong.svg",
-        "wrongIcon": "Wrong Icon",
-        "seeDetails": "Details",
-        "instagramBanner": {
-            "title": "How to work with Mafiabuzz app?",
-            "button": "Open in Instagram"
-        },
-        "selectPlaceholder": "Please select from below",
-        "patchButton": "View Patch Notes",
-        "characters": "Characters",
-        "characterUnlocked": "<strong>Congratz!!!</strong> You unlocked a new character",
-        "loadFromLastgameMessage": "Would you like to resume your <span class='green-color'>Last Game</span> or start a <span class='creator-color'>New Game</span>?",
-        "winner": [
-            {
-                "class": "mafia",
-                "name": "mafia",
-                "image": "mafiaparty.svg",
-                "alt": "Mafia Party Icon",
-                "title": "Congratulation to <strong>The Mafia</strong>",
-                "text": "🕵️‍♀️🕵️‍♂️🎂🎊🎉❤️ Congratulation to the Mafia team"
-            },
-            {
-                "class": "citizen",
-                "name": "citizen",
-                "image": "citizenparty.svg",
-                "alt": "Citizen Party Icon",
-                "title": "Congratulation to <strong>The Citizen</strong>",
-                "text": "👩‍👩‍👧‍👦🎂🎊🎉💙 Congratulation to the Citizen team"
-            },
-            {
-                "class": "solo",
-                "name": "solo",
-                "image": "citizenparty.svg",
-                "alt": "Solo Icon",
-                "title": "Congratulation to The Solo Player",
-                "text": "🦹‍♂️🎂🎊🎉🧡 Congratulation to the Solo player : "
-            }
-        ],
-        "errors": {
-            "uniquePlayers": "Please write unique names",
-            "generalFail": "There was an error!"
-        }
-    },
-    "common": {
-        "homeButton": "Navigate to Home",
-        "closeButton": "Close",
-        "page404": "I think <strong class='mafia-role'>Mafia</strong> has destoryed this page <span class='yellow-color'>404</span> times !!!",
-        "page404Alt": "Error 404 Image",
-        "Mafia": "mafia",
-        "Citizen": "citizen",
-        "mafia": "mafia",
-        "citizen": "citizen",
-        "Solo": "solo",
-        "solo": "solo",
-        "Role": "Role",
-        "Power": "Power",
-        "Vote": "Vote Counter",
-        "Player": "Player",
-        "Choose": "Choose...",
-        "Select": "Select",
-        "Close": "Close",
-        "Status": "Kill / Revive",
-        "Action": "Action",
-        "Night": "Night",
-        "Day": "Day",
-        "Kill": "kill",
-        "Have": "Have",
-        "NotHave": "Not Have",
-        "killCapacity": "Ability to Kill at night",
-        "None": "-",
-        "mostUsed": "Most Used",
-        "new": "New",
-        "loadLastGameButton": "Load last saved game",
-        "startNewGameButton": "Start game with same characters",
-        "clearStorage": "Start a new game (delete save)",
-        "cancelButton": "Cancel",
-        "newAlt": "New Icon",
-        "hotAlt": "Hot Icon",
-        "copyToClipboard": "Copy name for Discord"
-    },
-    "meta":{
-        "home": {
-            "title": "MafiaDealer is a web application for playing The Mafia party game",
-            "description": "MafiaDealer is a web application to set up and manage the 'Mafia Party Game' easily. People can set up their game and choose multiple roles as a creator to start playing the game in a group of friends or family",
-            "url": "/"
-        },
-        "howtoplay": {
-            "title": "How To Play",
-            "description": "We explained everything you need to know to play MafiaDealer Party Game",
-            "url": "how-to-play"
-        },
-        "about": {
-            "title": "About us",
-            "description": "We are some random gamers who wants to help other gamers to play and enjoy party and role play games",
-            "url": "about"
-        },
-        "notfound":{
-            "title": "Page Not Found - Error 404",
-            "description": "Page requested was not found - Error 404",
-            "url": "error-404"
-        },
-        "support": {
-            "title": "Support",
-            "description": "We are some random gamers who wants to help other gamers to play and enjoy party and role play games",
-            "url": "support"
-        },
-        "characters": {
-            "title": "Characters",
-            "description": "Meet all MafiaDealer characters and their abilities"
-        }
-    },
-    "navigation": [
-        {
-            "name": "Game Panel",
-            "alt": "Creator Icon"
-        },
-        {
-            "name": "How to play?",
-            "alt": "HowToPlay Icon"
-        },
-        {
-            "name": "About us",
-            "alt": "MafiaDealer Logo"
-        },
-        {
-            "name": "Characters",
-            "alt": "Characters Icon"
-        }
-    ],
-    "language": {
-        "text": "فارسی",
-        "alt": "Change Language Image"
-    },
-    "pages": {
-        "home": {
-            "gameModeButton": "Change Game Mode",
-            "welcome": {
-                "text": "<strong><i>M</i>afia<i>B</i>uzz</strong> <span>v{appVersion}</span>"
-            },
-            "image": "creator.svg",
-            "title": "Mighty God",
-            "subtitle": "🎮 Please choose below options to create your game :",
-            "step1": "Total <span class='primary-color'>Players</span> :",
-            "step2": "How many will be <span class='mafia-role'>Mafia</span> :",
-            "start": "Go next step !",
-            "changeSettings": "Back to Game Settings",
-            "errorText1": "You must select <span class='hint-color'> {number} </span> characters from group of <strong class='mafia-role'> {role} </strong>, But you have chosen <span class='mafia-role'> {chosen} </span> characters",
-            "errorText2": "You must select <span class='hint-color'> {number} </span> characters from group of <strong class='citizen-role'> {role} </strong> or <strong class='solo-role'> {secondRole} </strong>, But you have chosen <span class='citizen-role'> {chosen} </span> characters",
-            "cancelButton": "Cancel",
-            "changeSettingsText": "Are you sure about changing characters?",
-            "confirmButton": "Yes I want to",
-            "restartGame": "Restart game and change characters",
-            "restartButton": "Restart Game",
-            "resetTotalText": "Are you sure? Your selected characters and players will reset",
-            "defaultNames": "Default Names",
-            "lastNames": "Last Names",
-            "assign": "Assign characters",
-            "checkBeforeStart": "Your game will start with below characters",
-            "dashboardTitle": "<span>God</span> Dashboard",
-            "chooseNameHint": "Please write the name of each person:",
-            "nameExtraHint": "Write each player's name based on position and sitting order",
-            "playerDefault": "Player",
-            "passMobile": "Please pass device to next person:",
-            "gotMobile": "Please see your character carefully :",
-            "beforeShowButton": "Show me my character !",
-            "afterShowButton": "Ok got it"
-        },
-        "about": {
-            "image": "logo.png",
-            "title": "<span>About</span> us",
-            "subtitle": "Talk with your friends <span class='site-color'>About us</span>, That's the best support of us 💜",
-            "creators": [
-                {
-                    "name": "Saman Rashidi",
-                    "image": "godfather.svg",
-                    "url": "http://www.samanrashidi.com",
-                    "classes": ["primary", "Saman"],
-                    "title": "Founder & Front-end Developer"
-                },
-                {
-                    "name": "Shahriyar Osouli",
-                    "image": "magician.svg",
-                    "url": "https://www.linkedin.com/in/shahriyar-osuli-a9a77654/",
-                    "classes": ["hack-color", "Shahriyar"],
-                    "title": "Game Design"
-                },
-                {
-                    "name": "Samira Salimian",
-                    "image": "grandma.svg",
-                    "url": "https://www.instagram.com/samirasaly/",
-                    "classes": ["binded", "Samira"],
-                    "title": "Idea, Content & Social Media"
-                },
-                {
-                    "name": "Siavash Mirzaei",
-                    "image": "hacker.svg",
-                    "url": "https://www.linkedin.com/in/siavash-mirzaei-72a96a64",
-                    "classes": ["secondary-dark-color", "Siavash"],
-                    "title": "Back-end Development"
-                },
-                {
-                    "name": "Milad Senobari",
-                    "image": "mafia.svg",
-                    "url": "https://www.linkedin.com/in/miladsenobari",
-                    "classes": ["secondary-color", "Milad"],
-                    "title": "Development Advisor"
-                }
-            ],
-            "contactText": "Do you want to report a <i>Bug</i> or give us <strong>Feedback</strong>?",
-            "contactEmail": "mafiadealergame@gmail.com",
-            "supportText": "Contact us :",
-            "supportTel": "+989038996930",
-            "thanksForSupport": "Thanks for supporting our team so we can keep developing new tools and features to the application for you 🙏",
-            "supportButton": "Donation",
-            "socialText": "Follow us on Social Media and share your feedback with us 😎",
-            "socials": [
-                {
-                    "name": "Instagram",
-                    "url": "https://instagram.com/mafia.buzz",
-                    "icon": "instagram.svg",
-                    "alt": "Instagram Icon"
-                },
-                {
-                    "name": "Discord",
-                    "url": "https://discord.gg/zjZnRrG",
-                    "icon": "discord.svg",
-                    "alt": "Discord Icon"
-                },
-                {
-                    "name": "Linkedin",
-                    "url": "https://www.linkedin.com/company/mafiadealer",
-                    "icon": "linkedin.svg",
-                    "alt": "Linkedin Icon"
-                }
-            ]
-        },
-        "howtoplay": {
-            "image": "howtoplay.svg",
-            "title": "How to <span>Play</span>?",
-            "subtitle": "🔍 Just read and everything is so clear",
-            "steps": [
-                {
-                    "icon": "1.svg",
-                    "titl1": "The Mafia game",
-                    "desc1": "Mafia is a party game with modeling a conflict between two groups: an informed minority (<span class='mafia-role'> Tho Mafia </span>), and an uninformed majority (<span class='citizen-role'> The Citizens </span>). At the start of the game, each player is secretly assigned a role affiliated with one of these teams. The game has two alternating phases: <br /><span class='night-color'>Night</span>, during which the mafia may covertly 'murder' a citizen, and <span class='day-color'>Day</span>, in which surviving players debate the identities of the mafia and vote to eliminate a suspect. The game continues until all the mafia players have been eliminated or the mafia outnumber the citizens."
-                },
-                {
-                    "icon": "0.png",
-                    "titl1": "What is MafiaDealer?",
-                    "desc1": "Mafia is a popular and interesting party game, but always it is hard to control and manage the game by the game moderator ( <span class='creator-color'>God</span> ) when you want to play it with a large group of people. <br /><strong>MafiaDealer</strong> is a web application created by a team of developers and gamers. With the help of the application, you just have to select players and characters to start the game. Write the name of each person and give the phone to them to see their roles. After that <span class='creator-color'>God</span> can start the game and app will tell him what to do, calculate possibilities and show the result. <br /><strong>MafiaDealer</strong> team will add new characters to the game in a small period of time."
-                },
-                {
-                    "icon": "2.svg",
-                    "titl1": "Explaining Gameplay",
-                    "desc1": "Game is played by two teams: <span class='mafia-role'> Tho Mafia </span> and <span class='citizen-role'> The Citizens </span> ( There is a team named <span class='solo-role'>Solo</span> and it is part of citizen's team but they can win the game seperately from citizens with their abilities ). Live games require a moderator ( <span class='creator-color'>God</span> ) who does not participate as a player, and identities are assigned by application. At the start of the game, every mafioso is given the identities of their teammates, whereas citizens only receive the number of mafioso in the game, and do not know which players are mafia and which are citizens. <br /> There are two phases: <span class='night-color'>Night</span> and <span class='day-color'>Day</span>. At <span class='night-color'>Night</span>, certain players secretly perform special actions; during <span class='day-color'>Day</span>, players discuss and vote to kill one player. These phases alternate with each other until all mafioso have been eliminated or until the mafia outnumbers the citizens. <br /> Some players may be given roles with special abilities (Chosen by <span class='creator-color'>Game Creator</span>) <br /><br /> <span class='night-color'>Night:</span> All players close their eyes. The moderator then instructs all members of <span class='mafia-role'>The Mafia</span> to open their eyes and acknowledge their accomplices. Similar process for waking up pepole occurs by moderator for other roles with nightly actions. <br /><br /> <span class='day-color'>Day:</span> The moderator instructs players to open their eyes and announces what happened the previous night. Discussion ensues among the living players. At any point, a player may accuse someone of being a mafioso and prompt others to vote to kill them. If over half of the players do so, the accused person is eliminated and <span class='night-color'>Night</span> begins. Otherwise, thos phase continues until a killing occurs. Dead players are not permitted to attempt to influence the remainder of the game. Because players have more freedom to deliberate, <span class='day-color'>Days</span> tend to be longer than <span class='night-color'>Nights</span>."
-                },
-                {
-                    "icon": "3.svg",
-                    "titl1": "Know more about Roles",
-                    "desc1": "Different characters and roles are making <strong>MafiaDealer</strong> much funnier and more enjoyable. In below we are explaining about each character seperately:",
-                    "roles": true
-                }
-            ]
-        },
-        "characters": {
-            "alt": "Characters"
-        }
-    },
-    "powerMeter": {
-        "mafia": "Mafia Power",
-        "citizen": "Citizen Power",
-        "minus": "characters left",
-        "plus": "characters overplus",
-        "title": "Team balance based on selected characters"
-    },
-    "addCharacter": {
-        "characterName": "Character Name",
-        "chooseGroup": "Team",
-        "chooseGroupPlaceholder": "Select Team",
-        "chooseIcon": "Choose Icon",
-        "description": "Description (optional)",
-        "addCharacter": "Add Character",
-        "addCharacterDescription": "Add your own character to game and play with it. (God should manage ability and passive of character by himself)",
-        "chooseAbility": "Choose Ability",
-        "choosePassive": "Choose Passive",
-        "chooseAbilityCount": "Choose Ability Count"
-    },
-    "deleteCharacter": {
-        "deleteCharacter": "Delete Character"
-    },
-    "god": {
-        "name": "God",
-        "gameDashboardIconAlt": "Game Dashboard Icon",
-        "killIcon": "reaper.png",
-        "killAction": "Killed",
-        "reviveIcon": "angel.png",
-        "reviveAction": "Revived",
-        "nightText": "Change to Night",
-        "dayText": "Change to Day",
-        "confirmText": "Go Next Phase",
-        "cancelText": "No, Stay Here!",
-        "gameStartText": "Okay<i>.</i><i>.</i><i>.</i> your game started!",
-        "godButton": "I'm God! Show me game details",
-        "nightActionButton": "Start Night Actions",
-        "defaultPlaceholder": "Choose ...",
-        "selectPlaceholder": "Choose player ...",
-        "actionHintText": "Please select the person who takes action :",
-        "actionHintText2": "Please select the next person :",
-        "cancelButton": "Cancel",
-        "confirmButton": "Action..!",
-        "skipButton": "Skip, Go next action",
-        "skipButton2": "Yes, Skip it!",
-        "skipButton3": "Skip this action",
-        "question": "Please select the answer :",
-        "useAbility": "Use Ability",
-        "godKillIcon": "reaper.svg",
-        "godReviveIcon": "angel.svg",
-        "realGun": "Real Gun",
-        "fakeGun": "Fake Gun",
-        "remainingActions": "Remaining Actions",
-        "mafiaPartyIconAlt": "Mafia Party Icon",
-        "justiceAlt": "Justice",
-        "lastPhaseText": "Please select who died during the day with people's vote :",
-        "avengerText": "Has been killed !!!",
-        "revengeText": "Please select a target to get revenge :",
-        "justiceText": "Judge used his ability!!! Tell people to close their eyes and judge will decide who is going to die",
-        "mafiaPartyText": "Tell Mafia members to open their eyes and see each other",
-        "mafiaPartyException": [
-            "If <strong class='solo-role'>Nostradamus</strong> is in game, should open his eyes first.",
-            "<span>Drunk</span> should not open his eyes, and must inform his team by raising his hand",
-            "<span>Traitor</span> should not wake up at all."
-        ],
-        "mafiaPartyButton": "Click when it's over",
-        "nightLogButton": "Show Night Log",
-        "historyLogButton": "Show Log History",
-        "noLog": "There is nothing to show!",
-        "errorChoosePlayer": "Please choose a <span>Player</span> or <span>Answer</span> before executing an action",
-        "logCloseButton": "Okay got it!",
-        "logMainText": " used on : {targets}",
-        "logSideText": "used",
-        "logPassive": "Passive activated : ",
-        "logResult": "Result : ",
-        "restartButton": "Restart Game",
-        "startButton": "Start New Game",
-        "viewButton": "View Game Details",
-        "resetText": "Do you want to reset game with same characters?",
-        "resetTotalText": "Are you sure? Your selected characters and players will reset",
-        "skipText": "Do you want to skip this action for tonight?",
-        "thisNight": "Current Night",
-        "alivePeople": "Alive People",
-        "deadPeople": "Dead People",
-        "aliveMafia": "Alive Mafia",
-        "deadMafia": "Dead Mafia",
-        "aliveCitizens": "Alive Citizens",
-        "deadCitizens": "Dead Citizens",
-        "logDeadText": "has been killed !!!",
-        "logSilencedText": "has been silenced !!!",
-        "logRevivedText": "has been revived !!!",
-        "nextKiler": "is now <strong>The Killer</strong>",
-        "godKill": "God used his power and killed : ",
-        "godRevive": "God used his power and revived : ",
-        "revengeKill": "Chosen player has been killed : ",
-        "voteKill": "People killed this person by vote : ",
-        "hackedPerson": "is <span class='hack-color'>Hacked</span>...!!! Just wake him up but he is unable to perform an action.",
-        "inJailPerson": "is in <span class='gray-color'>Prison</span>...!!! He is unable to perform an action.",
-        "roleReplacedPerson": "has been changed by <span class='white-color'>Yakuza</span>...!!! You should pretend and play as if the player is alive.",
-        "deadPerson": "is <span class='dead-color'>Dead</span>...!!! You should pretend and play as if the player is alive.",
-        "revivedPerson": "is <span class='dead-color'>Revived</span>...!!! But doesn't have his role anymore.",
-        "hackedIconAlt": "Hacked Icon",
-        "inJailIconAlt": "In Jail Icon",
-        "roleReplacedAlt": "Role Replaced Icon",
-        "deadIconAlt": "Dead Icon",
-        "voteIcon": "vote.svg",
-        "voteIconAlt": "Vote Icon",
-        "revengeIcon": "revenge.svg",
-        "revengeIconAlt": "Revenge Icon",
-        "revivedIconAlt": "Revived Icon",
-        "playerIconAlt": "Character Icon",
-        "peopleIconAlt": "People Icon",
-        "actionIconAlt": "Action Icon",
-        "playerActionIconAlt": "Character Action Icon",
-        "finalMoveCard": "Final Move Card",
-        "actionQuestion1": "Ask",
-        "actionQuestion2": "to wake up and tell you the target/s for",
-        "lastNightSummary": "Brief Summary",
-        "lastNightTitle": "Tell people what happened",
-        "whatHappened": "Events History",
-        "roleViewerText": "Announce result of searching for dead pepole to the city",
-        "roleViewerButton": "Close the view box",
-        "noRolesToView": "There is no role to show!",
-        "faceOff": "Submit Face Off",
-        "faceOffChallengeTarget1": "Pick the first target",
-        "faceOffChallengeTarget2": "Pick the second target",
-        "dashboardHintTitle": "Game Icons and Signs",
-        "dashboardHint": [
-            {
-                "name": "killer",
-                "hint": "Kill Player by God power"
-            },
-            {
-                "name": "angel",
-                "hint": "Bring back Player to life by God power"
-            },
-            {
-                "name": "passive",
-                "hint": "Player has passive only."
-            },
-            {
-                "name": "pending-action",
-                "hint": "Player has action but not used."
-            },
-            {
-                "name": "done-action",
-                "hint": "Player's action has been used."
-            },
-            {
-                "name": "disabled",
-                "hint": "Player has no action or passive."
-            },
-            {
-                "name": "kill-icon",
-                "hint": "Player has ability to kill at night."
-            },
-            {
-                "name": "link-icon",
-                "hint": "Player has been linked to another player and when one of them dies, the other dies aswell"
-            },
-            {
-                "name": "silence-icon",
-                "hint": "Player has been silenced and can't talk during next day"
-            },
-            {
-                "name": "hack-icon",
-                "hint": "Player is hacked and can't use action or passive this night"
-            },
-            {
-                "name": "dead-icon",
-                "hint": "Player is dead!"
-            },
-            {
-                "name": "revived-icon",
-                "hint": "Player has been revived!"
-            },
-            {
-                "name": "invisible-icon",
-                "hint": "Player's identity reversed"
-            },
-            {
-                "name": "shield-icon",
-                "hint": "Player has shield that prevents one death at night"
-            },
-            {
-                "name": "heal-icon",
-                "hint": "Player is healed and can't be killed"
-            }
-        ],
-        "rgwRoles": "Restart game with same characters",
-        "resetGame": "Start a new game",
-        "gameSettings": {
-            "showHistoryLog": "History",
-            "safeMode": "Safe Mode",
-            "inquiry": "Inquiry",
-            "finalMoveCards": "Final Cards"
-        },
-        "gameCards": {
-            "lie": {
-                "name": "Thirteen Lie",
-                "description": "Tell a lie about yourself and god will confirm it"
-            },
-            "redCarpet": {
-                "name": "Red Carpet",
-                "description": "Choose one person to go straight to defense tomorrow"
-            },
-            "greenLine": {
-                "name": "Green Line",
-                "description": "Choose one person so that tomorrow he does not go on the defensive"
-            },
-            "shot": {
-                "name": "Final Shot",
-                "description": "Shoot instead of mafia tonight"
-            },
-            "mindRead": {
-                "name": "Beautiful Mind",
-                "description": "Guess someone's role correctly to stay in the game"
-            },
-            "sleepless": {
-                "name": "Sleepless",
-                "description": "It won't be night and we will go straight to the next day"
-            },
-            "judgeDay": {
-                "name": "Judge Day",
-                "description": "The next day will go to the vote phase without talking"
-            },
-            "exhumation": {
-                "name": "Exhumation",
-                "description": "Choose one of the people outside the game to announce his role to the city"
-            },
-            "showIdentity": {
-                "name": "Show Identity",
-                "description": "Reveal your identity to the city"
-            },
-            "luckyDay": {
-                "name": "Lucky Day",
-                "description": "Today is your lucky day, get back in game"
-            },
-            "will": {
-                "name": "Will",
-                "description": "Make a will before leaving the game"
-            },
-            "headCount": {
-                "name": "Headcount",
-                "description": "God must announce the inquiry of the dead in the game to the city"
-            },
-            "gamble": {
-                "name": "Gamble",
-                "description": "Choose one person so God will draw death lot between you, the winner stays in the game"
-            },
-            "faceOff": {
-                "name": "Face Off",
-                "description": "Choose one person so that your roles will be changed. God will secretly announce the new role to the person"
-            }
-        }
-    },
-    "rolesInfo": {
-        "power": "Power for Team :",
-        "rarity": "Rarity :",
-        "action": "Action :",
-        "passive": "Passive :",
-        "price": "Price :",
-        "unlock": "How to unlock :",
-        "free": "Free",
-        "uncommon": "Uncommon",
-        "rare": "Rare",
-        "epic": "Epic",
-        "legendary": "Legendary",
-        "mythical": "Mythical"
-    },
-    "ability": {
-        "kill": "Kill",
-        "heal": "Heal",
-        "silence": "Silence",
-        "antiSilence": "Anti Silence",
-        "checkIdentity": "Check Identity",
-        "revive": "Revive",
-        "hack": "Hack",
-        "revenge": "Revenge",
-        "poison": "Poison"
-    },
-    "passive": {
-        "immortal": "Immortal",
-        "fakeIdentity": "Fake Identity",
-        "antiHack": "Anti Hack",
-        "bomb": "Detonate on dead"
+    "errors": {
+      "uniquePlayers": "Please write unique names",
+      "generalFail": "There was an error!"
     }
+  },
+  "common": {
+    "homeButton": "Navigate to Home",
+    "closeButton": "Close",
+    "page404": "I think <strong class='mafia-role'>Mafia</strong> has destoryed this page <span class='yellow-color'>404</span> times !!!",
+    "page404Alt": "Error 404 Image",
+    "Mafia": "mafia",
+    "Citizen": "citizen",
+    "mafia": "mafia",
+    "citizen": "citizen",
+    "Solo": "solo",
+    "solo": "solo",
+    "Role": "Role",
+    "Power": "Power",
+    "Vote": "Vote Counter",
+    "Player": "Player",
+    "Choose": "Choose...",
+    "Select": "Select",
+    "Close": "Close",
+    "Status": "Kill / Revive",
+    "Action": "Action",
+    "Night": "Night",
+    "Day": "Day",
+    "Kill": "kill",
+    "Have": "Have",
+    "NotHave": "Not Have",
+    "killCapacity": "Ability to Kill at night",
+    "None": "-",
+    "mostUsed": "Most Used",
+    "new": "New",
+    "loadLastGameButton": "Load last saved game",
+    "startNewGameButton": "Start game with same characters",
+    "clearStorage": "Start a new game (delete save)",
+    "cancelButton": "Cancel",
+    "newAlt": "New Icon",
+    "hotAlt": "Hot Icon",
+    "copyToClipboard": "Copy name for Discord"
+  },
+  "meta": {
+    "home": {
+      "title": "MafiaDealer is a web application for playing The Mafia party game",
+      "description": "MafiaDealer is a web application to set up and manage the 'Mafia Party Game' easily. People can set up their game and choose multiple roles as a creator to start playing the game in a group of friends or family",
+      "url": "/"
+    },
+    "howtoplay": {
+      "title": "How To Play",
+      "description": "We explained everything you need to know to play MafiaDealer Party Game",
+      "url": "how-to-play"
+    },
+    "about": {
+      "title": "About us",
+      "description": "We are some random gamers who wants to help other gamers to play and enjoy party and role play games",
+      "url": "about"
+    },
+    "notfound": {
+      "title": "Page Not Found - Error 404",
+      "description": "Page requested was not found - Error 404",
+      "url": "error-404"
+    },
+    "support": {
+      "title": "Support",
+      "description": "We are some random gamers who wants to help other gamers to play and enjoy party and role play games",
+      "url": "support"
+    },
+    "characters": {
+      "title": "Characters",
+      "description": "Meet all MafiaDealer characters and their abilities"
+    }
+  },
+  "navigation": [
+    {
+      "name": "Game Panel",
+      "alt": "Creator Icon"
+    },
+    {
+      "name": "How to play?",
+      "alt": "HowToPlay Icon"
+    },
+    {
+      "name": "About us",
+      "alt": "MafiaDealer Logo"
+    },
+    {
+      "name": "Characters",
+      "alt": "Characters Icon"
+    }
+  ],
+  "language": {
+    "text": "فارسی",
+    "alt": "Change Language Image"
+  },
+  "pages": {
+    "home": {
+      "gameModeButton": "Change Game Mode",
+      "welcome": {
+        "text": "<strong><i>M</i>afia<i>B</i>uzz</strong> <span>v{appVersion}</span>"
+      },
+      "image": "creator.svg",
+      "title": "Mighty God",
+      "subtitle": "🎮 Please choose below options to create your game :",
+      "step1": "Total <span class='primary-color'>Players</span> :",
+      "step2": "How many will be <span class='mafia-role'>Mafia</span> :",
+      "start": "Go next step !",
+      "changeSettings": "Back to Game Settings",
+      "errorText1": "You must select <span class='hint-color'> {number} </span> characters from group of <strong class='mafia-role'> {role} </strong>, But you have chosen <span class='mafia-role'> {chosen} </span> characters",
+      "errorText2": "You must select <span class='hint-color'> {number} </span> characters from group of <strong class='citizen-role'> {role} </strong> or <strong class='solo-role'> {secondRole} </strong>, But you have chosen <span class='citizen-role'> {chosen} </span> characters",
+      "cancelButton": "Cancel",
+      "changeSettingsText": "Are you sure about changing characters?",
+      "confirmButton": "Yes I want to",
+      "restartGame": "Restart game and change characters",
+      "restartButton": "Restart Game",
+      "resetTotalText": "Are you sure? Your selected characters and players will reset",
+      "defaultNames": "Default Names",
+      "lastNames": "Last Names",
+      "assign": "Assign characters",
+      "checkBeforeStart": "Your game will start with below characters",
+      "dashboardTitle": "<span>God</span> Dashboard",
+      "chooseNameHint": "Please write the name of each person:",
+      "nameExtraHint": "Write each player's name based on position and sitting order",
+      "playerDefault": "Player",
+      "passMobile": "Please pass device to next person:",
+      "gotMobile": "Please see your character carefully :",
+      "beforeShowButton": "Show me my character !",
+      "afterShowButton": "Ok got it"
+    },
+    "about": {
+      "image": "logo.png",
+      "title": "<span>About</span> us",
+      "subtitle": "Talk with your friends <span class='site-color'>About us</span>, That's the best support of us 💜",
+      "creators": [
+        {
+          "name": "Saman Rashidi",
+          "image": "godfather.svg",
+          "url": "http://www.samanrashidi.com",
+          "classes": ["primary", "Saman"],
+          "title": "Founder & Front-end Developer"
+        },
+        {
+          "name": "Shahriyar Osouli",
+          "image": "magician.svg",
+          "url": "https://www.linkedin.com/in/shahriyar-osuli-a9a77654/",
+          "classes": ["hack-color", "Shahriyar"],
+          "title": "Game Design"
+        },
+        {
+          "name": "Samira Salimian",
+          "image": "grandma.svg",
+          "url": "https://www.instagram.com/samirasaly/",
+          "classes": ["binded", "Samira"],
+          "title": "Idea, Content & Social Media"
+        },
+        {
+          "name": "Siavash Mirzaei",
+          "image": "hacker.svg",
+          "url": "https://www.linkedin.com/in/siavash-mirzaei-72a96a64",
+          "classes": ["secondary-dark-color", "Siavash"],
+          "title": "Back-end Development"
+        },
+        {
+          "name": "Milad Senobari",
+          "image": "mafia.svg",
+          "url": "https://www.linkedin.com/in/miladsenobari",
+          "classes": ["secondary-color", "Milad"],
+          "title": "Development Advisor"
+        }
+      ],
+      "contactText": "Do you want to report a <i>Bug</i> or give us <strong>Feedback</strong>?",
+      "contactEmail": "mafiadealergame@gmail.com",
+      "supportText": "Contact us :",
+      "supportTel": "+989038996930",
+      "thanksForSupport": "Thanks for supporting our team so we can keep developing new tools and features to the application for you 🙏",
+      "supportButton": "Donation",
+      "socialText": "Follow us on Social Media and share your feedback with us 😎",
+      "socials": [
+        {
+          "name": "Instagram",
+          "url": "https://instagram.com/mafia.buzz",
+          "icon": "instagram.svg",
+          "alt": "Instagram Icon"
+        },
+        {
+          "name": "Discord",
+          "url": "https://discord.gg/zjZnRrG",
+          "icon": "discord.svg",
+          "alt": "Discord Icon"
+        },
+        {
+          "name": "Linkedin",
+          "url": "https://www.linkedin.com/company/mafiadealer",
+          "icon": "linkedin.svg",
+          "alt": "Linkedin Icon"
+        }
+      ]
+    },
+    "howtoplay": {
+      "image": "howtoplay.svg",
+      "title": "How to <span>Play</span>?",
+      "subtitle": "🔍 Just read and everything is so clear",
+      "steps": [
+        {
+          "icon": "1.svg",
+          "titl1": "The Mafia game",
+          "desc1": "Mafia is a party game with modeling a conflict between two groups: an informed minority (<span class='mafia-role'> Tho Mafia </span>), and an uninformed majority (<span class='citizen-role'> The Citizens </span>). At the start of the game, each player is secretly assigned a role affiliated with one of these teams. The game has two alternating phases: <br /><span class='night-color'>Night</span>, during which the mafia may covertly 'murder' a citizen, and <span class='day-color'>Day</span>, in which surviving players debate the identities of the mafia and vote to eliminate a suspect. The game continues until all the mafia players have been eliminated or the mafia outnumber the citizens."
+        },
+        {
+          "icon": "0.png",
+          "titl1": "What is MafiaDealer?",
+          "desc1": "Mafia is a popular and interesting party game, but always it is hard to control and manage the game by the game moderator ( <span class='creator-color'>God</span> ) when you want to play it with a large group of people. <br /><strong>MafiaDealer</strong> is a web application created by a team of developers and gamers. With the help of the application, you just have to select players and characters to start the game. Write the name of each person and give the phone to them to see their roles. After that <span class='creator-color'>God</span> can start the game and app will tell him what to do, calculate possibilities and show the result. <br /><strong>MafiaDealer</strong> team will add new characters to the game in a small period of time."
+        },
+        {
+          "icon": "2.svg",
+          "titl1": "Explaining Gameplay",
+          "desc1": "Game is played by two teams: <span class='mafia-role'> Tho Mafia </span> and <span class='citizen-role'> The Citizens </span> ( There is a team named <span class='solo-role'>Solo</span> and it is part of citizen's team but they can win the game seperately from citizens with their abilities ). Live games require a moderator ( <span class='creator-color'>God</span> ) who does not participate as a player, and identities are assigned by application. At the start of the game, every mafioso is given the identities of their teammates, whereas citizens only receive the number of mafioso in the game, and do not know which players are mafia and which are citizens. <br /> There are two phases: <span class='night-color'>Night</span> and <span class='day-color'>Day</span>. At <span class='night-color'>Night</span>, certain players secretly perform special actions; during <span class='day-color'>Day</span>, players discuss and vote to kill one player. These phases alternate with each other until all mafioso have been eliminated or until the mafia outnumbers the citizens. <br /> Some players may be given roles with special abilities (Chosen by <span class='creator-color'>Game Creator</span>) <br /><br /> <span class='night-color'>Night:</span> All players close their eyes. The moderator then instructs all members of <span class='mafia-role'>The Mafia</span> to open their eyes and acknowledge their accomplices. Similar process for waking up pepole occurs by moderator for other roles with nightly actions. <br /><br /> <span class='day-color'>Day:</span> The moderator instructs players to open their eyes and announces what happened the previous night. Discussion ensues among the living players. At any point, a player may accuse someone of being a mafioso and prompt others to vote to kill them. If over half of the players do so, the accused person is eliminated and <span class='night-color'>Night</span> begins. Otherwise, thos phase continues until a killing occurs. Dead players are not permitted to attempt to influence the remainder of the game. Because players have more freedom to deliberate, <span class='day-color'>Days</span> tend to be longer than <span class='night-color'>Nights</span>."
+        },
+        {
+          "icon": "3.svg",
+          "titl1": "Know more about Roles",
+          "desc1": "Different characters and roles are making <strong>MafiaDealer</strong> much funnier and more enjoyable. In below we are explaining about each character seperately:",
+          "roles": true
+        }
+      ]
+    },
+    "characters": {
+      "alt": "Characters"
+    }
+  },
+  "powerMeter": {
+    "mafia": "Mafia Power",
+    "citizen": "Citizen Power",
+    "minus": "characters left",
+    "plus": "characters overplus",
+    "title": "Team balance based on selected characters"
+  },
+  "addCharacter": {
+    "characterName": "Character Name",
+    "chooseGroup": "Team",
+    "chooseGroupPlaceholder": "Select Team",
+    "chooseIcon": "Choose Icon",
+    "description": "Description (optional)",
+    "addCharacter": "Add Character",
+    "addCharacterDescription": "Add your own character to game and play with it. (God should manage ability and passive of character by himself)",
+    "chooseAbility": "Choose Ability",
+    "choosePassive": "Choose Passive",
+    "chooseAbilityCount": "Choose Ability Count"
+  },
+  "deleteCharacter": {
+    "deleteCharacter": "Delete Character"
+  },
+  "god": {
+    "name": "God",
+    "gameDashboardIconAlt": "Game Dashboard Icon",
+    "killIcon": "reaper.png",
+    "killAction": "Killed",
+    "reviveIcon": "angel.png",
+    "reviveAction": "Revived",
+    "nightText": "Change to Night",
+    "dayText": "Change to Day",
+    "confirmText": "Go Next Phase",
+    "cancelText": "No, Stay Here!",
+    "gameStartText": "Okay<i>.</i><i>.</i><i>.</i> your game started!",
+    "godButton": "I'm God! Show me game details",
+    "nightActionButton": "Start Night Actions",
+    "defaultPlaceholder": "Choose ...",
+    "selectPlaceholder": "Choose player ...",
+    "actionHintText": "Please select the person who takes action :",
+    "actionHintText2": "Please select the next person :",
+    "cancelButton": "Cancel",
+    "confirmButton": "Action..!",
+    "skipButton": "Skip, Go next action",
+    "skipButton2": "Yes, Skip it!",
+    "skipButton3": "Skip this action",
+    "question": "Please select the answer :",
+    "useAbility": "Use Ability",
+    "godKillIcon": "reaper.svg",
+    "godReviveIcon": "angel.svg",
+    "realGun": "Real Gun",
+    "fakeGun": "Fake Gun",
+    "remainingActions": "Remaining Actions",
+    "mafiaPartyIconAlt": "Mafia Party Icon",
+    "justiceAlt": "Justice",
+    "lastPhaseText": "Please select who died during the day with people's vote :",
+    "avengerText": "Has been killed !!!",
+    "revengeText": "Please select a target to get revenge :",
+    "justiceText": "Judge used his ability!!! Tell people to close their eyes and judge will decide who is going to die",
+    "mafiaPartyText": "Tell Mafia members to open their eyes and see each other",
+    "mafiaPartyException": [
+      "If <strong class='solo-role'>Nostradamus</strong> is in game, should open his eyes first.",
+      "<span>Drunk</span> should not open his eyes, and must inform his team by raising his hand",
+      "<span>Traitor</span> should not wake up at all."
+    ],
+    "mafiaPartyButton": "Click when it's over",
+    "nightLogButton": "Show Night Log",
+    "historyLogButton": "Show Log History",
+    "noLog": "There is nothing to show!",
+    "errorChoosePlayer": "Please choose a <span>Player</span> or <span>Answer</span> before executing an action",
+    "logCloseButton": "Okay got it!",
+    "logMainText": " used on : {targets}",
+    "logSideText": "used",
+    "logPassive": "Passive activated : ",
+    "logResult": "Result : ",
+    "restartButton": "Restart Game",
+    "startButton": "Start New Game",
+    "viewButton": "View Game Details",
+    "resetText": "Do you want to reset game with same characters?",
+    "resetTotalText": "Are you sure? Your selected characters and players will reset",
+    "skipText": "Do you want to skip this action for tonight?",
+    "thisNight": "Current Night",
+    "alivePeople": "Alive People",
+    "deadPeople": "Dead People",
+    "aliveMafia": "Alive Mafia",
+    "deadMafia": "Dead Mafia",
+    "aliveCitizens": "Alive Citizens",
+    "deadCitizens": "Dead Citizens",
+    "logDeadText": "has been killed !!!",
+    "logSilencedText": "has been silenced !!!",
+    "logRevivedText": "has been revived !!!",
+    "nextKiler": "is now <strong>The Killer</strong>",
+    "godKill": "God used his power and killed : ",
+    "godRevive": "God used his power and revived : ",
+    "revengeKill": "Chosen player has been killed : ",
+    "voteKill": "People killed this person by vote : ",
+    "hackedPerson": "is <span class='hack-color'>Hacked</span>...!!! Just wake him up but he is unable to perform an action.",
+    "inJailPerson": "is in <span class='gray-color'>Prison</span>...!!! He is unable to perform an action.",
+    "roleReplacedPerson": "has been changed by <span class='white-color'>Yakuza</span>...!!! You should pretend and play as if the player is alive.",
+    "deadPerson": "is <span class='dead-color'>Dead</span>...!!! You should pretend and play as if the player is alive.",
+    "revivedPerson": "is <span class='dead-color'>Revived</span>...!!! But doesn't have his role anymore.",
+    "hackedIconAlt": "Hacked Icon",
+    "inJailIconAlt": "In Jail Icon",
+    "roleReplacedAlt": "Role Replaced Icon",
+    "deadIconAlt": "Dead Icon",
+    "voteIcon": "vote.svg",
+    "voteIconAlt": "Vote Icon",
+    "revengeIcon": "revenge.svg",
+    "revengeIconAlt": "Revenge Icon",
+    "revivedIconAlt": "Revived Icon",
+    "playerIconAlt": "Character Icon",
+    "peopleIconAlt": "People Icon",
+    "actionIconAlt": "Action Icon",
+    "playerActionIconAlt": "Character Action Icon",
+    "finalMoveCard": "Final Move Card",
+    "actionQuestion1": "Ask",
+    "actionQuestion2": "to wake up and tell you the target/s for",
+    "lastNightSummary": "Brief Summary",
+    "lastNightTitle": "Tell people what happened",
+    "whatHappened": "Events History",
+    "roleViewerText": "Announce result of searching for dead pepole to the city",
+    "roleViewerButton": "Close the view box",
+    "noRolesToView": "There is no role to show!",
+    "faceOff": "Submit Face Off",
+    "faceOffChallengeTarget1": "Pick the first target",
+    "faceOffChallengeTarget2": "Pick the second target",
+    "dashboardHintTitle": "Game Icons and Signs",
+    "dashboardHint": [
+      {
+        "name": "killer",
+        "hint": "Kill Player by God power"
+      },
+      {
+        "name": "angel",
+        "hint": "Bring back Player to life by God power"
+      },
+      {
+        "name": "passive",
+        "hint": "Player has passive only."
+      },
+      {
+        "name": "pending-action",
+        "hint": "Player has action but not used."
+      },
+      {
+        "name": "done-action",
+        "hint": "Player's action has been used."
+      },
+      {
+        "name": "disabled",
+        "hint": "Player has no action or passive."
+      },
+      {
+        "name": "kill-icon",
+        "hint": "Player has ability to kill at night."
+      },
+      {
+        "name": "link-icon",
+        "hint": "Player has been linked to another player and when one of them dies, the other dies aswell"
+      },
+      {
+        "name": "silence-icon",
+        "hint": "Player has been silenced and can't talk during next day"
+      },
+      {
+        "name": "hack-icon",
+        "hint": "Player is hacked and can't use action or passive this night"
+      },
+      {
+        "name": "dead-icon",
+        "hint": "Player is dead!"
+      },
+      {
+        "name": "revived-icon",
+        "hint": "Player has been revived!"
+      },
+      {
+        "name": "invisible-icon",
+        "hint": "Player's identity reversed"
+      },
+      {
+        "name": "shield-icon",
+        "hint": "Player has shield that prevents one death at night"
+      },
+      {
+        "name": "heal-icon",
+        "hint": "Player is healed and can't be killed"
+      }
+    ],
+    "rgwRoles": "Restart game with same characters",
+    "resetGame": "Start a new game",
+    "gameSettings": {
+      "showHistoryLog": "History",
+      "safeMode": "Safe Mode",
+      "inquiry": "Inquiry",
+      "finalMoveCards": "Final Cards"
+    },
+    "gameCards": {
+      "lie": {
+        "name": "Thirteen Lie",
+        "description": "Tell a lie about yourself and god will confirm it"
+      },
+      "redCarpet": {
+        "name": "Red Carpet",
+        "description": "Choose one person to go straight to defense tomorrow"
+      },
+      "greenLine": {
+        "name": "Green Line",
+        "description": "Choose one person so that tomorrow he does not go on the defensive"
+      },
+      "shot": {
+        "name": "Final Shot",
+        "description": "Shoot instead of mafia tonight"
+      },
+      "mindRead": {
+        "name": "Beautiful Mind",
+        "description": "Guess someone's role correctly to stay in the game"
+      },
+      "sleepless": {
+        "name": "Sleepless",
+        "description": "It won't be night and we will go straight to the next day"
+      },
+      "judgeDay": {
+        "name": "Judge Day",
+        "description": "The next day will go to the vote phase without talking"
+      },
+      "exhumation": {
+        "name": "Exhumation",
+        "description": "Choose one of the people outside the game to announce his role to the city"
+      },
+      "showIdentity": {
+        "name": "Show Identity",
+        "description": "Reveal your identity to the city"
+      },
+      "luckyDay": {
+        "name": "Lucky Day",
+        "description": "Today is your lucky day, get back in game"
+      },
+      "will": {
+        "name": "Will",
+        "description": "Make a will before leaving the game"
+      },
+      "headCount": {
+        "name": "Headcount",
+        "description": "God must announce the inquiry of the dead in the game to the city"
+      },
+      "gamble": {
+        "name": "Gamble",
+        "description": "Choose one person so God will draw death lot between you, the winner stays in the game"
+      },
+      "faceOff": {
+        "name": "Face Off",
+        "description": "Choose one person so that your roles will be changed. God will secretly announce the new role to the person"
+      }
+    }
+  },
+  "rolesInfo": {
+    "power": "Power for Team :",
+    "rarity": "Rarity :",
+    "action": "Action :",
+    "passive": "Passive :",
+    "price": "Price :",
+    "unlock": "How to unlock :",
+    "free": "Free",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary",
+    "mythical": "Mythical"
+  },
+  "ability": {
+    "kill": "Kill",
+    "heal": "Heal",
+    "silence": "Silence",
+    "antiSilence": "Anti Silence",
+    "checkIdentity": "Check Identity",
+    "revive": "Revive",
+    "hack": "Hack",
+    "revenge": "Revenge",
+    "poison": "Poison"
+  },
+  "passive": {
+    "immortal": "Immortal",
+    "fakeIdentity": "Fake Identity",
+    "antiHack": "Anti Hack",
+    "bomb": "Detonate on dead"
+  }
 }

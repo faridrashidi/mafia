@@ -1,42 +1,42 @@
-.create{
-    padding-bottom: $meter_height;
-    button{
-      background-color:$creator_color;
-    }
+.create {
+  padding-bottom: $meter_height;
+  button {
+    background-color: $creator_color;
+  }
 }
 
-.not-found{
-    padding-top:50px;
-    img{
-      max-width: 320px;
-    }
+.not-found {
+  padding-top: 50px;
+  img {
+    max-width: 320px;
+  }
 }
 
 .welcome,
-.thank-you{
-    margin-bottom: 30px;
-    > img{
-        width:200px;
-        margin-top:40px;
-        margin-bottom: 10px;
-        &.email-activation{
-        width:80px;
-        }
+.thank-you {
+  margin-bottom: 30px;
+  > img {
+    width: 200px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    &.email-activation {
+      width: 80px;
     }
-    p.hint{
-        font-size: $font_size_5 !important;
-        strong{
-        color: $red_color;
-        }
+  }
+  p.hint {
+    font-size: $font_size_5 !important;
+    strong {
+      color: $red_color;
     }
-    > h1{
-        font-size: 1.4em;
-        strong{
-        display: inline-block;
-        vertical-align: middle;
-        font-family: $font_mafia;
-        font-size: $font_size_large;
-        color: $about_color;
-        }
+  }
+  > h1 {
+    font-size: 1.4em;
+    strong {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: $font_mafia;
+      font-size: $font_size_large;
+      color: $about_color;
     }
+  }
 }

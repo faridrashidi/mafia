@@ -1,10 +1,8 @@
 <template>
-  <div
-    class="table"
-  >
+  <div class="table">
     <table
       :class="{
-        'safemode': gameSettings.safemode
+        safemode: gameSettings.safemode
       }"
     >
       <tr>
@@ -39,27 +37,18 @@
           </th>
         </template> -->
       </tr>
-      <tr
-        v-for="(tD, index) in tableData"
-        :key="index"
-        :class="characterClasses(tD)"
-      >
+      <tr v-for="(tD, index) in tableData" :key="index" :class="characterClasses(tD)">
         <td
           :class="{
             'killer-role': tD.ability.killer && !tD.status.dead
           }"
         >
-          <img
-            :src="getImg('/roles', tD.icon)"
-            :alt="tD.info[currentLang].name"
-          > 
+          <img :src="getImg('/roles', tD.icon)" :alt="tD.info[currentLang].name" />
           <span>
             {{ tD.info[currentLang].name }}
           </span>
-          <span
-            v-if="tD.lastRoleInfo"
-          >
-            {{ `(${(tD.lastRoleInfo[currentLang].name || '')})` }}
+          <span v-if="tD.lastRoleInfo">
+            {{ `(${tD.lastRoleInfo[currentLang].name || ""})` }}
           </span>
           <img
             v-if="tD.ability.killer && !tD.status.dead"
@@ -67,29 +56,25 @@
             alt="Killer Icon"
             class="killer-icon"
             :title="$t('common.killCapacity')"
-          >
+          />
           <img
             v-if="tD.status.realGun"
             src="@/assets/images/icons/kill.svg"
             alt="Real Gun Icon"
             class="gun-icon"
             :title="$t('god.realGun')"
-          >
+          />
           <img
             v-if="tD.status.fakeGun"
             src="@/assets/images/icons/fakegun.svg"
             alt="Fake Gun Icon"
             class="gun-icon"
             :title="$t('god.fakeGun')"
-          >
+          />
         </td>
-        <template
-          v-if="dashboardTable"
-        >
+        <template v-if="dashboardTable">
           <td>
-            <span
-              class="character-player"
-            >
+            <span class="character-player">
               {{ tD.player }}
             </span>
           </td>
@@ -97,8 +82,8 @@
             <a
               href="javascript:void(0)"
               :class="{
-                'killer': !tD.status.dead,
-                'angel': tD.status.dead
+                killer: !tD.status.dead,
+                angel: tD.status.dead
               }"
               @click="godAction(tD)"
             />
@@ -118,35 +103,26 @@
               @click="selectThis"
             >
           </td> -->
-          <td
-            v-if="!dashboard.day"
-          >
+          <td v-if="!dashboard.day">
             <span
               v-if="!tD.status.hasPassive && !tD.status.hasAction && !tD.hasDoneAction"
               class="disabled"
             />
-            <span
-              v-if="tD.status.hasPassive && !tD.status.hasAction"
-              class="passive"
-            />
+            <span v-if="tD.status.hasPassive && !tD.status.hasAction" class="passive" />
             <span
               v-else
               :class="{
-                'pending-action': (!tD.hasDoneAction && tD.status.hasAction) || (!tD.hasDoneAction && tD.status.hasAction),
+                'pending-action':
+                  (!tD.hasDoneAction && tD.status.hasAction) ||
+                  (!tD.hasDoneAction && tD.status.hasAction),
                 'done-action': tD.hasDoneAction
               }"
             />
           </td>
         </template>
-        <template
-          v-else
-        >
+        <template v-else>
           <td>
-            <CharacterPower
-              :mafia="tD.mafia"
-              :solo="tD.solo"
-              :power="tD.power"
-            />
+            <CharacterPower :mafia="tD.mafia" :solo="tD.solo" :power="tD.power" />
           </td>
         </template>
       </tr>
@@ -155,10 +131,10 @@
 </template>
 
 <script>
-import CharacterPower from '@/components/CharacterPower.vue';
+import CharacterPower from "@/components/CharacterPower.vue";
 
 export default {
-  name: 'Table',
+  name: "Table",
   components: {
     CharacterPower
   },
@@ -173,41 +149,41 @@ export default {
     }
   },
   methods: {
-    characterClasses (char) {
-      let output = {}
+    characterClasses(char) {
+      let output = {};
       if (this.dashboardTable) {
         output = {
-          'dead': char.status.dead,
-          'heal': char.status.heal,
-          'ninja': char.status.roleReplaced,
-          'love-bind': char.status.link,
-          'freemason': char.status.freemason,
-          'silence': char.status.silence,
-          'shield': char.status.shield && !char.status.hack,
-          'invisible': char.status.fakeIdentity && !char.status.hack,
-          'in-jail': char.status.inJail || char.status.busted,
-          'hack': char.status.hack,
-          'skeleton': char.status.minion,
-          'solo': char.solo
-        }
+          dead: char.status.dead,
+          heal: char.status.heal,
+          ninja: char.status.roleReplaced,
+          "love-bind": char.status.link,
+          freemason: char.status.freemason,
+          silence: char.status.silence,
+          shield: char.status.shield && !char.status.hack,
+          invisible: char.status.fakeIdentity && !char.status.hack,
+          "in-jail": char.status.inJail || char.status.busted,
+          hack: char.status.hack,
+          skeleton: char.status.minion,
+          solo: char.solo
+        };
       } else {
         output = {
-          'solo': char.solo
-        }
+          solo: char.solo
+        };
       }
-      return output
+      return output;
     },
-    selectThis (event) {
-      event.target.setSelectionRange(0, 2)
+    selectThis(event) {
+      event.target.setSelectionRange(0, 2);
     },
-    updateVotes (vote, id) {
+    updateVotes(vote, id) {
       this.gameSettings.selectedRoles.forEach(role => {
         if (role.id === id) {
-          role.vote = vote
+          role.vote = vote;
         }
-      })
-      this.SetGameSettings(this.gameSettings)
+      });
+      this.SetGameSettings(this.gameSettings);
     }
   }
-}
+};
 </script>

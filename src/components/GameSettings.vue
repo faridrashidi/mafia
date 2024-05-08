@@ -1,21 +1,16 @@
 <template>
-  <div
-    class="game-settings"
-  >
+  <div class="game-settings">
     <nav>
       <button
         v-for="(setting, index) in settings"
         :key="index"
         :class="{
-          'active': setting.active
+          active: setting.active
         }"
         @click="openSettings(setting.value, index)"
       >
         <span>
-          <img
-            :src="getImg('/icons', setting.value + '.svg')"
-            :alt="setting.name"
-          >
+          <img :src="getImg('/icons', setting.value + '.svg')" :alt="setting.name" />
           <strong>
             {{ setting.name }}
           </strong>
@@ -24,14 +19,14 @@
     </nav>
     <GameCharacterWakeUp
       :class="{
-        'active': wakeup
+        active: wakeup
       }"
       @close="closeSettings"
     />
     <!-- History Log -->
     <HistoryLog
       :class="{
-        'active': historyLog
+        active: historyLog
       }"
       @close="closeSettings"
     />
@@ -39,14 +34,14 @@
     <GameInquiry
       :show-numbers="inquiry"
       :class="{
-        'active': inquiry
+        active: inquiry
       }"
       @close="closeSettings"
     />
     <!-- Final Cards -->
     <FinalCards
       :class="{
-        'active': cards
+        active: cards
       }"
       @close="closeSettings"
     />
@@ -54,13 +49,13 @@
 </template>
 
 <script>
-import HistoryLog from '@/components/HistoryLog.vue';
-import GameInquiry from '@/components/GameInquiry.vue';
-import FinalCards from '@/components/FinalCards.vue';
-import GameCharacterWakeUp from '@/components/GameCharacterWakeUp.vue';
+import HistoryLog from "@/components/HistoryLog.vue";
+import GameInquiry from "@/components/GameInquiry.vue";
+import FinalCards from "@/components/FinalCards.vue";
+import GameCharacterWakeUp from "@/components/GameCharacterWakeUp.vue";
 
 export default {
-  name: 'GameSettings',
+  name: "GameSettings",
   components: {
     HistoryLog,
     GameInquiry,
@@ -86,42 +81,42 @@ export default {
         //   active: false
         // },
         {
-          name: this.$t('god.gameSettings.wakeup'),
-          value: 'wakeup',
+          name: this.$t("god.gameSettings.wakeup"),
+          value: "wakeup",
           active: false
         },
         {
-          name: this.$t('god.gameSettings.inquiry'),
-          value: 'inquiry',
+          name: this.$t("god.gameSettings.inquiry"),
+          value: "inquiry",
           active: false
         },
         {
-          name: this.$t('god.gameSettings.finalMoveCards'),
-          value: 'cards',
+          name: this.$t("god.gameSettings.finalMoveCards"),
+          value: "cards",
           active: false
         }
       ]
-    }
+    };
   },
   methods: {
-    openSettings (setting, index) {
-      this[setting] = true
-      this.settings[index].active = !this.settings[index].active 
-      if (setting === 'safemode') {
-        this.gameSettings.safemode = !this.gameSettings.safemode
-        this.SetGameSettings(this.gameSettings)
+    openSettings(setting, index) {
+      this[setting] = true;
+      this.settings[index].active = !this.settings[index].active;
+      if (setting === "safemode") {
+        this.gameSettings.safemode = !this.gameSettings.safemode;
+        this.SetGameSettings(this.gameSettings);
       }
     },
-    closeSettings (setting) {
-      this[setting] = false
-      let settingIndex = 0
+    closeSettings(setting) {
+      this[setting] = false;
+      let settingIndex = 0;
       this.settings.filter((item, index) => {
         if (item.value === setting) {
-          settingIndex = index
+          settingIndex = index;
         }
-      })
-      this.settings[settingIndex].active = false
+      });
+      this.settings[settingIndex].active = false;
     }
   }
-}
+};
 </script>

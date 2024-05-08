@@ -2,8 +2,8 @@
   <div
     class="game-card"
     :class="{
-      'active': cardShow,
-      'hide': cardOpen
+      active: cardShow,
+      hide: cardOpen
     }"
   >
     <div
@@ -13,10 +13,7 @@
       }"
       @click="openCard()"
     >
-      <img
-        :src="getImg('/icons', icon)"
-        :alt="name"
-      >
+      <img :src="getImg('/icons', icon)" :alt="name" />
       <h2>
         {{ name }}
       </h2>
@@ -24,17 +21,10 @@
         {{ description }}
       </p>
     </div>
-    <div
-      class="card-front"
-      @click.self="showCard()"
-    >
-      <BaseButton
-        v-if="cardShow && !cardOpen"
-        class="primary sm"
-        @clicked="openCard()"
-      >
+    <div class="card-front" @click.self="showCard()">
+      <BaseButton v-if="cardShow && !cardOpen" class="primary sm" @clicked="openCard()">
         <span>
-          {{ $t('common.Select') }}
+          {{ $t("common.Select") }}
         </span>
       </BaseButton>
     </div>
@@ -42,43 +32,42 @@
 </template>
 
 <script>
-
 export default {
-  name: 'GameCard',
+  name: "GameCard",
   props: {
     id: {
       type: String,
-      defult: ''
+      defult: ""
     },
     name: {
       type: String,
-      defult: ''
+      defult: ""
     },
     description: {
       type: String,
-      defult: ''
+      defult: ""
     },
     icon: {
       type: String,
-      defult: ''
+      defult: ""
     }
   },
-  data () {
+  data() {
     return {
       cardShow: false,
       cardOpen: false
-    }
+    };
   },
   methods: {
-    showCard () {
-      this.cardShow = !this.cardShow
+    showCard() {
+      this.cardShow = !this.cardShow;
     },
-    openCard () {
-      this.cardOpen = true
-      if (this.id === 'faceOff') {
-        this.$emit('faceOff')
+    openCard() {
+      this.cardOpen = true;
+      if (this.id === "faceOff") {
+        this.$emit("faceOff");
       }
     }
   }
-}
+};
 </script>

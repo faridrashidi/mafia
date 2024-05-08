@@ -1,49 +1,21 @@
 <template>
-  <div
-    id="app"
-  >
+  <div id="app">
     <!-- Sub Navigation -->
-    <h1
-      class="header"
-    ><center>کارت پخش‌کن بازی مافیا</center>
-    </h1>
-    <transition
-      name="slide"
-      mode="out-in"
-    >
+    <h1 class="header"><center>کارت پخش‌کن بازی مافیا</center></h1>
+    <transition name="slide" mode="out-in">
       <router-view />
     </transition>
     <!-- App Notifications -->
-    <notifications
-      group="log"
-      position="bottom center"
-    >
-      <template
-        slot="body"
-        slot-scope="props"
-      >
-        <div
-          :class="'vue-notification ' + props.item.type"
-        >
-          <div
-            class="image-wrapper"
-          >
-            <img
-              :src="getImg('/actions', props.item.title)"
-              :alt="props.item.title"
-            >
+    <notifications group="log" position="bottom center">
+      <template slot="body" slot-scope="props">
+        <div :class="'vue-notification ' + props.item.type">
+          <div class="image-wrapper">
+            <img :src="getImg('/actions', props.item.title)" :alt="props.item.title" />
           </div>
-          <a
-            class="close"
-            @click="props.close"
-          >
-            <i
-              class="fa fa-fw fa-close"
-            />
+          <a class="close" @click="props.close">
+            <i class="fa fa-fw fa-close" />
           </a>
-          <div
-            v-html="props.item.text"
-          />
+          <div v-html="props.item.text" />
         </div>
       </template>
     </notifications>
@@ -51,80 +23,76 @@
 </template>
 
 <script>
-import SERVER from '@/service/server';
+import SERVER from "@/service/server";
 
 export default {
-  components: {
-  },
-  data () {
+  components: {},
+  data() {
     return {
       imageCounter: false,
       trackOnce: false,
       loaderData: {
-        loader: 'dots',
-        color: '#c33e3e',
+        loader: "dots",
+        color: "#c33e3e",
         width: 75,
         height: 75,
-        backgroundColor: '#000000',
+        backgroundColor: "#000000",
         canCancel: false,
         onCancel: this.onCancel
       }
-    }
+    };
   },
   created() {
     // Get Default Language from localStorage
-    const savedLocale = JSON.parse(localStorage.getItem('locale'))
+    const savedLocale = JSON.parse(localStorage.getItem("locale"));
     // Get saved game from localStorage
-    const capturedState = JSON.parse(localStorage.getItem('save-automatic'))
+    const capturedState = JSON.parse(localStorage.getItem("save-automatic"));
     if (capturedState) {
       this.SetGameSettingsItem({
         hasSavedGame: true
-      })
+      });
     }
     // Get Discord Token from localStorage
-    const discordToken = localStorage.getItem('discordToken')
+    const discordToken = localStorage.getItem("discordToken");
     // Setup Discord Channel if Discord Token available
     if (discordToken) {
-      this.SetDiscordChannel(discordToken)
+      this.SetDiscordChannel(discordToken);
     }
     // App Loader for Async data to load
-    const loader = this.$loading.show(this.loaderData)
+    const loader = this.$loading.show(this.loaderData);
     // Get all Characters from Database
     SERVER.getRoles()
-      .then((res) => {
-        const defaultCharacters = JSON.parse(JSON.stringify(res.data))
-        const savedCharacters = JSON.parse(localStorage.getItem('saved-characters'))
-        let finalCharacters = defaultCharacters
-        if (savedCharacters) (
-          finalCharacters = defaultCharacters.concat(savedCharacters)
-        )
-        this.SetRoles(finalCharacters)
+      .then(res => {
+        const defaultCharacters = JSON.parse(JSON.stringify(res.data));
+        const savedCharacters = JSON.parse(localStorage.getItem("saved-characters"));
+        let finalCharacters = defaultCharacters;
+        if (savedCharacters) finalCharacters = defaultCharacters.concat(savedCharacters);
+        this.SetRoles(finalCharacters);
         // Get all Replacing Characters from Database
         SERVER.getReplacingRoles()
-          .then((response) => {
-            this.SetReplacingRoles(JSON.parse(JSON.stringify(response.data)))
-              .then(() => {
-                // After everything loaded, Set Default State of App in localstorage to prevent data loss from erros during the game
-                loader.hide()
-              })
+          .then(response => {
+            this.SetReplacingRoles(JSON.parse(JSON.stringify(response.data))).then(() => {
+              // After everything loaded, Set Default State of App in localstorage to prevent data loss from erros during the game
+              loader.hide();
+            });
           })
           .catch(() => {
-            loader.hide()
-          })
+            loader.hide();
+          });
       })
       .catch(() => {
-        loader.hide()
-      })
+        loader.hide();
+      });
     // Setup App Language based on Default Language
-    const el = document.body
-    const html = document.documentElement
-    el.classList.add('rtl')
-    html.setAttribute('dir', 'rtl')
-    html.setAttribute('lang', 'fa')
+    const el = document.body;
+    const html = document.documentElement;
+    el.classList.add("rtl");
+    html.setAttribute("dir", "rtl");
+    html.setAttribute("lang", "fa");
   }
-}
+};
 </script>
 
 <style lang="scss">
-  @import "./sass/main";
+@import "./sass/main";
 </style>

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from "vue";
 
 export default {
   namespaced: true,
@@ -32,12 +32,12 @@ export default {
   },
   mutations: {
     SET_DASHBOARD: (state, dashboard) => {
-      Vue.set(state, 'dashboard', dashboard)
+      Vue.set(state, "dashboard", dashboard);
     }
   },
   actions: {
     SetDashboard: (context, dashboard) => {
-      context.commit('SET_DASHBOARD', dashboard)
+      context.commit("SET_DASHBOARD", dashboard);
     }
   }
-}
+};

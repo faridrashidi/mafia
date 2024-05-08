@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import gameSettings from './modules/gameSettings'
-import dashboard from './modules/dashboard'
-import roles from './modules/roles'
+import Vue from "vue";
+import Vuex from "vuex";
+import gameSettings from "./modules/gameSettings";
+import dashboard from "./modules/dashboard";
+import roles from "./modules/roles";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   strict: true,
@@ -14,13 +14,13 @@ export default new Vuex.Store({
     roles
   },
   getters: {
-    allStates: (state) => {
+    allStates: state => {
       const states = {
         gameSettings: state.gameSettings,
         dashboard: state.dashboard,
         roles: state.roles
-      }
-      return states
+      };
+      return states;
     }
   }
-})
+});

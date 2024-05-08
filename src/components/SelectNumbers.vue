@@ -1,22 +1,11 @@
 <template>
   <div class="select-numbers step-box">
     <p style="margin-bottom: 0px;" v-html="$t(`pages.home.step${selectIndex}`)" />
-    <select
-      v-model.number="selectValue"
-      name="quantity"
-      id="quantity"
-      @change="calcVal"
-    >
-      <option
-        value="null"
-        disabled
-      >
-        {{ $t('general.selectPlaceholder') }}
+    <select v-model.number="selectValue" name="quantity" id="quantity" @change="calcVal">
+      <option value="null" disabled>
+        {{ $t("general.selectPlaceholder") }}
       </option>
-      <option
-        v-for="(n, index) in value"
-        :key="index"
-      >
+      <option v-for="(n, index) in value" :key="index">
         {{ n + margin }}
       </option>
     </select>
@@ -25,7 +14,7 @@
 
 <script>
 export default {
-  name: 'SelectNumbers',
+  name: "SelectNumbers",
   props: {
     totalPlayers: {
       type: Boolean,
@@ -35,45 +24,49 @@ export default {
   data() {
     return {
       selectValue: 0
-    }
+    };
   },
   computed: {
-    selectIndex () {
-      return this.totalPlayers ? 1 : 2
+    selectIndex() {
+      return this.totalPlayers ? 1 : 2;
     },
-    value () {
-      return this.totalPlayers ? 45 : this.calcMafiaCapacity
+    value() {
+      return this.totalPlayers ? 45 : this.calcMafiaCapacity;
     },
-    margin () {
-      return this.totalPlayers ? 5 : 0
+    margin() {
+      return this.totalPlayers ? 5 : 0;
     },
-    calcMafiaCapacity () {
-      return Math.floor(this.gameSettings.totalPlayers / 2) - 1
+    calcMafiaCapacity() {
+      return Math.floor(this.gameSettings.totalPlayers / 2) - 1;
     },
-    calcCitizen () {
-      return this.gameSettings.totalPlayers - this.gameSettings.mafia
+    calcCitizen() {
+      return this.gameSettings.totalPlayers - this.gameSettings.mafia;
     },
-    bestCombo () {
-      return Math.floor(this.gameSettings.totalPlayers / 3)
+    bestCombo() {
+      return Math.floor(this.gameSettings.totalPlayers / 3);
     }
   },
-  created () {
-    this.totalPlayers ? this.selectValue = this.gameSettings.totalPlayers : this.selectValue = this.gameSettings.mafia
+  created() {
+    this.totalPlayers
+      ? (this.selectValue = this.gameSettings.totalPlayers)
+      : (this.selectValue = this.gameSettings.mafia);
   },
-  updated () {
+  updated() {
     if (!this.totalPlayers && this.selectValue > this.calcMafiaCapacity) {
-      this.selectValue = this.bestCombo
-      this.gameSettings.mafia = this.bestCombo
-      this.gameSettings.citizen = this.calcCitizen
-      this.SetGameSettings(this.gameSettings)
+      this.selectValue = this.bestCombo;
+      this.gameSettings.mafia = this.bestCombo;
+      this.gameSettings.citizen = this.calcCitizen;
+      this.SetGameSettings(this.gameSettings);
     }
   },
   methods: {
-    calcVal () {
-      this.totalPlayers ? this.gameSettings.totalPlayers = this.selectValue : this.gameSettings.mafia = this.selectValue
-      this.gameSettings.citizen = this.calcCitizen
-      this.SetGameSettings(this.gameSettings)
+    calcVal() {
+      this.totalPlayers
+        ? (this.gameSettings.totalPlayers = this.selectValue)
+        : (this.gameSettings.mafia = this.selectValue);
+      this.gameSettings.citizen = this.calcCitizen;
+      this.SetGameSettings(this.gameSettings);
     }
   }
-}
+};
 </script>

@@ -1,44 +1,26 @@
 <template>
-  <div
-    class="patch-notes"
-  >
-    <div
-      class="dashboard-header"
-    >
-      <BaseButton
-        class="patch-bttn awesome3"
-        @clicked="togglePatchNotes(true)"
-      >
+  <div class="patch-notes">
+    <div class="dashboard-header">
+      <BaseButton class="patch-bttn awesome3" @clicked="togglePatchNotes(true)">
         <span>
-          {{ $t('general.patchButton') }}
+          {{ $t("general.patchButton") }}
         </span>
       </BaseButton>
     </div>
     <Overlay
       :class="{
-        'active': patchNotes
+        active: patchNotes
       }"
     >
       <template>
-        <img
-          class="app-logo"
-          src="@/assets/images/logo.png"
-          :alt="$t('general.alt')"
-        >
-        <h2
-          class="app-version has-bottom-margin"
-        >
-          {{ 'v' + appVersion }}
+        <img class="app-logo" src="@/assets/images/logo.png" :alt="$t('general.alt')" />
+        <h2 class="app-version has-bottom-margin">
+          {{ "v" + appVersion }}
         </h2>
-        <ListItem
-          :items="$t('patchNotes')"
-        />
-        <BaseButton
-          class="close-bttn secondary has-top-margin"
-          @clicked="togglePatchNotes(false)"
-        >
+        <ListItem :items="$t('patchNotes')" />
+        <BaseButton class="close-bttn secondary has-top-margin" @clicked="togglePatchNotes(false)">
           <span>
-            {{ $t('common.closeButton') }}
+            {{ $t("common.closeButton") }}
           </span>
         </BaseButton>
       </template>
@@ -47,28 +29,28 @@
 </template>
 
 <script>
-import PageTitle from '@/components/PageTitle.vue';
-import ListItem from '@/components/ListItem.vue';
+import PageTitle from "@/components/PageTitle.vue";
+import ListItem from "@/components/ListItem.vue";
 
 export default {
   components: {
     ListItem,
-    PageTitle,
+    PageTitle
   },
-  data () {
+  data() {
     return {
       patchNotes: false
-    }
+    };
   },
   computed: {
-    appVersion () {
-      return process.env.VUE_APP_VERSION
+    appVersion() {
+      return process.env.VUE_APP_VERSION;
     }
   },
   methods: {
-    togglePatchNotes (value) {
-      this.patchNotes = value
+    togglePatchNotes(value) {
+      this.patchNotes = value;
     }
   }
-}
+};
 </script>

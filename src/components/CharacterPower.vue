@@ -8,13 +8,13 @@
   >
     <span
       :class="{
-        'mafia': mafia,
-        'solo': !mafia && solo,
-        'citizen': !mafia && !solo,
+        mafia: mafia,
+        solo: !mafia && solo,
+        citizen: !mafia && !solo,
         'zero-state': (solo || !mafia) && power <= 5
       }"
       :style="{
-        width: `${Math.abs(power)*2}%`
+        width: `${Math.abs(power) * 2}%`
       }"
     >
       <i>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'CharacterPower',
+  name: "CharacterPower",
   props: {
     mafia: {
       type: Boolean,
@@ -41,5 +41,5 @@ export default {
       default: 0
     }
   }
-}
+};
 </script>

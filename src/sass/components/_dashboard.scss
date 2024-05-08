@@ -1,19 +1,25 @@
-.dashboard-header .title{
-    h2 strong{color:$hint_color;}
+.dashboard-header .title {
+  h2 strong {
+    color: $hint_color;
+  }
 }
 
-.dashboard-hint li{
-    font-size: $font_size_3;
-    margin:5px 0;
-    &:first-child{margin-top:0;}
-    &:last-child{margin-bottom: 0;}
-    span{
-        display:block;
-        padding:5px 0 5px 32px;
-        background-repeat: no-repeat;
-        background-position: left 2px;
-        background-size: 24px;
-    }
+.dashboard-hint li {
+  font-size: $font_size_3;
+  margin: 5px 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  span {
+    display: block;
+    padding: 5px 0 5px 32px;
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    background-size: 24px;
+  }
 }
 
 .left-button {
@@ -24,37 +30,38 @@
   float: right;
 }
 
-.predefined{
-    top:16px;
-    right:10px;
-    display: flex;
-    justify-content: space-between;
-    font-size:$font_size_2;
-    color:$color_1;
-    text-align: center;
-    padding:8px 10px 8px 35px;
-    border:1px solid $color_1;
-    border-radius: $curve_radius;
-    transition:all .2s ease-in-out;
-    &::after{
-        content:'';
-        position: relative;
-        top:0px;
-        left:-12px;
-        width:19px;
-        height:19px;
-        background-repeat: no-repeat;
-        background-position: center;
-        border:1px solid $color_1;
-        border-radius: $circle_radius;
-        transition:all .2s ease-in-out;
+.predefined {
+  top: 16px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: $font_size_2;
+  color: $color_1;
+  text-align: center;
+  padding: 8px 10px 8px 35px;
+  border: 1px solid $color_1;
+  border-radius: $curve_radius;
+  transition: all 0.2s ease-in-out;
+  &::after {
+    content: "";
+    position: relative;
+    top: 0px;
+    left: -12px;
+    width: 19px;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid $color_1;
+    border-radius: $circle_radius;
+    transition: all 0.2s ease-in-out;
+  }
+  &.active {
+    background-color: $background_color_default;
+    border-color: $color_5;
+    &::after {
+      background: url("~@/assets/images/assets/tick.svg") no-repeat center
+        $green_color;
+      background-size: 12px;
     }
-    &.active{
-        background-color: $background_color_default;
-        border-color:$color_5;
-        &::after{
-            background:url('~@/assets/images/assets/tick.svg') no-repeat center $green_color;
-            background-size:12px;
-        }
-    }
+  }
 }

@@ -1,54 +1,39 @@
 <template>
-  <div
-    class="home"
-  >
+  <div class="home">
     <!-- Extra Meta Description for SEO -->
-    <p
-      class="seo-clipboard"
-    >
-      {{ $t('meta.home.description') }}
+    <p class="seo-clipboard">
+      {{ $t("meta.home.description") }}
     </p>
     <!-- If last game saved data is available in localstorage, show Alert to load data from localstorage or start a new game -->
-    <SavedGameAlert
-      v-if="gameSettings.hasSavedGame"
-    />
-    <template
-      v-else
-    >
-      <transition
-        name="slide"
-        mode="out-in"
-      >
+    <SavedGameAlert v-if="gameSettings.hasSavedGame" />
+    <template v-else>
+      <transition name="slide" mode="out-in">
         <!-- Show Create Game Panel when the game is not started -->
-        <CreateGamePanel
-          v-if="!gameSettings.gameStarted"
-        />
+        <CreateGamePanel v-if="!gameSettings.gameStarted" />
         <!-- Show Dashboard Panel when the game is started -->
-        <DashboardPanel
-          v-else
-        />
+        <DashboardPanel v-else />
       </transition>
     </template>
   </div>
 </template>
 
 <script>
-import CreateGamePanel from '@/components/CreateGamePanel.vue';
-import DashboardPanel from '@/components/DashboardPanel.vue';
-import SavedGameAlert from '@/components/SavedGameAlert.vue';
+import CreateGamePanel from "@/components/CreateGamePanel.vue";
+import DashboardPanel from "@/components/DashboardPanel.vue";
+import SavedGameAlert from "@/components/SavedGameAlert.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     CreateGamePanel,
     DashboardPanel,
     SavedGameAlert
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: `${this.$t('meta.home.title')}`,
+      title: `${this.$t("meta.home.title")}`,
       meta: []
-    }
+    };
   }
-}
+};
 </script>

@@ -1,26 +1,21 @@
 <template>
-  <a
-    class="bttn"
-    :href="href"
-    :target="target"
-    @click="$emit('clicked')"
-  >
+  <a class="bttn" :href="href" :target="target" @click="$emit('clicked')">
     <slot />
   </a>
 </template>
 
 <script>
 export default {
-  name: 'BaseButton',
+  name: "BaseButton",
   props: {
     href: {
       type: String,
-      default: 'javascript:void(0)'
+      default: "javascript:void(0)"
     },
     target: {
       type: String,
-      default: '_self'
+      default: "_self"
     }
   }
-}
+};
 </script>

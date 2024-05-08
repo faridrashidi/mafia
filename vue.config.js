@@ -1,14 +1,14 @@
-process.env.VUE_APP_VERSION = require('./package.json').version
+process.env.VUE_APP_VERSION = require("./package.json").version;
 
 module.exports = {
-  publicPath: '/mafia/',
+  publicPath: "/mafia/",
   filenameHashing: false,
   pluginOptions: {
     i18n: {
-      locale: 'fa',
-      fallbackLocale: 'fa',
-      localeDir: 'locales',
+      locale: "fa",
+      fallbackLocale: "fa",
+      localeDir: "locales",
       enableInSFC: true
     }
   }
-}
+};

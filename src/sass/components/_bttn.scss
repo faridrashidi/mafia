@@ -1,303 +1,308 @@
-.bttn{
-    display:block;
-    color:$color_1;
-    line-height: 1.4;
-    text-align: center;
-    padding:12px;
-    margin-top:10px;
-    background-color:$background_color_3;
-    border-radius: $curve_radius;
-    transition:all .2s ease-in-out;
-    &.sm{
-        display:inline-block;
-        min-width: 150px;
-        font-size: .85em !important;
-        padding:8px 10px;
-    }
-    &.sm-padding{
-        padding:10px;
-    }
-    &.sm-fontsize{
-        font-size: .85em !important;
-    }
-    &.lg-fontsize{
-        font-size: 1.2em !important;
-    }
-    &.square{
-        border-radius: 5px;
-    }
-    &.square-circle{
-        border-radius: 13px;
-    }
-    &:hover{
-        background-color: $green_color;
-    }
-    &.active{
-        background-color: $creator_color;
-        &:hover{
-            background-color: $dark_orange_color;
-        }
-    }
-    &.btn-center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    &.danger{
-        background-color: $dark_red_color;
-        &:hover{
-            background-color: $red_color;
-        }
-    }
-    &.red{
-        background-color: $red_color;
-        &:hover{
-            background-color: $dark_red_color;
-        }
-    }
-    &.yellow{
-        background-color: $day;
-        &:hover{
-            background-color: $hint_color;
-        }
-    }
-    &.white{
-        color: $black_color;
-        background-color: $white_color;
-        &:hover{
-            background-color: $color_8;
-        }
-    }
-    &.primary{
-        background-color: $primary;
-        box-shadow: 0 0 4px $black_color;
-        &:hover{
-            background-color: $primary_light;
-        }
-    }
-    &.secondary{
-        background-color: $secondary;
-        box-shadow: 0 0 4px $black_color;
-        &:hover{
-            background-color: $secondary_light;
-        }
-    }
-    &.purple{
-        background-color: $purple_color;
-        box-shadow: 0 0 4px $black_color;
-        &:hover{
-            background-color: $purple_dark_color;
-        }
-    }
-    &.black{
-        background-color: $background_color_main;
-        box-shadow: 0 0 3px $black_color;
-    }
-    &.green{
-        background-color: $green_color;
-        &:hover{
-            background-color: $light_green_color;
-        }
-    }
-    &.blue{
-        background-color: $blue_color;
-        &:hover{
-            background-color: $dark_blue_color;
-        }
-    }
-    &.site{
-        background: $site;
-        box-shadow: 0 0 10px $black_color;
-        &:hover{
-            background: $site_reverse;
-        }
-    }
-    &.awesome{
-        background: $awesome;
-        &:hover{
-            background: $awesome_reverse;
-        }
-    }
-    &.awesome2{
-        background: $awesome_2;
-        &:hover{
-            background: $awesome_2_reverse;
-        }
-    }
-    &.awesome3{
-        background: $awesome_3;
-        box-shadow: 0 0 5px $black_color;
-    }
-    &.day{
-        padding:13px 10px;
-        background: url('~@/assets/images/game/moon.svg') no-repeat 10px -5px $night !important;
-        background-size: 64px !important;
-        border-radius: $site_radius;
-        box-shadow: 0 0 7px $black_color;
-    }
-    &.night{
-        padding:13px 10px;
-        background: url('~@/assets/images/game/sun.svg') no-repeat 10px -5px $day !important;
-        background-size: 64px !important;
-        border-radius: $site_radius;
-        box-shadow: 0 0 7px $black_color;
-    }
-    &.highlighted{
-        animation: 1s highlight ease-in-out infinite alternate;
-    }
-    &.subnav-bttn{
-        direction: ltr;
-        display: block;
-        width:100%;
-        font-family: $font_mafia_rtl;
-        font-size: 1rem !important;
-        padding: 8px 2px 6px 2px;
-        transition:all .3s ease-in-out;
-        z-index: 99;
-        box-shadow: inset 0 0 2px $black_color;
-        border-radius: 4px;
-        img{
-            display: inline-block;
-            vertical-align: middle;
-            width:30px;
-            margin:0 5px;
-        }
-        strong{
-            display: inline-block;
-            vertical-align: middle;
-            margin:0 5px;
-        }
-    }
-}
-
-.button-holder{padding-top:5px;}
-
-.patch-bttn{
-    height:44px;
-    padding:9px !important;
-    border-radius: 5px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 28px;
-        background:url('~@/assets/images/assets/patch-button.svg') no-repeat left center;
-        background-size: 20px;
-    }
-}
-
-.success-bttn{
-    width:calc(100% - 2px);
-    height:44px;
-    padding:7px !important;
-    margin:0 auto !important;
-    border-radius: 5px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 28px;
-        background:url('~@/assets/images/assets/tick.svg') no-repeat left center;
-        background-size: 20px;
-    }
-}
-
-.start-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 32px;
-        background:url('~@/assets/images/assets/play.svg') no-repeat left center;
-        background-size: 22px;
-    }
-}
-
-.support-bttn{
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 35px;
-        background:url('~@/assets/images/assets/support.svg') no-repeat left center;
-        background-size: 28px;
-    }
-}
-
-.settings-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 30px;
-        background:url('~@/assets/images/assets/settings.svg') no-repeat left center;
-        background-size: 24px;
-    }
-}
-
-.assign-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 2px 5px 2px 30px;
-        background:url('~@/assets/images/assets/assign.svg') no-repeat left center;
-        background-size: 26px;
-    }
-}
-
-.swap-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 5px 35px;
-        background:url('~@/assets/images/assets/swap.svg') no-repeat left center;
-        background-size: 24px;
-    }
-}
-
-.disc-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 2px 30px;
-        background:url('~@/assets/images/assets/disc.svg') no-repeat left center;
-        background-size: 18px;
-    }
-}
-
-.exit-bttn{
-    height:46px;
-    padding:9px !important;
-    span{
-        display: inline-block;
-        padding: 5px 5px 2px 30px;
-        background:url('~@/assets/images/assets/exit.svg') no-repeat left center;
-        background-size: 18px;
-    }
-}
-
-.info-bttn{
-    height:32px;
-    padding:5px !important;
+.bttn {
+  display: block;
+  color: $color_1;
+  line-height: 1.4;
+  text-align: center;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: $background_color_3;
+  border-radius: $curve_radius;
+  transition: all 0.2s ease-in-out;
+  &.sm {
+    display: inline-block;
+    min-width: 150px;
+    font-size: 0.85em !important;
+    padding: 8px 10px;
+  }
+  &.sm-padding {
+    padding: 10px;
+  }
+  &.sm-fontsize {
+    font-size: 0.85em !important;
+  }
+  &.lg-fontsize {
+    font-size: 1.2em !important;
+  }
+  &.square {
+    border-radius: 5px;
+  }
+  &.square-circle {
+    border-radius: 13px;
+  }
+  &:hover {
     background-color: $green_color;
-    span{
-        display: inline-block;
-        padding: 2px 5px 0 26px;
-        background:url('~@/assets/images/assets/info-white.svg') no-repeat left center;
-        background-size: 20px;
+  }
+  &.active {
+    background-color: $creator_color;
+    &:hover {
+      background-color: $dark_orange_color;
     }
-}
-
-.coffee-bttn{
-    height: 44px !important;
-    margin:15px auto 0 auto;
-}
-
-.discord-bttn{
-    height:46px;
-    span{
-        display: inline-block;
-        padding: 3px 5px 3px 40px;
-        background:url('~@/assets/images/icons/discord-white.svg') no-repeat left center;
-        background-size: 34px;
+  }
+  &.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.danger {
+    background-color: $dark_red_color;
+    &:hover {
+      background-color: $red_color;
     }
+  }
+  &.red {
+    background-color: $red_color;
+    &:hover {
+      background-color: $dark_red_color;
+    }
+  }
+  &.yellow {
+    background-color: $day;
+    &:hover {
+      background-color: $hint_color;
+    }
+  }
+  &.white {
+    color: $black_color;
+    background-color: $white_color;
+    &:hover {
+      background-color: $color_8;
+    }
+  }
+  &.primary {
+    background-color: $primary;
+    box-shadow: 0 0 4px $black_color;
+    &:hover {
+      background-color: $primary_light;
+    }
+  }
+  &.secondary {
+    background-color: $secondary;
+    box-shadow: 0 0 4px $black_color;
+    &:hover {
+      background-color: $secondary_light;
+    }
+  }
+  &.purple {
+    background-color: $purple_color;
+    box-shadow: 0 0 4px $black_color;
+    &:hover {
+      background-color: $purple_dark_color;
+    }
+  }
+  &.black {
+    background-color: $background_color_main;
+    box-shadow: 0 0 3px $black_color;
+  }
+  &.green {
+    background-color: $green_color;
+    &:hover {
+      background-color: $light_green_color;
+    }
+  }
+  &.blue {
+    background-color: $blue_color;
+    &:hover {
+      background-color: $dark_blue_color;
+    }
+  }
+  &.site {
+    background: $site;
+    box-shadow: 0 0 10px $black_color;
+    &:hover {
+      background: $site_reverse;
+    }
+  }
+  &.awesome {
+    background: $awesome;
+    &:hover {
+      background: $awesome_reverse;
+    }
+  }
+  &.awesome2 {
+    background: $awesome_2;
+    &:hover {
+      background: $awesome_2_reverse;
+    }
+  }
+  &.awesome3 {
+    background: $awesome_3;
+    box-shadow: 0 0 5px $black_color;
+  }
+  &.day {
+    padding: 13px 10px;
+    background: url("~@/assets/images/game/moon.svg") no-repeat 10px -5px $night !important;
+    background-size: 64px !important;
+    border-radius: $site_radius;
+    box-shadow: 0 0 7px $black_color;
+  }
+  &.night {
+    padding: 13px 10px;
+    background: url("~@/assets/images/game/sun.svg") no-repeat 10px -5px $day !important;
+    background-size: 64px !important;
+    border-radius: $site_radius;
+    box-shadow: 0 0 7px $black_color;
+  }
+  &.highlighted {
+    animation: 1s highlight ease-in-out infinite alternate;
+  }
+  &.subnav-bttn {
+    direction: ltr;
+    display: block;
+    width: 100%;
+    font-family: $font_mafia_rtl;
+    font-size: 1rem !important;
+    padding: 8px 2px 6px 2px;
+    transition: all 0.3s ease-in-out;
+    z-index: 99;
+    box-shadow: inset 0 0 2px $black_color;
+    border-radius: 4px;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 30px;
+      margin: 0 5px;
+    }
+    strong {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+  }
 }
 
+.button-holder {
+  padding-top: 5px;
+}
+
+.patch-bttn {
+  height: 44px;
+  padding: 9px !important;
+  border-radius: 5px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 28px;
+    background: url("~@/assets/images/assets/patch-button.svg") no-repeat left
+      center;
+    background-size: 20px;
+  }
+}
+
+.success-bttn {
+  width: calc(100% - 2px);
+  height: 44px;
+  padding: 7px !important;
+  margin: 0 auto !important;
+  border-radius: 5px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 28px;
+    background: url("~@/assets/images/assets/tick.svg") no-repeat left center;
+    background-size: 20px;
+  }
+}
+
+.start-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 32px;
+    background: url("~@/assets/images/assets/play.svg") no-repeat left center;
+    background-size: 22px;
+  }
+}
+
+.support-bttn {
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 35px;
+    background: url("~@/assets/images/assets/support.svg") no-repeat left center;
+    background-size: 28px;
+  }
+}
+
+.settings-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    background: url("~@/assets/images/assets/settings.svg") no-repeat left
+      center;
+    background-size: 24px;
+  }
+}
+
+.assign-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 2px 5px 2px 30px;
+    background: url("~@/assets/images/assets/assign.svg") no-repeat left center;
+    background-size: 26px;
+  }
+}
+
+.swap-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 5px 35px;
+    background: url("~@/assets/images/assets/swap.svg") no-repeat left center;
+    background-size: 24px;
+  }
+}
+
+.disc-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 2px 30px;
+    background: url("~@/assets/images/assets/disc.svg") no-repeat left center;
+    background-size: 18px;
+  }
+}
+
+.exit-bttn {
+  height: 46px;
+  padding: 9px !important;
+  span {
+    display: inline-block;
+    padding: 5px 5px 2px 30px;
+    background: url("~@/assets/images/assets/exit.svg") no-repeat left center;
+    background-size: 18px;
+  }
+}
+
+.info-bttn {
+  height: 32px;
+  padding: 5px !important;
+  background-color: $green_color;
+  span {
+    display: inline-block;
+    padding: 2px 5px 0 26px;
+    background: url("~@/assets/images/assets/info-white.svg") no-repeat left
+      center;
+    background-size: 20px;
+  }
+}
+
+.coffee-bttn {
+  height: 44px !important;
+  margin: 15px auto 0 auto;
+}
+
+.discord-bttn {
+  height: 46px;
+  span {
+    display: inline-block;
+    padding: 3px 5px 3px 40px;
+    background: url("~@/assets/images/icons/discord-white.svg") no-repeat left
+      center;
+    background-size: 34px;
+  }
+}

@@ -1,79 +1,57 @@
 <template>
-  <div
-    class="dashboard"
-  >
+  <div class="dashboard">
     <!-- Dashboard Header & Back to Settings button -->
-    <div
-      class="dashboard-header"
-    >
-      <!-- <PageBox>
-        <PageTitle
-          dashboard-title
-        />
-      </PageBox> -->
+    <div class="dashboard-header">
       <BaseButton
         v-if="gameSettings.stepCounter !== 3"
         class="settings-bttn danger has-small-top-margin"
         @clicked="toggleAlertBox(true)"
       >
         <span>
-          {{ $t('pages.home.changeSettings') }}
+          {{ $t("pages.home.changeSettings") }}
         </span>
       </BaseButton>
     </div>
     <!-- Confirmation Alert for change settings -->
     <Overlay
       :class="{
-        'active': alertBox,
-        'dialog': true
+        active: alertBox,
+        dialog: true
       }"
     >
       <img
         class="has-xsmall-bottom-margin"
         src="@/assets/images/icons/warning.svg"
         :alt="$t('general.warningIcon')"
-      >
+      />
       <p>
-        {{ $t('pages.home.changeSettingsText') }}
+        {{ $t("pages.home.changeSettingsText") }}
       </p>
-      <BaseButton
-        class="green"
-        @clicked="changeGameSettings()"
-      >
+      <BaseButton class="green" @clicked="changeGameSettings()">
         <span>
-          {{ $t('pages.home.confirmButton') }}
+          {{ $t("pages.home.confirmButton") }}
         </span>
       </BaseButton>
-      <BaseButton
-        class="danger"
-        @clicked="toggleAlertBox(false)"
-      >
+      <BaseButton class="danger" @clicked="toggleAlertBox(false)">
         <span>
-          {{ $t('pages.home.cancelButton') }}
+          {{ $t("pages.home.cancelButton") }}
         </span>
       </BaseButton>
     </Overlay>
-    <transition
-      name="slide"
-      mode="out-in"
-    >
+    <transition name="slide" mode="out-in">
       <!-- Input to write name of players -->
-      <PageBox
-        v-if="gameSettings.stepCounter === 1"
-        class="has-top-padding"
-        key="step1"
-      >
+      <PageBox v-if="gameSettings.stepCounter === 1" class="has-top-padding" key="step1">
         <!-- Use Pre Defined names for players -->
         <a
           href="javascript:void(0)"
           class="predefined right-button"
           :class="{
-            'active': showPredefined
+            active: showPredefined
           }"
           @click="togglePredefinedNames()"
         >
           <span>
-            {{ $t('pages.home.defaultNames') }}
+            {{ $t("pages.home.defaultNames") }}
           </span>
         </a>
         <!-- Load last game players -->
@@ -82,22 +60,17 @@
           href="javascript:void(0)"
           class="predefined type-2 left-button"
           :class="{
-            'active': showSavedNames
+            active: showSavedNames
           }"
           @click="toggleSavedNames()"
         >
           <span>
-            {{ $t('pages.home.lastNames') }}
+            {{ $t("pages.home.lastNames") }}
           </span>
         </a>
-        <!-- <p>
-          {{ $t('pages.home.chooseNameHint') }}
-        </p> -->
         <br />
-        <p
-          class="important-hint"
-        >
-          {{ $t('pages.home.nameExtraHint') }}
+        <p class="important-hint">
+          {{ $t("pages.home.nameExtraHint") }}
         </p>
         <input
           v-for="(roleInput, index) in gameSettings.selectedRoles"
@@ -106,42 +79,30 @@
           class="has-xsmall-bottom-margin"
           :key="index"
           v-model="players[index]"
-        >
-        <BaseButton
-          class="primary assign-bttn"
-          @clicked="assignRoles()"
-        >
+        />
+        <BaseButton class="primary assign-bttn" @clicked="assignRoles()">
           <span>
-            {{ $t('pages.home.assign') }}
+            {{ $t("pages.home.assign") }}
           </span>
         </BaseButton>
       </PageBox>
       <!-- Show each player their randomly chosen character -->
-      <PageBox
-        v-else-if="gameSettings.stepCounter === 2"
-        class="display autoheight"
-        key="step2"
-      >
-        <div
-          class="inner-display"
-        >
+      <PageBox v-else-if="gameSettings.stepCounter === 2" class="display autoheight" key="step2">
+        <div class="inner-display">
           <ShowBox />
         </div>
       </PageBox>
       <!-- Show God Panel When each player knows his role -->
-      <GodPanel
-        v-else-if="gameSettings.stepCounter === 3"
-        key="step3"
-      />
+      <GodPanel v-else-if="gameSettings.stepCounter === 3" key="step3" />
     </transition>
   </div>
 </template>
 
 <script>
-import GodPanel from '@/components/GodPanel.vue';
-import ShowBox from '@/components/ShowBox.vue';
-import PageTitle from '@/components/PageTitle.vue';
-import Random from 'random-js';
+import GodPanel from "@/components/GodPanel.vue";
+import ShowBox from "@/components/ShowBox.vue";
+import PageTitle from "@/components/PageTitle.vue";
+import Random from "random-js";
 
 export default {
   data() {
@@ -150,7 +111,7 @@ export default {
       showPredefined: false,
       showSavedNames: false,
       alertBox: false
-    }
+    };
   },
   components: {
     GodPanel,
@@ -159,120 +120,125 @@ export default {
   },
   computed: {
     roles() {
-      return JSON.parse(JSON.stringify(this.Roles))
+      return JSON.parse(JSON.stringify(this.Roles));
     },
     checkUsers() {
-      const savedPlayers = JSON.parse(localStorage.getItem('latest-players'))
+      const savedPlayers = JSON.parse(localStorage.getItem("latest-players"));
       if (savedPlayers && savedPlayers.length > 0) {
-        return true
+        return true;
       }
-      return false
+      return false;
     }
   },
   methods: {
-    assignRoles () {
-      const chosenCharacters = this.gameSettings.selectedRoles
-      const playerNames = this.players
-      let readyToAssignRoles = false
-      let discordText = this.$t('thirdparty.discordPlayers')
+    assignRoles() {
+      const chosenCharacters = this.gameSettings.selectedRoles;
+      const playerNames = this.players;
+      let readyToAssignRoles = false;
+      let discordText = this.$t("thirdparty.discordPlayers");
       // Check inputs are not empty
-      const checkPlayersInput = playerNames.filter((item, index) => playerNames.indexOf(item) >= index)
+      const checkPlayersInput = playerNames.filter(
+        (item, index) => playerNames.indexOf(item) >= index
+      );
       // Check if there is no duplicate names
-      if (playerNames.length === chosenCharacters.length && checkPlayersInput.length === playerNames.length) {
+      if (
+        playerNames.length === chosenCharacters.length &&
+        checkPlayersInput.length === playerNames.length
+      ) {
         for (let i = 0; i < playerNames.length; i++) {
           if (playerNames[i].length < 1) {
-            readyToAssignRoles = false
-            break
+            readyToAssignRoles = false;
+            break;
           } else {
-            readyToAssignRoles = true
+            readyToAssignRoles = true;
           }
         }
       } else {
         this.$notify({
-          group: 'log',
-          type: 'error',
-          title: 'error.svg',
-          text: `${this.$t('general.errors.uniquePlayers')}`,
+          group: "log",
+          type: "error",
+          title: "error.svg",
+          text: `${this.$t("general.errors.uniquePlayers")}`,
           duration: 4000
-        })
+        });
       }
       if (readyToAssignRoles) {
         // Randomize Characters in Array
-        this.randomFunc()
+        this.randomFunc();
         for (let i = chosenCharacters.length - 1; i >= 0; i--) {
           // Assign each player to one character
-          chosenCharacters[i].player = playerNames[i]
+          chosenCharacters[i].player = playerNames[i];
         }
-        this.gameSettings.stepCounter = 2
-        discordText += `• `
-        playerNames.forEach((name) => {
-          discordText += `${name} • `
-        })
+        this.gameSettings.stepCounter = 2;
+        discordText += `• `;
+        playerNames.forEach(name => {
+          discordText += `${name} • `;
+        });
         // Post Players To Discord
-        this.postDiscord(discordText)
+        this.postDiscord(discordText);
       }
       // Save Names to localStorage
       if (playerNames.length > 0) {
-        localStorage.setItem('latest-players', JSON.stringify(playerNames))
+        localStorage.setItem("latest-players", JSON.stringify(playerNames));
       }
-      this.SetGameSettings(this.gameSettings)
+      this.SetGameSettings(this.gameSettings);
     },
-    togglePredefinedNames () {
+    togglePredefinedNames() {
       if (this.showPredefined === false) {
-        this.fillPreDefinedNames()
-        this.showPredefined = true
-        this.showSavedNames = false
+        this.fillPreDefinedNames();
+        this.showPredefined = true;
+        this.showSavedNames = false;
       } else {
-        this.players = []
-        this.showPredefined = false
-        this.showSavedNames = true
+        this.players = [];
+        this.showPredefined = false;
+        this.showSavedNames = true;
       }
     },
-    toggleSavedNames () {
+    toggleSavedNames() {
       if (this.showSavedNames === false) {
-        this.players = JSON.parse(localStorage.getItem('latest-players'))
+        this.players = JSON.parse(localStorage.getItem("latest-players"));
         if (this.gameSettings.selectedRoles.length < this.players.length) {
-          this.players = this.players.slice(0, this.gameSettings.selectedRoles.length)
+          this.players = this.players.slice(0, this.gameSettings.selectedRoles.length);
         }
-        this.showPredefined = false
-        this.showSavedNames = true
+        this.showPredefined = false;
+        this.showSavedNames = true;
       } else {
-        this.players = []
-        this.showPredefined = true
-        this.showSavedNames = false
+        this.players = [];
+        this.showPredefined = true;
+        this.showSavedNames = false;
       }
     },
-    fillPreDefinedNames () {
+    fillPreDefinedNames() {
       this.gameSettings.selectedRoles.forEach((name, index) => {
-        this.players.push(`${this.$t('pages.home.playerDefault')} ${index + 1}`)
-      })
+        this.players.push(`${this.$t("pages.home.playerDefault")} ${index + 1}`);
+      });
     },
-    toggleAlertBox (value) {
-      this.alertBox = value
+    toggleAlertBox(value) {
+      this.alertBox = value;
     },
-    changeGameSettings () {
-      this.startGameEngine('roles-selected-create')
+    changeGameSettings() {
+      this.startGameEngine("roles-selected-create");
     },
     checkConsecutiveElements(array) {
-      const length = array.length
+      const length = array.length;
       for (let i = 0; i < length - 2; i++) {
-        const elem1 = array[i].mafia
-        const elem2 = array[i + 1].mafia
-        const elem3 = array[i + 2].mafia
+        const elem1 = array[i].mafia;
+        const elem2 = array[i + 1].mafia;
+        const elem3 = array[i + 2].mafia;
         if (elem1 == true && elem1 == true && elem3 == true) {
-          return true
+          return true;
         }
       }
-      return false
+      return false;
     },
-    randomFunc () {
-      const random = new Random(Random.engines.mt19937().autoSeed())
-      let isConsecutive
+    randomFunc() {
+      const random = new Random(Random.engines.mt19937().autoSeed());
+      let isConsecutive;
       do {
-        random.shuffle(this.gameSettings.selectedRoles)
-        isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles)
-      } while (isConsecutive)
+        random.shuffle(this.gameSettings.selectedRoles);
+        isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles);
+      } while (isConsecutive);
     }
   }
-}
+};
 </script>

@@ -1,13 +1,13 @@
 export default {
   methods: {
-    saveHistory (img, txt) {
+    saveHistory(img, txt) {
       this.dashboard.historyLog.push({
         image: img,
         text: txt
-      })
+      });
     },
-    saveTotalHistory (history) {
-      this.dashboard.totalHistory.push(history)
+    saveTotalHistory(history) {
+      this.dashboard.totalHistory.push(history);
     }
   }
-}
+};

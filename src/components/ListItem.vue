@@ -1,12 +1,7 @@
 <template>
-  <div
-    class="list-item"
-  >
+  <div class="list-item">
     <ul>
-      <li
-        v-for="(item, index) in items"
-        :key="index"
-      >
+      <li v-for="(item, index) in items" :key="index">
         {{ item.text }}
       </li>
     </ul>
@@ -14,14 +9,13 @@
 </template>
 
 <script>
-
 export default {
-  name: 'ListItem',
+  name: "ListItem",
   props: {
     items: {
       type: Array,
       default: () => []
     }
   }
-}
+};
 </script>

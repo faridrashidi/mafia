@@ -1,13 +1,7 @@
 <template>
-  <div
-    class="god god-panel"
-  >
+  <div class="god god-panel">
     <!-- Dashboard Buttons -->
-    <div
-      v-if="showGodPanel"
-      class="change-phase-button"
-      id="ChangePhase"
-    >
+    <div v-if="showGodPanel" class="change-phase-button" id="ChangePhase">
       <!-- <template
         v-if="gameSettings.discordChannel"
       >
@@ -55,78 +49,43 @@
       </transition> -->
     </div>
     <!-- Game Settings -->
-    <GameSettings
-      v-if="showGodPanel"
-    />
+    <GameSettings v-if="showGodPanel" />
     <!-- Day & Night Dashboard -->
-    <transition
-      name="fade"
-    >
-      <ActionBar
-        v-if="showGodPanel && dashboard.actionProgress !== dashboard.actionBox.length"
-      />
+    <transition name="fade">
+      <ActionBar v-if="showGodPanel && dashboard.actionProgress !== dashboard.actionBox.length" />
     </transition>
-    <div
-      class="main-dashboard"
-    >
+    <div class="main-dashboard">
       <PageBox
         class="display god-dashboard"
         :class="{
           'game-not-started': !showGodPanel,
-          'day': dashboard.day && showGodPanel,
-          'night': !dashboard.day
+          day: dashboard.day && showGodPanel,
+          night: !dashboard.day
         }"
       >
-        <div
-          class="inner-display"
-        >
-          <transition-group
-            name="fade"
-          >
-            <strong
-              v-if="!dashboard.day"
-              class="round-tracker"
-              key="round-tracker"
-            >
+        <div class="inner-display">
+          <transition-group name="fade">
+            <strong v-if="!dashboard.day" class="round-tracker" key="round-tracker">
               {{ dashboard.round }}
             </strong>
           </transition-group>
-          <div
-            class="center-aligned"
-          >
-            <transition
-              name="slide"
-              mode="out-in"
-            >
-              <div
-                v-if="!showGodPanel"
-                key="beforeShow"
-              >
+          <div class="center-aligned">
+            <transition name="slide" mode="out-in">
+              <div v-if="!showGodPanel" key="beforeShow">
                 <img
                   class="game-icon"
                   src="@/assets/images/icons/game.svg"
                   :alt="$t('god.gameDashboardIconAlt')"
-                >
-                <h3
-                  v-html="$t('god.gameStartText')"
-                  class="different-colors"
                 />
-                <BaseButton
-                  class="primary"
-                  @clicked="showPlay()"
-                >
-                  {{ $t('god.godButton') }}
+                <h3 v-html="$t('god.gameStartText')" class="different-colors" />
+                <BaseButton class="primary" @clicked="showPlay()">
+                  {{ $t("god.godButton") }}
                 </BaseButton>
               </div>
-              <div
-                v-else
-                key="afterShow"
-              >
-                <div
-                  class="players-role"
-                >
+              <div v-else key="afterShow">
+                <div class="players-role">
                   <p>
-                    {{ $t('god.playerKillOrSurvive') }}
+                    {{ $t("god.playerKillOrSurvive") }}
                   </p>
                   <Table
                     :table-data="gameSettings.fMafias"
@@ -153,18 +112,16 @@
     <Overlay
       class="vote-box dialog"
       :class="{
-        'active': dashboard.lastPhaseAction && dashboard.round >= 1
+        active: dashboard.lastPhaseAction && dashboard.round >= 1
       }"
     >
-      <VoteAlert
-        v-if="dashboard.lastPhaseAction && dashboard.round >= 1"
-      />
+      <VoteAlert v-if="dashboard.lastPhaseAction && dashboard.round >= 1" />
     </Overlay>
     <!-- Role Viewer -->
     <Overlay
       :class="{
-        'active': gameSettings.searchingUsed,
-        'viewer': true
+        active: gameSettings.searchingUsed,
+        viewer: true
       }"
     >
       <RoleViewer
@@ -176,8 +133,8 @@
     <!-- Last Night Report -->
     <Overlay
       :class="{
-        'active': dashboard.lastNightBox,
-        'dialog': false,
+        active: dashboard.lastNightBox,
+        dialog: false,
         'last-night': true
       }"
     >
@@ -187,21 +144,17 @@
     <Overlay
       class="revenge-box dialog"
       :class="{
-        'active': dashboard.revengeKillBox && dashboard.actionProgress === 0
+        active: dashboard.revengeKillBox && dashboard.actionProgress === 0
       }"
     >
-      <RevengeAlert
-        v-if="dashboard.revengeKillBox && dashboard.actionProgress === 0"
-      />
+      <RevengeAlert v-if="dashboard.revengeKillBox && dashboard.actionProgress === 0" />
     </Overlay>
     <!-- Restart or Reset Game -->
-    <RestartGameAlert
-      v-if="showGodPanel"
-    />
+    <RestartGameAlert v-if="showGodPanel" />
     <!-- Game Finish Box -->
     <GameFinished
       :class="{
-        'active': gameSettings.gameFinished
+        active: gameSettings.gameFinished
       }"
       :game-winner="gameSettings.winner"
       :solo-winner-details="gameSettings.soloWinner"
@@ -210,19 +163,19 @@
 </template>
 
 <script>
-import ActionBar from '@/components/ActionBar.vue';
-import GameFinished from '@/components/GameFinished.vue';
-import LastNightLog from '@/components/LastNightLog.vue';
-import Table from '@/components/Table.vue';
-import RoleViewer from '@/components/RoleViewer.vue';
-import RestartGameAlert from '@/components/RestartGameAlert.vue';
-import RevengeAlert from '@/components/RevengeAlert.vue';
-import DashboardHints from '@/components/DashboardHints.vue';
-import VoteAlert from '@/components/VoteAlert.vue';
-import GameSettings from '@/components/GameSettings.vue';
+import ActionBar from "@/components/ActionBar.vue";
+import GameFinished from "@/components/GameFinished.vue";
+import LastNightLog from "@/components/LastNightLog.vue";
+import Table from "@/components/Table.vue";
+import RoleViewer from "@/components/RoleViewer.vue";
+import RestartGameAlert from "@/components/RestartGameAlert.vue";
+import RevengeAlert from "@/components/RevengeAlert.vue";
+import DashboardHints from "@/components/DashboardHints.vue";
+import VoteAlert from "@/components/VoteAlert.vue";
+import GameSettings from "@/components/GameSettings.vue";
 
 export default {
-  name: 'GodPanel',
+  name: "GodPanel",
   components: {
     ActionBar,
     GameFinished,
@@ -240,85 +193,82 @@ export default {
       logAction: false,
       showGodPanel: false,
       logActionDone: false
-    }
+    };
   },
   computed: {
-    deadRoles () {
-      const output = this.gameSettings.selectedRoles.filter(role => role.status.dead)
-      return output
+    deadRoles() {
+      const output = this.gameSettings.selectedRoles.filter(role => role.status.dead);
+      return output;
     }
   },
-  mounted () {
+  mounted() {
     setInterval(() => {
-      localStorage.setItem('save-automatic', JSON.stringify(this.allStates))
-    }, 60000)
+      localStorage.setItem("save-automatic", JSON.stringify(this.allStates));
+    }, 60000);
   },
   methods: {
     showPlay() {
       // Show God Panel, After Players See Their Roles
-      this.showGodPanel = true
-      this.addAttributesToCharacters()
-      this.SetDashboard(this.dashboard)
+      this.showGodPanel = true;
+      this.addAttributesToCharacters();
+      this.SetDashboard(this.dashboard);
     },
-    addAttributesToCharacters () {
-      this.gameSettings.selectedRoles.forEach((role) => {
+    addAttributesToCharacters() {
+      this.gameSettings.selectedRoles.forEach(role => {
         // Add Sniper Bullet Limit
         if (role.ability.sniper) {
-          role.status.actionLimit = this.mafiaHalfNumber
+          role.status.actionLimit = this.mafiaHalfNumber;
         }
-      })
-      this.SetGameSettings(this.gameSettings)
+      });
+      this.SetGameSettings(this.gameSettings);
     },
-    sendVoteResult () {
+    sendVoteResult() {
       // Post Vote Result To Discord
       let text = `
-      ${this.$t('thirdparty.discordVoteResultText')}
-      `
-      this.gameSettings.selectedRoles.forEach((role) => {
+      ${this.$t("thirdparty.discordVoteResultText")}
+      `;
+      this.gameSettings.selectedRoles.forEach(role => {
         if (!role.status.dead) {
           text += `
           ${role.player} => ${role.vote}
-          `
+          `;
         }
-      })
-      this.postDiscord(text)
+      });
+      this.postDiscord(text);
     },
-    sendStats () {
+    sendStats() {
       // Post Latest Game Stats To Discord
-      let alivePeople = ''
-      let deadPeople = ''
-      this.gameSettings.selectedRoles.forEach((role) => {
+      let alivePeople = "";
+      let deadPeople = "";
+      this.gameSettings.selectedRoles.forEach(role => {
         if (!role.status.dead) {
-          alivePeople += `${role.player} • `
+          alivePeople += `${role.player} • `;
         } else {
-          deadPeople += `${role.player} • `
+          deadPeople += `${role.player} • `;
         }
-      })
-      let text = `${this.$t('thirdparty.discordLatestStats')}`
+      });
+      let text = `${this.$t("thirdparty.discordLatestStats")}`;
       text += `
 
-      ${this.$t('thirdparty.discordAlivePeople')}`
-      
+      ${this.$t("thirdparty.discordAlivePeople")}`;
+
       text += `
-      • ${alivePeople}`
+      • ${alivePeople}`;
 
       if (deadPeople.length > 1) {
+        text += `
 
-      text += `
-
-      ${this.$t('thirdparty.discordDeadPeople')}`
-      text += `
-      • ${deadPeople}`
-
+      ${this.$t("thirdparty.discordDeadPeople")}`;
+        text += `
+      • ${deadPeople}`;
       }
 
       text += `
 
-      ${this.$t('thirdparty.discordSpentNights')} ${this.dashboard.round}
-      `
-      this.postDiscord(text)
+      ${this.$t("thirdparty.discordSpentNights")} ${this.dashboard.round}
+      `;
+      this.postDiscord(text);
     }
   }
-}
-
+};
 </script>
