@@ -234,6 +234,25 @@
   }
 }
 
+.mask-bttn {
+  background-color: transparent !important;
+  background-image: url("~@/assets/images/game/mask.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 81px;
+  height: 108px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  &.selected {
+    opacity: 0.05;
+  }
+}
+
 .assign-bttn {
   height: 46px;
   padding: 9px !important;

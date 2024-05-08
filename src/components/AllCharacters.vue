@@ -220,8 +220,8 @@ export default {
       this.SetGameSettings(this.gameSettings);
     },
     openInfoBox(selectedRole) {
-      // this.roleInfo = selectedRole
-      // this.showInfo = !this.showInfo
+      this.roleInfo = selectedRole;
+      this.showInfo = !this.showInfo;
     },
     hideInfoBox() {
       this.showInfo = false;

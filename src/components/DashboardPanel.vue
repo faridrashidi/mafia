@@ -89,7 +89,7 @@
       <!-- Show each player their randomly chosen character -->
       <PageBox v-else-if="gameSettings.stepCounter === 2" class="display autoheight" key="step2">
         <div class="inner-display">
-          <ShowBox />
+          <ShowGrid />
         </div>
       </PageBox>
       <!-- Show God Panel When each player knows his role -->
@@ -101,6 +101,7 @@
 <script>
 import GodPanel from "@/components/GodPanel.vue";
 import ShowBox from "@/components/ShowBox.vue";
+import ShowGrid from "@/components/ShowGrid.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import Random from "random-js";
 
@@ -116,7 +117,8 @@ export default {
   components: {
     GodPanel,
     ShowBox,
-    PageTitle
+    PageTitle,
+    ShowGrid
   },
   computed: {
     roles() {
@@ -238,6 +240,10 @@ export default {
         random.shuffle(this.gameSettings.selectedRoles);
         isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles);
       } while (isConsecutive);
+    },
+    randomFunc2() {
+      const random = new Random(Random.engines.mt19937().autoSeed());
+      random.shuffle(this.gameSettings.selectedRoles);
     }
   }
 };

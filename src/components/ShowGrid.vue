@@ -1,76 +1,77 @@
 <template>
-  <div class="show-box">
-    <p v-if="!showrole">
+  <div class="show-box" style="display: flex; justify-content: center;">
+    <!-- <p v-if="!showrole">
       {{ $t("pages.home.passMobile") }}
-    </p>
-    <div v-for="row in rows" :key="row">
-      <button
-        v-for="button in buttons[row]"
-        :key="button.id"
-        :disabled="button.disabled"
-        @click="selectButton(button)"
+    </p> -->
+    <table v-if="!showrole" style="border-collapse: collapse;width: 100%;">
+      <strong>
+        {{ roles[personNumber - 1].player }}
+      </strong>
+      <tr
+        v-for="row in rows"
+        :key="row"
+        style="display: flex; justify-content: space-between;flex-wrap: wrap;"
       >
-        {{ button.label }}
-      </button>
-    </div>
-    <div v-if="selectedButton">
-      <p>You selected: {{ selectedButton.label }}</p>
-    </div>
-    <!-- <div v-for="(role, index) in gameSettings.selectedRoles" :key="index">
-      <div class="player-display" v-if="index + 1 === personNumber">
-        <strong
-          :class="
-            showrole
-              ? {
-                  'mafia-color': role.mafia,
-                  'solo-color': !role.mafia && role.solo,
-                  'citizen-color': !role.mafia && !role.solo
-                }
-              : ''
-          "
-        >
-          {{ role.player }}
-        </strong>
-        <transition name="fade" mode="out-in">
+        <td v-for="button in buttons[row - 1]" :key="button.id" style="flex: 1 1 auto;">
           <BaseButton
-            v-if="!showrole"
-            class="primary"
+            class="mask-bttn"
             key="showButton"
-            @clicked="toggleShowRole(true)"
+            :class="{ selected: button.disabled }"
+            :disabled="button.disabled"
+            @clicked="selectButton(button)"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <div class="player-display" v-if="selectedButton">
+      <strong
+        :class="
+          showrole
+            ? {
+                'mafia-color': selectedButton.role.mafia,
+                'solo-color': !selectedButton.role.mafia && selectedButton.role.solo,
+                'citizen-color': !selectedButton.role.mafia && !selectedButton.role.solo
+              }
+            : ''
+        "
+      >
+        {{ selectedButton.role.player }}
+      </strong>
+      <transition name="fade" mode="out-in">
+        <div class="role-info-wrapper">
+          <div
+            class="role-info"
+            :class="{
+              solo: !selectedButton.role.mafia && selectedButton.role.solo,
+              citizen: !selectedButton.role.mafia && !selectedButton.role.solo
+            }"
           >
-            {{ $t("pages.home.beforeShowButton") }}
-          </BaseButton>
-          <div v-else class="role-info-wrapper">
-            <div
-              class="role-info"
-              :class="{
-                solo: !role.mafia && role.solo,
-                citizen: !role.mafia && !role.solo
-              }"
-            >
-              <img :src="getImg('/roles', role.icon)" :alt="role.info[currentLang].name" />
-            </div>
-            <BaseButton class="awesome" @clicked.once="nextPerson()">
-              {{ $t("pages.home.afterShowButton") }}
-            </BaseButton>
-            <BaseButton
-              v-if="gameSettings.discordChannel"
-              class="discord-bttn purple"
-              @clicked="copyToClipboard(role)"
-            >
-              <span>
-                {{ $t("common.copyToClipboard") }}
-              </span>
-              <input
-                type="hidden"
-                :value="role.emoji + ' ' + role.info[currentLang].name"
-                ref="copyToDiscord"
-              />
-            </BaseButton>
+            <img
+              :src="getImg('/roles', selectedButton.role.icon)"
+              :alt="selectedButton.role.info[currentLang].name"
+            />
           </div>
-        </transition>
-      </div>
-    </div> -->
+          <BaseButton class="awesome" @clicked.once="nextPerson()">
+            {{ $t("pages.home.afterShowButton") }}
+          </BaseButton>
+          <BaseButton
+            v-if="gameSettings.discordChannel"
+            class="discord-bttn purple"
+            @clicked="copyToClipboard(role)"
+          >
+            <span>
+              {{ $t("common.copyToClipboard") }}
+            </span>
+            <input
+              type="hidden"
+              :value="selectedButton.role.emoji + ' ' + selectedButton.role.info[currentLang].name"
+              ref="copyToDiscord"
+            />
+          </BaseButton>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -83,7 +84,8 @@ export default {
       personNumber: 1,
       buttons: [],
       rows: 0,
-      selectedButton: null
+      selectedButton: null,
+      roles: []
     };
   },
   mounted() {
@@ -91,16 +93,21 @@ export default {
   },
   methods: {
     generateButtons() {
-      const n = 12; // Set the number of buttons you want here
-      this.rows = Math.ceil(n / 4);
+      this.roles = JSON.parse(JSON.stringify(this.gameSettings.selectedRoles));
+      const n = this.gameSettings.totalPlayers;
+      let nInEeachRow = 4;
+      if (n > 24) {
+        nInEeachRow = 5;
+      }
+      this.rows = Math.ceil(n / nInEeachRow);
       let buttonId = 1;
-
       for (let i = 0; i < this.rows; i++) {
         const row = [];
-        for (let j = 0; j < 4; j++) {
+        for (let j = 0; j < nInEeachRow; j++) {
           if (buttonId <= n) {
             row.push({
               id: buttonId,
+              role: this.gameSettings.selectedRoles[buttonId - 1],
               label: `Button ${buttonId}`,
               disabled: false
             });
@@ -111,12 +118,22 @@ export default {
       }
     },
     selectButton(button) {
-      this.selectedButton = button;
-      button.disabled = true;
+      if (!button.disabled) {
+        this.selectedButton = button;
+        this.gameSettings.selectedRoles[this.selectedButton.id - 1] = this.roles[
+          this.personNumber - 1
+        ];
+        this.selectedButton.role = this.gameSettings.selectedRoles[this.selectedButton.id - 1];
+        this.toggleShowRole(true);
+        this.selectedButton.disabled = true;
+      }
     },
     nextPerson() {
       this.toggleShowRole(false);
-      if (this.personNumber == this.gameSettings.selectedRoles.length) {
+      if (this.selectedButton) {
+        this.selectedButton = null;
+      }
+      if (this.personNumber == this.gameSettings.totalPlayers) {
         this.gameSettings.stepCounter = 3;
         this.SetGameSettings(this.gameSettings);
         // Post Start Game By God To Discord
