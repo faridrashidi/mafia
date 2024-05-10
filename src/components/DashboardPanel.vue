@@ -159,7 +159,7 @@ export default {
         this.$notify({
           group: "log",
           type: "error",
-          title: "error.svg",
+          title: "error2.svg",
           text: `${this.$t("general.errors.uniquePlayers")}`,
           duration: 4000
         });

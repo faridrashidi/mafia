@@ -172,7 +172,7 @@ export default {
         this.$notify({
           group: "log",
           type: "error",
-          title: "error.svg",
+          title: "error2.svg",
           image: actionImage,
           text: `${this.$t("god.errorChoosePlayer")}`
         });
