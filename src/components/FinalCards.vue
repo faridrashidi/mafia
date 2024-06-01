@@ -1,8 +1,8 @@
 <template>
   <Overlay class="final-cards">
     <p>
-      کارت‌های حرکت آخر شامل: تغییرچهره، فرش‌قرمز، مسیرسبز، روزشانس، بخت‌واقبال، سرشماری، نبش‌قبر،
-      وصیت، ذهن‌زیبا، دروغ‌سیزده، روزمحاکمه، بی‌خوابی، شلیک‌نهایی و افشای‌هویت
+      کارت‌های حرکت آخر شامل: تغییرچهره، فرش‌قرمز، مسیرسبز، سرگیجه، ذهن‌زیبا، سکوت‌بره‌ها، سرگیجه،
+      بی‌خوابی، شلیک‌نهایی و افشای‌هویت
     </p>
     <p>
       می‌تونی به فرد خارج‌شده بگی یکی از گزینه‌های زیر رو انتخاب کنه حال بسته به کارت‌هایی که مد نظر
@@ -93,42 +93,42 @@ export default {
           description: this.$t("god.gameCards.judgeDay.description"),
           icon: "judgeDay.svg"
         },
-        {
-          id: "exhumation",
-          name: this.$t("god.gameCards.exhumation.name"),
-          description: this.$t("god.gameCards.exhumation.description"),
-          icon: "exhumation.svg"
-        },
+        // {
+        //   id: "exhumation",
+        //   name: this.$t("god.gameCards.exhumation.name"),
+        //   description: this.$t("god.gameCards.exhumation.description"),
+        //   icon: "exhumation.svg"
+        // },
         {
           id: "showIdentity",
           name: this.$t("god.gameCards.showIdentity.name"),
           description: this.$t("god.gameCards.showIdentity.description"),
           icon: "showIdentity.svg"
         },
-        {
-          id: "luckyDay",
-          name: this.$t("god.gameCards.luckyDay.name"),
-          description: this.$t("god.gameCards.luckyDay.description"),
-          icon: "luckyDay.svg"
-        },
-        {
-          id: "will",
-          name: this.$t("god.gameCards.will.name"),
-          description: this.$t("god.gameCards.will.description"),
-          icon: "will.svg"
-        },
+        // {
+        //   id: "luckyDay",
+        //   name: this.$t("god.gameCards.luckyDay.name"),
+        //   description: this.$t("god.gameCards.luckyDay.description"),
+        //   icon: "luckyDay.svg"
+        // },
+        // {
+        //   id: "will",
+        //   name: this.$t("god.gameCards.will.name"),
+        //   description: this.$t("god.gameCards.will.description"),
+        //   icon: "will.svg"
+        // },
         {
           id: "headCount",
           name: this.$t("god.gameCards.headCount.name"),
           description: this.$t("god.gameCards.headCount.description"),
           icon: "headCount.svg"
         },
-        {
-          id: "gamble",
-          name: this.$t("god.gameCards.gamble.name"),
-          description: this.$t("god.gameCards.gamble.description"),
-          icon: "gamble.svg"
-        },
+        // {
+        //   id: "gamble",
+        //   name: this.$t("god.gameCards.gamble.name"),
+        //   description: this.$t("god.gameCards.gamble.description"),
+        //   icon: "gamble.svg"
+        // },
         {
           id: "faceOff",
           name: this.$t("god.gameCards.faceOff.name"),
