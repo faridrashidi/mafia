@@ -5,38 +5,6 @@
         safemode: gameSettings.safemode
       }"
     >
-      <tr>
-        <!-- <th>
-          {{ $t('common.Role') }}
-        </th> -->
-        <!-- <template
-          v-if="dashboardTable"
-        >
-          <th>
-            {{ $t('common.Player') }}
-          </th>
-          <th>
-            {{ $t('common.Status') }}
-          </th>
-          <th
-            v-if="dashboard.day"
-          >
-            {{ $t('common.Vote') }}
-          </th>
-          <th
-            v-if="!dashboard.day"
-          >
-            {{ $t('common.Action') }}
-          </th>
-        </template> -->
-        <!-- <template
-          v-else
-        >
-          <th>
-            {{ $t('common.Power') }}
-          </th>
-        </template> -->
-      </tr>
       <tr v-for="(tD, index) in tableData" :key="index" :class="characterClasses(tD)">
         <td
           :class="{
@@ -88,21 +56,6 @@
               @click="godAction(tD)"
             />
           </td>
-          <!-- <td
-          v-if="dashboard.day"
-            class="vote-counter"
-          >
-            <input
-              v-model.number="tD.vote"
-              type="tel"
-              :name="`vote_count_${index}`"
-              :maxlength="'2'"
-              :tabindex="index+10"
-              placeholder="0"
-              @blur="updateVotes(tD.vote, tD.id)"
-              @click="selectThis"
-            >
-          </td> -->
           <td v-if="!dashboard.day">
             <span
               v-if="!tD.status.hasPassive && !tD.status.hasAction && !tD.hasDoneAction"
@@ -183,6 +136,48 @@ export default {
         }
       });
       this.SetGameSettings(this.gameSettings);
+    },
+    writeToHumanReadableFile(variable, fileName) {
+      let content = "";
+      if (typeof variable === "string") {
+        content = variable;
+      } else if (typeof variable === "number" || typeof variable === "boolean") {
+        content = variable.toString();
+      } else if (Array.isArray(variable)) {
+        content = variable.map(item => item.info.fa.name).join("\n");
+      } else {
+        content = "Unsupported variable type. Only strings and arrays are supported.";
+      }
+      const blob = new Blob([content], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      link.click();
+      URL.revokeObjectURL(url);
+    },
+    godAction2(target) {
+      let godActionText = "";
+      let godActionImage = "";
+      if (target.status.dead) {
+        this.resurrect(target.player);
+        godActionText = `<span>${this.$t("god.godRevive")}</span> <strong>${
+          target.player
+        }</strong>`;
+        godActionImage = `${this.$t("god.godReviveIcon")}`;
+      } else {
+        this.kill(target.player, "straight");
+        godActionText = `<span>${this.$t("god.godKill")}</span> <strong>${target.player}</strong>`;
+        godActionImage = `${this.$t("god.godKillIcon")}`;
+      }
+      // TODO:
+      // const index = this.tableData.findIndex(item => item.id === target.id);
+      // this.tableData.splice(index, 1);
+      // this.tableData.push(target);
+      // this.writeToHumanReadableFile(this.tableData, "/Users/farid/Desktop/salam.txt");
+      this.saveHistory(godActionImage, godActionText);
+      this.SetGameSettings(this.gameSettings);
+      this.SetDashboard(this.dashboard);
     }
   }
 };

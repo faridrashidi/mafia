@@ -99,25 +99,6 @@ export default {
         role => !role.mafia
       ).length;
     },
-    writeToHumanReadableFile(variable, fileName) {
-      let content = "";
-      if (typeof variable === "string") {
-        content = variable;
-      } else if (typeof variable === "number" || typeof variable === "boolean") {
-        content = variable.toString();
-      } else if (Array.isArray(variable)) {
-        content = variable.map(item => item.info.fa.name).join("\n");
-      } else {
-        content = "Unsupported variable type. Only strings and arrays are supported.";
-      }
-      const blob = new Blob([content], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = fileName;
-      link.click();
-      URL.revokeObjectURL(url);
-    },
     checkNumbers(selectedRole) {
       if (this.gameSettings.multipleRoles.normalMafia > 0 && selectedRole.status.mafia) {
         return true;

@@ -106,23 +106,21 @@
           opacity: 1 !important;
           visibility: visible !important;
           background-image: none !important;
+          // background-image: url("~@/assets/images/icons/dead.svg") !important;
+          background-color: rgba(0, 0, 0, 0.8);
+          background-position: 98% center !important;
         }
         &::before {
           display: none;
         }
         &:nth-child(1) {
           text-decoration: line-through;
-          &::after {
-            background-image: url("~@/assets/images/icons/dead.svg") !important;
-            background-color: rgba(0, 0, 0, 0.2);
-            background-position: 98% center !important;
-          }
         }
-        &:nth-child(2)::after {
-          display: none;
+        &:nth-child(2) {
+          text-decoration: line-through;
         }
         a.angel {
-          background-color: $dark_green_color !important;
+          // background-color: $dark_blue_color !important;
         }
       }
       &.ninja td {

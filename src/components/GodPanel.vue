@@ -152,13 +152,13 @@
     <!-- Restart or Reset Game -->
     <RestartGameAlert v-if="showGodPanel" />
     <!-- Game Finish Box -->
-    <GameFinished
+    <!-- <GameFinished
       :class="{
         active: gameSettings.gameFinished
       }"
       :game-winner="gameSettings.winner"
       :solo-winner-details="gameSettings.soloWinner"
-    />
+    /> -->
   </div>
 </template>
 

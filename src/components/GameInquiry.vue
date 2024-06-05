@@ -10,9 +10,9 @@
               useEasing: true
             }"
           />
-          <p>
-            {{ inquiry.name }}
-          </p>
+          <div style="text-align: center;">
+            <p style="display: inline-block;">{{ inquiry.name }}</p>
+          </div>
         </div>
       </div>
       <BaseButton class="primary has-small-top-margin" @clicked="closeLog()">
