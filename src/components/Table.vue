@@ -5,80 +5,82 @@
         safemode: gameSettings.safemode
       }"
     >
-      <tr v-for="(tD, index) in tableData" :key="index" :class="characterClasses(tD)">
-        <td
-          :class="{
-            'killer-role': tD.ability.killer && !tD.status.dead
-          }"
-        >
-          <img :src="getImg('/roles', tD.icon)" :alt="tD.info[currentLang].name" />
-          <span>
-            {{ tD.info[currentLang].name }}
-          </span>
-          <span v-if="tD.lastRoleInfo">
-            {{ `(${tD.lastRoleInfo[currentLang].name || ""})` }}
-          </span>
-          <img
-            v-if="tD.ability.killer && !tD.status.dead"
-            src="@/assets/images/icons/killer.svg"
-            alt="Killer Icon"
-            class="killer-icon"
-            :title="$t('common.killCapacity')"
-          />
-          <img
-            v-if="tD.status.realGun"
-            src="@/assets/images/icons/kill.svg"
-            alt="Real Gun Icon"
-            class="gun-icon"
-            :title="$t('god.realGun')"
-          />
-          <img
-            v-if="tD.status.fakeGun"
-            src="@/assets/images/icons/fakegun.svg"
-            alt="Fake Gun Icon"
-            class="gun-icon"
-            :title="$t('god.fakeGun')"
-          />
-        </td>
-        <template v-if="dashboardTable">
-          <td>
-            <span class="character-player">
-              {{ tD.player }}
+      <tbody>
+        <tr v-for="(tD, index) in tableData" :key="index" :class="characterClasses(tD)">
+          <td
+            :class="{
+              'killer-role': tD.ability.killer && !tD.status.dead
+            }"
+          >
+            <img :src="getImg('/roles', tD.icon)" :alt="tD.info[currentLang].name" />
+            <span>
+              {{ tD.info[currentLang].name }}
             </span>
-          </td>
-          <td>
-            <a
-              href="javascript:void(0)"
-              :class="{
-                killer: !tD.status.dead,
-                angel: tD.status.dead
-              }"
-              @click="godAction(tD)"
+            <span v-if="tD.lastRoleInfo">
+              {{ `(${tD.lastRoleInfo[currentLang].name || ""})` }}
+            </span>
+            <img
+              v-if="tD.ability.killer && !tD.status.dead"
+              src="@/assets/images/icons/killer.svg"
+              alt="Killer Icon"
+              class="killer-icon"
+              :title="$t('common.killCapacity')"
+            />
+            <img
+              v-if="tD.status.realGun"
+              src="@/assets/images/icons/kill.svg"
+              alt="Real Gun Icon"
+              class="gun-icon"
+              :title="$t('god.realGun')"
+            />
+            <img
+              v-if="tD.status.fakeGun"
+              src="@/assets/images/icons/fakegun.svg"
+              alt="Fake Gun Icon"
+              class="gun-icon"
+              :title="$t('god.fakeGun')"
             />
           </td>
-          <td v-if="!dashboard.day">
-            <span
-              v-if="!tD.status.hasPassive && !tD.status.hasAction && !tD.hasDoneAction"
-              class="disabled"
-            />
-            <span v-if="tD.status.hasPassive && !tD.status.hasAction" class="passive" />
-            <span
-              v-else
-              :class="{
-                'pending-action':
-                  (!tD.hasDoneAction && tD.status.hasAction) ||
-                  (!tD.hasDoneAction && tD.status.hasAction),
-                'done-action': tD.hasDoneAction
-              }"
-            />
-          </td>
-        </template>
-        <template v-else>
-          <td>
-            <CharacterPower :mafia="tD.mafia" :solo="tD.solo" :power="tD.power" />
-          </td>
-        </template>
-      </tr>
+          <template v-if="dashboardTable">
+            <td>
+              <span class="character-player">
+                {{ tD.player }}
+              </span>
+            </td>
+            <td>
+              <a
+                href="javascript:void(0)"
+                :class="{
+                  killer: !tD.status.dead,
+                  angel: tD.status.dead
+                }"
+                @click="godAction(tD)"
+              />
+            </td>
+            <td v-if="!dashboard.day">
+              <span
+                v-if="!tD.status.hasPassive && !tD.status.hasAction && !tD.hasDoneAction"
+                class="disabled"
+              />
+              <span v-if="tD.status.hasPassive && !tD.status.hasAction" class="passive" />
+              <span
+                v-else
+                :class="{
+                  'pending-action':
+                    (!tD.hasDoneAction && tD.status.hasAction) ||
+                    (!tD.hasDoneAction && tD.status.hasAction),
+                  'done-action': tD.hasDoneAction
+                }"
+              />
+            </td>
+          </template>
+          <template v-else>
+            <td>
+              <CharacterPower :mafia="tD.mafia" :solo="tD.solo" :power="tD.power" />
+            </td>
+          </template>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -178,6 +180,11 @@ export default {
       this.saveHistory(godActionImage, godActionText);
       this.SetGameSettings(this.gameSettings);
       this.SetDashboard(this.dashboard);
+    },
+    moveRowToEnd(index) {
+      const row = this.tableData.splice(index, 1)[0];
+      this.tableData.push(row);
+      // this.writeToHumanReadableFile(this.tableData, "/Users/farid/Desktop/salam.txt");
     }
   }
 };

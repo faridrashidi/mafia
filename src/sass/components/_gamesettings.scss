@@ -35,11 +35,12 @@
         background-color: $light_orange_color !important;
       }
       &:nth-child(3) {
-        background-color: $primary !important;
+        color: $black_color;
+        background-color: $light_purple_color !important;
       }
       &:nth-child(4) {
         color: $black_color;
-        background-color: $white_color !important;
+        background-color: $dark_blue_color !important;
       }
       span {
         display: table-cell;

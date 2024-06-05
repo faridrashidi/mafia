@@ -71,8 +71,8 @@ export default {
       wakeup: false,
       settings: [
         // {
-        //   name: this.$t('god.gameSettings.showHistoryLog'),
-        //   value: 'historyLog',
+        //   name: this.$t("god.gameSettings.showHistoryLog"),
+        //   value: "historyLog",
         //   active: false
         // },
         // {
@@ -95,6 +95,12 @@ export default {
           value: "cards",
           active: false
         }
+        // TODO:
+        // {
+        //   name: this.$t("god.gameSettings.showHistoryLog"),
+        //   value: "historyLog",
+        //   active: false
+        // }
       ]
     };
   },

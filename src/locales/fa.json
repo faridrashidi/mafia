@@ -452,7 +452,7 @@
     "faceOffChallengeTarget1": "نفر اول رو انتخاب کن",
     "faceOffChallengeTarget2": "نفر دوم رو انتخاب کن",
     "dashboardHintTitle": "توضیح علامت‌ها و آیکن‌ها",
-    "playerKillOrSurvive": "برای کشتن یا زنده‌کردن بازیکن روی گزینه اسکلت بزن",
+    "playerKillOrSurvive": "برای کشتن یا زنده‌کردن هر بازیکن روی گزینه بال در چپ بزن",
     "dashboardHint": [
       {
         "name": "killer",
