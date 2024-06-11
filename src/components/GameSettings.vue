@@ -24,9 +24,9 @@
       @close="closeSettings"
     />
     <!-- History Log -->
-    <HistoryLog
+    <ChangeRole
       :class="{
-        active: historyLog
+        active: changeRole
       }"
       @close="closeSettings"
     />
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import HistoryLog from "@/components/HistoryLog.vue";
+import ChangeRole from "@/components/ChangeRole.vue";
 import GameInquiry from "@/components/GameInquiry.vue";
 import FinalCards from "@/components/FinalCards.vue";
 import GameCharacterWakeUp from "@/components/GameCharacterWakeUp.vue";
@@ -57,18 +57,19 @@ import GameCharacterWakeUp from "@/components/GameCharacterWakeUp.vue";
 export default {
   name: "GameSettings",
   components: {
-    HistoryLog,
+    ChangeRole,
     GameInquiry,
     FinalCards,
     GameCharacterWakeUp
   },
   data() {
     return {
-      historyLog: false,
       safemode: false,
       inquiry: false,
       cards: false,
       wakeup: false,
+      historyLog: false,
+      changeRole: false,
       settings: [
         // {
         //   name: this.$t("god.gameSettings.showHistoryLog"),
@@ -95,12 +96,13 @@ export default {
           value: "cards",
           active: false
         }
-        // TODO:
+        // ,
         // {
-        //   name: this.$t("god.gameSettings.showHistoryLog"),
-        //   value: "historyLog",
+        //   name: this.$t("god.gameSettings.changeRole"),
+        //   value: "changeRole",
         //   active: false
         // }
+        // TODO:
       ]
     };
   },

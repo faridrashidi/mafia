@@ -522,6 +522,7 @@
       "safeMode": "حالت امن",
       "inquiry": "استعلام وضعیت",
       "wakeup": "ترتیب بیداری",
+      "changeRole": "تغییر نقش",
       "finalMoveCards": "کارت حرکت آخر"
     },
     "gameCards": {
