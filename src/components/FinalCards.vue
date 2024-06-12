@@ -50,12 +50,49 @@ export default {
   },
   computed: {
     gameCards() {
+      // TODO: based on scenario
       const output = [
         {
-          id: "lie",
-          name: this.$t("god.gameCards.lie.name"),
-          description: this.$t("god.gameCards.lie.description"),
-          icon: "lie.svg"
+          id: "faceOff",
+          name: this.$t("god.gameCards.faceOff.name"),
+          description: this.$t("god.gameCards.faceOff.description"),
+          icon: "faceOff.svg"
+        },
+        {
+          id: "mindRead",
+          name: this.$t("god.gameCards.mindRead.name"),
+          description: this.$t("god.gameCards.mindRead.description"),
+          icon: "mindRead.svg"
+        },
+        {
+          id: "showIdentity",
+          name: this.$t("god.gameCards.showIdentity.name"),
+          description: this.$t("god.gameCards.showIdentity.description"),
+          icon: "showIdentity.svg"
+        },
+        {
+          id: "judgeDay",
+          name: this.$t("god.gameCards.judgeDay.name"),
+          description: this.$t("god.gameCards.judgeDay.description"),
+          icon: "judgeDay.svg"
+        },
+        {
+          id: "headCount",
+          name: this.$t("god.gameCards.headCount.name"),
+          description: this.$t("god.gameCards.headCount.description"),
+          icon: "headCount.svg"
+        },
+        {
+          id: "shot",
+          name: this.$t("god.gameCards.shot.name"),
+          description: this.$t("god.gameCards.shot.description"),
+          icon: "shot.svg"
+        },
+        {
+          id: "sleepless",
+          name: this.$t("god.gameCards.sleepless.name"),
+          description: this.$t("god.gameCards.sleepless.description"),
+          icon: "sleepless.svg"
         },
         {
           id: "redCarpet",
@@ -70,41 +107,17 @@ export default {
           icon: "greenLine.svg"
         },
         {
-          id: "shot",
-          name: this.$t("god.gameCards.shot.name"),
-          description: this.$t("god.gameCards.shot.description"),
-          icon: "shot.svg"
-        },
-        {
-          id: "mindRead",
-          name: this.$t("god.gameCards.mindRead.name"),
-          description: this.$t("god.gameCards.mindRead.description"),
-          icon: "mindRead.svg"
-        },
-        {
-          id: "sleepless",
-          name: this.$t("god.gameCards.sleepless.name"),
-          description: this.$t("god.gameCards.sleepless.description"),
-          icon: "sleepless.svg"
-        },
-        {
-          id: "judgeDay",
-          name: this.$t("god.gameCards.judgeDay.name"),
-          description: this.$t("god.gameCards.judgeDay.description"),
-          icon: "judgeDay.svg"
-        },
+          id: "lie",
+          name: this.$t("god.gameCards.lie.name"),
+          description: this.$t("god.gameCards.lie.description"),
+          icon: "lie.svg"
+        }
         // {
         //   id: "exhumation",
         //   name: this.$t("god.gameCards.exhumation.name"),
         //   description: this.$t("god.gameCards.exhumation.description"),
         //   icon: "exhumation.svg"
         // },
-        {
-          id: "showIdentity",
-          name: this.$t("god.gameCards.showIdentity.name"),
-          description: this.$t("god.gameCards.showIdentity.description"),
-          icon: "showIdentity.svg"
-        },
         // {
         //   id: "luckyDay",
         //   name: this.$t("god.gameCards.luckyDay.name"),
@@ -117,24 +130,12 @@ export default {
         //   description: this.$t("god.gameCards.will.description"),
         //   icon: "will.svg"
         // },
-        {
-          id: "headCount",
-          name: this.$t("god.gameCards.headCount.name"),
-          description: this.$t("god.gameCards.headCount.description"),
-          icon: "headCount.svg"
-        },
         // {
         //   id: "gamble",
         //   name: this.$t("god.gameCards.gamble.name"),
         //   description: this.$t("god.gameCards.gamble.description"),
         //   icon: "gamble.svg"
         // },
-        {
-          id: "faceOff",
-          name: this.$t("god.gameCards.faceOff.name"),
-          description: this.$t("god.gameCards.faceOff.description"),
-          icon: "faceOff.svg"
-        }
       ];
       output.sort(() => 0.5 - Math.random());
       return output;
