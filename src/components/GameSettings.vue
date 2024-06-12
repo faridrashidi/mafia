@@ -102,7 +102,7 @@ export default {
         //   value: "changeRole",
         //   active: false
         // }
-        // TODO:
+        // TODO: add change role
       ]
     };
   },

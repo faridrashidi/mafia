@@ -51,12 +51,12 @@
         </select>
       </div>
     </div>
-    <BaseButton class="yellow has-small-top-margin" @clicked="executeFaceOff()">
+    <BaseButton class="yellow has-small-top-margin" @clicked="executeChangeRole()">
       <span>
         {{ $t("god.faceOff") }}
       </span>
     </BaseButton>
-    <BaseButton class="red has-small-top-margin" @clicked="closeFaceOff()">
+    <BaseButton class="red has-small-top-margin" @clicked="closeChangeRole()">
       <span>
         {{ $t("common.Close") }}
       </span>
@@ -74,8 +74,8 @@ export default {
     };
   },
   methods: {
-    executeFaceOff() {
-      // TODO:
+    executeChangeRole() {
+      // TODO: add change role
       if (this.firstTarget && this.secondTarget) {
         let target1Index = 0;
         let target2Index = 0;
@@ -95,7 +95,7 @@ export default {
         this.secondTarget = "";
       }
     },
-    closeFaceOff() {
+    closeChangeRole() {
       this.firstTarget = "";
       this.secondTarget = "";
       this.$emit("close", "changeRole");

@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     executeFaceOff() {
-      // TODO:
       if (this.firstTarget && this.secondTarget) {
         let target1Index = 0;
         let target2Index = 0;
