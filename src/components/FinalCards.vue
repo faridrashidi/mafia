@@ -45,100 +45,98 @@ export default {
   },
   data() {
     return {
-      faceOffChallengeActivated: false
+      faceOffChallengeActivated: false,
+      cards: new Map([
+        [
+          "پدرخوانده",
+          [
+            {
+              id: "faceOff",
+              name: this.$t("god.gameCards.faceOff.name"),
+              description: this.$t("god.gameCards.faceOff.description"),
+              icon: "faceOff.svg"
+            },
+            {
+              id: "mindRead",
+              name: this.$t("god.gameCards.mindRead.name"),
+              description: this.$t("god.gameCards.mindRead.description"),
+              icon: "mindRead.svg"
+            },
+            {
+              id: "showIdentity",
+              name: this.$t("god.gameCards.showIdentity.name"),
+              description: this.$t("god.gameCards.showIdentity.description"),
+              icon: "showIdentity.svg"
+            },
+            {
+              id: "handcuff",
+              name: this.$t("god.gameCards.handcuff.name"),
+              description: this.$t("god.gameCards.handcuff.description"),
+              icon: "handcuff.svg"
+            },
+            {
+              id: "speechless",
+              name: this.$t("god.gameCards.speechless.name"),
+              description: this.$t("god.gameCards.speechless.description"),
+              icon: "speechless.svg"
+            }
+          ]
+        ],
+        [
+          "فیلیمو",
+          [
+            {
+              id: "lie",
+              name: this.$t("god.gameCards.lie.name"),
+              description: this.$t("god.gameCards.lie.description"),
+              icon: "lie.svg"
+            },
+            {
+              id: "shot",
+              name: this.$t("god.gameCards.shot.name"),
+              description: this.$t("god.gameCards.shot.description"),
+              icon: "shot.svg"
+            },
+            {
+              id: "sleepless",
+              name: this.$t("god.gameCards.sleepless.name"),
+              description: this.$t("god.gameCards.sleepless.description"),
+              icon: "sleepless.svg"
+            },
+            {
+              id: "redCarpet",
+              name: this.$t("god.gameCards.redCarpet.name"),
+              description: this.$t("god.gameCards.redCarpet.description"),
+              icon: "redCarpet.svg"
+            },
+            {
+              id: "greenLine",
+              name: this.$t("god.gameCards.greenLine.name"),
+              description: this.$t("god.gameCards.greenLine.description"),
+              icon: "greenLine.svg"
+            },
+            {
+              id: "mindRead",
+              name: this.$t("god.gameCards.mindRead.name"),
+              description: this.$t("god.gameCards.mindRead.description"),
+              icon: "mindRead.svg"
+            }
+          ]
+        ]
+      ])
     };
   },
   computed: {
     gameCards() {
       // TODO: based on scenario
-      const output = [
-        {
-          id: "faceOff",
-          name: this.$t("god.gameCards.faceOff.name"),
-          description: this.$t("god.gameCards.faceOff.description"),
-          icon: "faceOff.svg"
-        },
-        {
-          id: "mindRead",
-          name: this.$t("god.gameCards.mindRead.name"),
-          description: this.$t("god.gameCards.mindRead.description"),
-          icon: "mindRead.svg"
-        },
-        {
-          id: "showIdentity",
-          name: this.$t("god.gameCards.showIdentity.name"),
-          description: this.$t("god.gameCards.showIdentity.description"),
-          icon: "showIdentity.svg"
-        },
-        {
-          id: "judgeDay",
-          name: this.$t("god.gameCards.judgeDay.name"),
-          description: this.$t("god.gameCards.judgeDay.description"),
-          icon: "judgeDay.svg"
-        },
-        {
-          id: "headCount",
-          name: this.$t("god.gameCards.headCount.name"),
-          description: this.$t("god.gameCards.headCount.description"),
-          icon: "headCount.svg"
-        },
-        {
-          id: "shot",
-          name: this.$t("god.gameCards.shot.name"),
-          description: this.$t("god.gameCards.shot.description"),
-          icon: "shot.svg"
-        },
-        {
-          id: "sleepless",
-          name: this.$t("god.gameCards.sleepless.name"),
-          description: this.$t("god.gameCards.sleepless.description"),
-          icon: "sleepless.svg"
-        },
-        {
-          id: "redCarpet",
-          name: this.$t("god.gameCards.redCarpet.name"),
-          description: this.$t("god.gameCards.redCarpet.description"),
-          icon: "redCarpet.svg"
-        },
-        {
-          id: "greenLine",
-          name: this.$t("god.gameCards.greenLine.name"),
-          description: this.$t("god.gameCards.greenLine.description"),
-          icon: "greenLine.svg"
-        },
-        {
-          id: "lie",
-          name: this.$t("god.gameCards.lie.name"),
-          description: this.$t("god.gameCards.lie.description"),
-          icon: "lie.svg"
-        }
-        // {
-        //   id: "exhumation",
-        //   name: this.$t("god.gameCards.exhumation.name"),
-        //   description: this.$t("god.gameCards.exhumation.description"),
-        //   icon: "exhumation.svg"
-        // },
-        // {
-        //   id: "luckyDay",
-        //   name: this.$t("god.gameCards.luckyDay.name"),
-        //   description: this.$t("god.gameCards.luckyDay.description"),
-        //   icon: "luckyDay.svg"
-        // },
-        // {
-        //   id: "will",
-        //   name: this.$t("god.gameCards.will.name"),
-        //   description: this.$t("god.gameCards.will.description"),
-        //   icon: "will.svg"
-        // },
-        // {
-        //   id: "gamble",
-        //   name: this.$t("god.gameCards.gamble.name"),
-        //   description: this.$t("god.gameCards.gamble.description"),
-        //   icon: "gamble.svg"
-        // },
-      ];
-      output.sort(() => 0.5 - Math.random());
-      return output;
+      if (this.cards.has(this.gameSettings.scenario)) {
+        const output = this.cards.get(this.gameSettings.scenario);
+        output.sort(() => 0.5 - Math.random());
+        return output;
+      } else {
+        const output = [];
+        return output;
+      }
     }
   },
   methods: {

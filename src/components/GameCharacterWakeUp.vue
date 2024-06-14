@@ -27,6 +27,7 @@ export default {
   name: 'GameCharacterWakeUp',
   data() {
     return {
+      // TODO: complete it
       dictionary: {
         "بازپرس": [
           "محقق",
