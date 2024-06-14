@@ -1,13 +1,5 @@
 <template>
   <Overlay class="final-cards">
-    <p>
-      کارت‌های حرکت آخر شامل: تغییرچهره، فرش‌قرمز، مسیرسبز، سرگیجه، ذهن‌زیبا، سکوت‌بره‌ها، سرگیجه،
-      بی‌خوابی، شلیک‌نهایی و افشای‌هویت
-    </p>
-    <p>
-      می‌تونی به فرد خارج‌شده بگی یکی از گزینه‌های زیر رو انتخاب کنه حال بسته به کارت‌هایی که مد نظر
-      داری خودت تصمیم بگیر کارت انتخابی اعمال می‌شه یا باید یک کارت دیگه انتخاب کنه
-    </p>
     <div class="card-holder">
       <GameCard
         v-for="(gameCard, index) in gameCards"
@@ -128,7 +120,7 @@ export default {
   },
   computed: {
     gameCards() {
-      // TODO: based on scenario
+      // TODO: add more cards
       if (this.cards.has(this.gameSettings.scenario)) {
         const output = this.cards.get(this.gameSettings.scenario);
         output.sort(() => 0.5 - Math.random());
