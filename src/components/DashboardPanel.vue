@@ -164,9 +164,12 @@ export default {
           duration: 4000
         });
       }
+      // TODO: randomize the player names
+      // const random = new Random(Random.engines.mt19937().autoSeed());
+      // random.shuffle(playerNames);
       if (readyToAssignRoles) {
         // Randomize Characters in Array
-        this.randomFunc();
+        this.randomizeSelectedRoles();
         for (let i = chosenCharacters.length - 1; i >= 0; i--) {
           // Assign each player to one character
           chosenCharacters[i].player = playerNames[i];
@@ -176,7 +179,6 @@ export default {
         playerNames.forEach(name => {
           discordText += `${name} • `;
         });
-        // Post Players To Discord
         this.postDiscord(discordText);
       }
       // Save Names to localStorage
@@ -233,17 +235,13 @@ export default {
       }
       return false;
     },
-    randomFunc() {
+    randomizeSelectedRoles() {
       const random = new Random(Random.engines.mt19937().autoSeed());
       let isConsecutive;
       do {
         random.shuffle(this.gameSettings.selectedRoles);
         isConsecutive = this.checkConsecutiveElements(this.gameSettings.selectedRoles);
       } while (isConsecutive);
-    },
-    randomFunc2() {
-      const random = new Random(Random.engines.mt19937().autoSeed());
-      random.shuffle(this.gameSettings.selectedRoles);
     }
   }
 };
