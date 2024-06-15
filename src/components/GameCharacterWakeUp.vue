@@ -27,7 +27,7 @@ export default {
   name: 'GameCharacterWakeUp',
   data() {
     return {
-      // TODO: complete it
+      // TODO: complete order of roles wakeup
       dictionary: {
         "بازپرس": [
           "محقق",

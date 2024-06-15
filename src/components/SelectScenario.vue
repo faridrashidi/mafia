@@ -22,6 +22,7 @@ export default {
   },
   computed: {
     getScenarios() {
+      // TODO: add more scenarios
       const scenarios = [
         "بازپرس",
         "تکاور",

@@ -172,7 +172,7 @@ export default {
         godActionText = `<span>${this.$t("god.godKill")}</span> <strong>${target.player}</strong>`;
         godActionImage = `${this.$t("god.godKillIcon")}`;
       }
-      // TODO: move dead player
+      // TODO: move dead player to end of table
       // const index = this.tableData.findIndex(item => item.id === target.id);
       // this.tableData.splice(index, 1);
       // this.tableData.push(target);

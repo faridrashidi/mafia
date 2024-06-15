@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     executeChangeRole() {
-      // TODO: add change role
+      // TODO: add change role option
       if (this.firstTarget && this.secondTarget) {
         let target1Index = 0;
         let target2Index = 0;
