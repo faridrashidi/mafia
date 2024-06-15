@@ -28,7 +28,7 @@
           {{ $t("common.Citizen") }}
         </strong>
       </div>
-      <div class="details-info">
+      <!-- <div class="details-info">
         <div>
           <span>
             {{ $t("rolesInfo.power") }}
@@ -85,8 +85,9 @@
             </template>
           </div>
         </div>
-      </div>
-      <p v-html="role.info[currentLang].description" />
+      </div> -->
+      <br></br>
+      <p style="font-size: 15px!important; text-align: justify;" v-html="role.info[currentLang].description" />
       <DeleteCharacter v-if="role.characterAddedByUser" :character="role" />
     </template>
   </div>
