@@ -136,6 +136,13 @@ export default {
       if (this.personNumber == this.gameSettings.totalPlayers) {
         let roles = JSON.parse(JSON.stringify(this.gameSettings.selectedRoles));
         this.gameSettings.selectedRoles = roles.sort(function(a, b) {
+          const aIsSpecial = a.id === 101 || a.id === 201;
+          const bIsSpecial = b.id === 101 || b.id === 201;
+          if (aIsSpecial && !bIsSpecial) {
+            return 1;
+          } else if (!aIsSpecial && bIsSpecial) {
+            return -1;
+          }
           if (a.solo !== b.solo) {
             return a.solo ? -1 : 1;
           }
