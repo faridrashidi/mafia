@@ -1,5 +1,17 @@
 # کارت پخش‌کن بازی مافیا
 
+<div style="text-align:center;">
+  <img src=".github/images/banner.jpg" alt="Image" />
+</div>
+
+### Setup as an app on iPhones:
+
+<div style="text-align:center;">
+  <img src=".github/images/info.jpg" alt="Image" width="500px" />
+</div>
+
+### Install
+
 Install nodejs:
 
 ```
