@@ -134,6 +134,16 @@ export default {
         this.selectedButton = null;
       }
       if (this.personNumber == this.gameSettings.totalPlayers) {
+        let roles = JSON.parse(JSON.stringify(this.gameSettings.selectedRoles));
+        this.gameSettings.selectedRoles = roles.sort(function(a, b) {
+          if (a.solo !== b.solo) {
+            return a.solo ? -1 : 1;
+          }
+          if (a.mafia !== b.mafia) {
+            return a.mafia ? -1 : 1;
+          }
+          return a.id - b.id;
+        });
         this.gameSettings.stepCounter = 3;
         this.SetGameSettings(this.gameSettings);
         // Post Start Game By God To Discord
