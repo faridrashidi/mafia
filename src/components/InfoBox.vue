@@ -88,6 +88,7 @@
       </div> -->
       <br></br>
       <p style="font-size: 15px!important; text-align: justify;" v-html="role.info[currentLang].description" />
+      <br/><br/><br/><br/>
       <DeleteCharacter v-if="role.characterAddedByUser" :character="role" />
     </template>
   </div>
