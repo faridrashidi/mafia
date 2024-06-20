@@ -108,7 +108,7 @@ export default {
         if (
           (this.gameSettings.scenario == "نماینده") &
           (this.gameSettings.totalPlayers < 12) &
-          (role.id == 113)
+          (role.id == 114)
         ) {
           return false;
         }
@@ -128,8 +128,15 @@ export default {
         }
         if (
           (this.gameSettings.scenario == "پدرخوانده") &
-          (this.gameSettings.totalPlayers < 12) &
+          (this.gameSettings.totalPlayers < 13) &
           (role.id == 101)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "دربار") &
+          (this.gameSettings.totalPlayers < 11) &
+          ((role.id == 122) | (role.id == 229) | (role.id == 236))
         ) {
           return false;
         }

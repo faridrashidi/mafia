@@ -140,6 +140,7 @@ export default {
       this.SetGameSettings(this.gameSettings);
     },
     writeToHumanReadableFile(variable, fileName) {
+      // NOTE: write an object to a file
       let content = "";
       if (typeof variable === "string") {
         content = variable;
@@ -159,6 +160,7 @@ export default {
       URL.revokeObjectURL(url);
     },
     godAction2(target) {
+      // TODO: move dead player to end of table
       let godActionText = "";
       let godActionImage = "";
       if (target.status.dead) {
@@ -172,7 +174,6 @@ export default {
         godActionText = `<span>${this.$t("god.godKill")}</span> <strong>${target.player}</strong>`;
         godActionImage = `${this.$t("god.godKillIcon")}`;
       }
-      // TODO: move dead player to end of table
       // const index = this.tableData.findIndex(item => item.id === target.id);
       // this.tableData.splice(index, 1);
       // this.tableData.push(target);

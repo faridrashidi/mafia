@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     getScenarios() {
-      // TODO: add more scenarios
+      // NOTE: add scenarios
       const scenarios = [
         "بازپرس",
         "تکاور",
@@ -33,8 +33,8 @@ export default {
         "زودیاک",
         "میتیک",
         "دربار",
-        "ارتش سری",
-        "ضد",
+        // "ارتش سری",
+        // "ضد",
         "گرگ",
         "شب مافیا",
         "کل نقش‌ها"

@@ -120,7 +120,7 @@ export default {
   },
   computed: {
     gameCards() {
-      // TODO: add more last card
+      // NOTE: add last card
       if (this.cards.has(this.gameSettings.scenario)) {
         const output = this.cards.get(this.gameSettings.scenario);
         output.sort(() => 0.5 - Math.random());

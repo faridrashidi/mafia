@@ -228,7 +228,7 @@
     "id": 102,
     "mafia": true,
     "solo": false,
-    "scenario": ["کل نقش‌ها", "بازپرس", "تکاور", "مذاکره", "نماینده"],
+    "scenario": ["کل نقش‌ها", "بازپرس", "تکاور", "مذاکره"],
     "rarity": "",
     "priority": 0,
     "killPriority": 0,
@@ -534,6 +534,108 @@
     "id": 105,
     "mafia": true,
     "solo": false,
+    "scenario": ["کل نقش‌ها", "نماینده"],
+    "rarity": "",
+    "priority": 0,
+    "killPriority": 0,
+    "potentialKiller": false,
+    "slug": "",
+    "icon": "donemafia.png",
+    "emoji": "",
+    "actionIcon": "",
+    "passiveIcon": "",
+    "power": 0,
+    "new": false,
+    "hot": false,
+    "player": "",
+    "selected": false,
+    "vote": 0,
+    "info": {
+      "en": {
+        "name": "",
+        "description": "",
+        "passive": "",
+        "action": ""
+      },
+      "fa": {
+        "name": "دُن مافیا",
+        "description": "",
+        "passive": "",
+        "action": ""
+      }
+    },
+    "ability": {
+      "killer": false,
+      "healer": false,
+      "silencer": false,
+      "binder": false,
+      "roleChecker": false,
+      "identityChecker": false,
+      "hasShield": false,
+      "reviver": false,
+      "revenge": false,
+      "replacer": false,
+      "hacker": false,
+      "magician": false,
+      "searching": false,
+      "justice": false,
+      "explosioner": false,
+      "chooseBoolean": false,
+      "prediction": false,
+      "antiSilencer": false,
+      "voteSeeker": false,
+      "poison": false,
+      "sniper": false,
+      "loyalty": false
+    },
+    "status": {
+      "mafia": false,
+      "citizen": false,
+      "hasAction": false,
+      "hasPassive": false,
+      "dead": false,
+      "immortal": false,
+      "deadMagnet": false,
+      "returnKill": false,
+      "readyToDetonate": false,
+      "fakeIdentity": false,
+      "silence": false,
+      "roleChecked": false,
+      "playerReplaced": false,
+      "heal": false,
+      "link": false,
+      "drunk": false,
+      "traitor": false,
+      "shield": false,
+      "revived": false,
+      "hack": false,
+      "antiHack": false,
+      "hackForever": false,
+      "hackBomber": false,
+      "identityChanged": false,
+      "minion": false,
+      "recentlyDead": false,
+      "recentlySilenced": false,
+      "recentlyRevived": false,
+      "searched": false,
+      "booleanAbilityUsed": false,
+      "marked": false,
+      "finishStopper": false,
+      "thick": false,
+      "poisoned": false,
+      "busted": false,
+      "inJail": false,
+      "hitByAction": 0,
+      "successMarks": 0,
+      "targetNumbers": 1,
+      "targetGroup": "*",
+      "actionLimit": "*"
+    }
+  },
+  {
+    "id": 106,
+    "mafia": true,
+    "solo": false,
     "scenario": ["کل نقش‌ها", "تکاور"],
     "rarity": "",
     "priority": 0,
@@ -633,7 +735,7 @@
     }
   },
   {
-    "id": 106,
+    "id": 107,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "پدرخوانده"],
@@ -735,7 +837,7 @@
     }
   },
   {
-    "id": 107,
+    "id": 108,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "زودیاک"],
@@ -837,7 +939,7 @@
     }
   },
   {
-    "id": 108,
+    "id": 109,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "زودیاک"],
@@ -939,7 +1041,7 @@
     }
   },
   {
-    "id": 109,
+    "id": 110,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "فیلیمو"],
@@ -1041,7 +1143,7 @@
     }
   },
   {
-    "id": 110,
+    "id": 111,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "فیلیمو"],
@@ -1143,7 +1245,7 @@
     }
   },
   {
-    "id": 111,
+    "id": 112,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "مذاکره"],
@@ -1245,7 +1347,7 @@
     }
   },
   {
-    "id": 112,
+    "id": 113,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "پدرخوانده"],
@@ -1347,7 +1449,7 @@
     }
   },
   {
-    "id": 113,
+    "id": 114,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "بازپرس", "تکاور", "نماینده"],
@@ -1449,7 +1551,7 @@
     }
   },
   {
-    "id": 114,
+    "id": 115,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "بازپرس"],
@@ -1551,7 +1653,7 @@
     }
   },
   {
-    "id": 115,
+    "id": 116,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "فیلیمو"],
@@ -1653,7 +1755,7 @@
     }
   },
   {
-    "id": 116,
+    "id": 117,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "میتیک"],
@@ -1755,7 +1857,7 @@
     }
   },
   {
-    "id": 117,
+    "id": 118,
     "mafia": false,
     "solo": true,
     "scenario": ["کل نقش‌ها", "میتیک"],
@@ -1857,7 +1959,7 @@
     }
   },
   {
-    "id": 118,
+    "id": 119,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "میتیک"],
@@ -1959,7 +2061,7 @@
     }
   },
   {
-    "id": 119,
+    "id": 120,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "میتیک"],
@@ -2061,7 +2163,7 @@
     }
   },
   {
-    "id": 120,
+    "id": 121,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "دربار"],
@@ -2163,7 +2265,7 @@
     }
   },
   {
-    "id": 121,
+    "id": 122,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "دربار"],
@@ -2265,7 +2367,7 @@
     }
   },
   {
-    "id": 122,
+    "id": 123,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "دربار"],
@@ -2367,7 +2469,7 @@
     }
   },
   {
-    "id": 123,
+    "id": 124,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "دربار"],
@@ -2469,7 +2571,7 @@
     }
   },
   {
-    "id": 124,
+    "id": 125,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "ارتش سری"],
@@ -2571,7 +2673,7 @@
     }
   },
   {
-    "id": 125,
+    "id": 126,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "ارتش سری"],
@@ -2673,7 +2775,7 @@
     }
   },
   {
-    "id": 126,
+    "id": 127,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "ارتش سری"],
@@ -2775,7 +2877,7 @@
     }
   },
   {
-    "id": 127,
+    "id": 128,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "ضد"],
@@ -2877,7 +2979,7 @@
     }
   },
   {
-    "id": 128,
+    "id": 129,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "ضد"],
@@ -2979,7 +3081,7 @@
     }
   },
   {
-    "id": 129,
+    "id": 130,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "نماینده"],
@@ -3081,7 +3183,7 @@
     }
   },
   {
-    "id": 130,
+    "id": 131,
     "mafia": true,
     "solo": false,
     "scenario": ["کل نقش‌ها", "نماینده"],
