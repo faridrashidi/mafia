@@ -1,9 +1,9 @@
 <template>
   <div class="show-box" style="display: flex; justify-content: center;">
-    <!-- <p v-if="!showrole">
-      {{ $t("pages.home.passMobile") }}
-    </p> -->
     <table v-if="!showrole" style="border-collapse: collapse;width: 100%;">
+      <p v-if="!showrole" style="margin-bottom: 0px;">
+        {{ $t("pages.home.passMobile") }}
+      </p>
       <strong>
         {{ roles[personNumber - 1].player }}
       </strong>
