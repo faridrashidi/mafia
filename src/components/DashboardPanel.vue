@@ -164,9 +164,9 @@ export default {
           duration: 4000
         });
       }
-      // TODO: randomize the player names
-      // const random = new Random(Random.engines.mt19937().autoSeed());
-      // random.shuffle(playerNames);
+      // NOTE: randomize the player names
+      const random = new Random(Random.engines.mt19937().autoSeed());
+      random.shuffle(playerNames);
       if (readyToAssignRoles) {
         // Randomize Characters in Array
         this.randomizeSelectedRoles();

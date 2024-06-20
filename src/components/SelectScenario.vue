@@ -47,16 +47,6 @@ export default {
   },
   methods: {
     calcSen() {
-      // this.gameSettings.selectedRoles.forEach((role) => {
-      //   role.selected == false ? role.selected = true : role.selected = false
-      // })
-      // this.gameSettings.selectedRoles = []
-      // this.gameSettings.multipleRoles =  {normalMafia: 0, normalCitizen: 0}
-      // this.gameSettings.selectedMafia = 0
-      // this.gameSettings.selectedCitizen = 0
-      // this.gameSettings.fMafias = []
-      // this.gameSettings.fCitizens = []
-      // this.SetRoles(JSON.parse(JSON.stringify(this.Roles)))
       this.gameSettings.scenario = this.selectSenario;
       this.SetGameSettings(this.gameSettings);
     }
