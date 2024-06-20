@@ -4,7 +4,7 @@
     <ul class="has-clear-fix">
       <li
         v-for="(role, index) in getRoles"
-        v-if="role.scenario.includes(gameSettings.scenario)"
+        v-if="shouldShowItem(role)"
         :key="index"
         :class="{
           mafia: role.mafia,
@@ -74,6 +74,70 @@ export default {
     }
   },
   methods: {
+    shouldShowItem(role) {
+      // NOTE: manage roles in each scenario
+      if (role.scenario.includes(this.gameSettings.scenario)) {
+        if (
+          (this.gameSettings.scenario == "بازپرس") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 207)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "بازپرس") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 101)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "تکاور") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 101)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "نماینده") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 250)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "نماینده") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 113)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "نماینده") &
+          (this.gameSettings.totalPlayers < 14) &
+          (role.id == 101)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "زودیاک") &
+          (this.gameSettings.totalPlayers < 13) &
+          (role.id == 101)
+        ) {
+          return false;
+        }
+        if (
+          (this.gameSettings.scenario == "پدرخوانده") &
+          (this.gameSettings.totalPlayers < 12) &
+          (role.id == 101)
+        ) {
+          return false;
+        }
+        return true;
+      } else {
+        return false;
+      }
+    },
     calcPower() {
       const $powerControl = this.gameSettings.powerControl;
       $powerControl.power = 0;
