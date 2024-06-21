@@ -362,7 +362,7 @@
     "gameStartText": "خب<i>.</i><i>.</i><i>.</i> بازی شروع شد!",
     "godButton": "من گاد هستم! داشبورد رو نشون بده",
     "nightActionButton": "شروع اکشن‌های شب",
-    "selectPlaceholder": "انتخاب شخص ...",
+    "selectPlaceholder": "انتخاب شخص...",
     "defaultPlaceholder": "انتخاب ...",
     "actionHintText": "بازیکنی که قراره اکشن روش انجام شه رو انتخاب کن:",
     "actionHintText2": "نفر بعدی رو انتخاب کن:",
@@ -519,7 +519,10 @@
       "name": "تغییر نقش",
       "description": "یک نفر رو انتخاب کن تا نقشش رو تغییر بدی",
       "target1": "نقش ایشون رو",
-      "target2": "تغییر بده به"
+      "target2": "تغییر بده به",
+      "selectPlaceholder1": "انتخاب شخص...",
+      "selectPlaceholder2": "انتخاب نقش...",
+      "button": "اعمال تغییر نقش"
     },
     "rgwRoles": "راه اندازی مجدد بازی با همین نقش‌ها",
     "resetGame": "شروع بازی جدید",

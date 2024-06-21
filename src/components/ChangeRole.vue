@@ -12,15 +12,10 @@
       {{ $t("god.changeRole.description") }}
     </p>
     <div class="choose-players has-top-margin">
-      <div>
-        <label for="first_target">
-          <span>
-            {{ $t("god.changeRole.target1") }}
-          </span>
-        </label>
+      <div class="select-numbers step-box">
         <select v-model="firstTarget" name="first_target" class="has-xsmall-top-margin">
           <option :value="null" disabled>
-            {{ $t("god.selectPlaceholder") }}
+            {{ $t("god.changeRole.selectPlaceholder1") }}
           </option>
           <option
             v-for="(person, index) in checkGroupToSelectTarget()"
@@ -30,16 +25,12 @@
             {{ person.player + ` (${person.info[currentLang].name})` }}
           </option>
         </select>
+        <p style="margin-bottom: 0px;" v-html="$t('god.changeRole.target1')" />
       </div>
-      <div class="has-small-top-margin">
-        <label for="first_target">
-          <span>
-            {{ $t("god.changeRole.target2") }}
-          </span>
-        </label>
+      <div class="select-numbers step-box">
         <select v-model="secondTarget" name="first_target" class="has-xsmall-top-margin">
           <option :value="null" disabled>
-            {{ $t("god.selectPlaceholder") }}
+            {{ $t("god.changeRole.selectPlaceholder2") }}
           </option>
           <option
             v-for="(person, index) in checkGroupToSelectTarget()"
@@ -49,11 +40,13 @@
             {{ `${person.info[currentLang].name}` }}
           </option>
         </select>
+        <p style="margin-bottom: 0px;" v-html="$t('god.changeRole.target2')" />
       </div>
     </div>
+    <br /><br />
     <BaseButton class="yellow has-small-top-margin" @clicked="executeChangeRole()">
       <span>
-        {{ $t("god.faceOff") }}
+        {{ $t("god.changeRole.button") }}
       </span>
     </BaseButton>
     <BaseButton class="red has-small-top-margin" @clicked="closeChangeRole()">

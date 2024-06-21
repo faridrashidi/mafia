@@ -12,12 +12,7 @@
       {{ $t("god.gameCards.faceOff.description") }}
     </p>
     <div class="choose-players has-top-margin">
-      <div>
-        <label for="first_target">
-          <span>
-            {{ $t("god.faceOffChallengeTarget1") }}
-          </span>
-        </label>
+      <div class="select-numbers step-box">
         <select v-model="firstTarget" name="first_target" class="has-xsmall-top-margin">
           <option :value="null" disabled>
             {{ $t("god.selectPlaceholder") }}
@@ -30,13 +25,9 @@
             {{ person.player + ` (${person.info[currentLang].name})` }}
           </option>
         </select>
+        <p style="margin-bottom: 0px;" v-html="$t('god.faceOffChallengeTarget1')" />
       </div>
-      <div class="has-small-top-margin">
-        <label for="first_target">
-          <span>
-            {{ $t("god.faceOffChallengeTarget2") }}
-          </span>
-        </label>
+      <div class="select-numbers step-box">
         <select v-model="secondTarget" name="first_target" class="has-xsmall-top-margin">
           <option :value="null" disabled>
             {{ $t("god.selectPlaceholder") }}
@@ -49,8 +40,10 @@
             {{ person.player + ` (${person.info[currentLang].name})` }}
           </option>
         </select>
+        <p style="margin-bottom: 0px;" v-html="$t('god.faceOffChallengeTarget2')" />
       </div>
     </div>
+    <br /><br />
     <BaseButton class="yellow has-small-top-margin" @clicked="executeFaceOff()">
       <span>
         {{ $t("god.faceOff") }}
