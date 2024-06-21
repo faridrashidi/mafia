@@ -236,6 +236,7 @@ export default {
       return false;
     },
     randomizeSelectedRoles() {
+      // NOTE: randomize selected roles
       const random = new Random(Random.engines.mt19937().autoSeed());
       let isConsecutive;
       do {

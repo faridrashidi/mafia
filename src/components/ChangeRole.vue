@@ -2,20 +2,20 @@
   <Overlay class="face-off-challenge">
     <img
       :src="getImg('/icons', 'faceOff.svg')"
-      :alt="$t('god.gameCards.faceOff.name')"
+      :alt="$t('god.changeRole.name')"
       class="img-size-lg"
     />
     <h1>
-      {{ $t("god.gameCards.faceOff.name") }}
+      {{ $t("god.changeRole.name") }}
     </h1>
     <p>
-      {{ $t("god.gameCards.faceOff.description") }}
+      {{ $t("god.changeRole.description") }}
     </p>
     <div class="choose-players has-top-margin">
       <div>
         <label for="first_target">
           <span>
-            {{ $t("god.faceOffChallengeTarget1") }}
+            {{ $t("god.changeRole.target1") }}
           </span>
         </label>
         <select v-model="firstTarget" name="first_target" class="has-xsmall-top-margin">
@@ -34,7 +34,7 @@
       <div class="has-small-top-margin">
         <label for="first_target">
           <span>
-            {{ $t("god.faceOffChallengeTarget2") }}
+            {{ $t("god.changeRole.target2") }}
           </span>
         </label>
         <select v-model="secondTarget" name="first_target" class="has-xsmall-top-margin">
@@ -46,7 +46,7 @@
             :key="index"
             :value="person.player"
           >
-            {{ person.player + ` (${person.info[currentLang].name})` }}
+            {{ `${person.info[currentLang].name}` }}
           </option>
         </select>
       </div>
@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     executeChangeRole() {
-      // TODO: add change role option
+      // NOTE: add change role option
       if (this.firstTarget && this.secondTarget) {
         let target1Index = 0;
         let target2Index = 0;
@@ -87,8 +87,17 @@ export default {
             target2Index = index;
           }
         });
-        this.gameSettings.selectedRoles[target1Index].player = this.secondTarget;
-        this.gameSettings.selectedRoles[target2Index].player = this.firstTarget;
+        const target1Name = JSON.parse(
+          JSON.stringify(this.gameSettings.selectedRoles[target1Index].player)
+        );
+        const target2Name = JSON.parse(
+          JSON.stringify(this.gameSettings.selectedRoles[target2Index].player)
+        );
+        this.gameSettings.selectedRoles[target1Index] = JSON.parse(
+          JSON.stringify(this.gameSettings.selectedRoles[target2Index])
+        );
+        this.gameSettings.selectedRoles[target1Index].player = target1Name;
+        this.gameSettings.selectedRoles[target2Index].player = target2Name;
         this.SetGameSettings(this.gameSettings);
         this.$emit("close", "changeRole");
         this.firstTarget = "";

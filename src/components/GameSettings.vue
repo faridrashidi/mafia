@@ -95,14 +95,13 @@ export default {
           name: this.$t("god.gameSettings.finalMoveCards"),
           value: "cards",
           active: false
+        },
+        {
+          name: this.$t("god.gameSettings.changeRole"),
+          value: "changeRole",
+          active: false
         }
-        // ,
-        // {
-        //   name: this.$t("god.gameSettings.changeRole"),
-        //   value: "changeRole",
-        //   active: false
-        // }
-        // TODO: add change role option
+        // NOTE: add an option to the god panel
       ]
     };
   },
