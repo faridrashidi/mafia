@@ -134,6 +134,7 @@ export default {
         this.selectedButton = null;
       }
       if (this.personNumber == this.gameSettings.totalPlayers) {
+        // NOTE: reorder roles
         let roles = JSON.parse(JSON.stringify(this.gameSettings.selectedRoles));
         this.gameSettings.selectedRoles = roles.sort(function(a, b) {
           const aIsSpecial = a.id === 101 || a.id === 201;

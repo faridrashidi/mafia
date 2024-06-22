@@ -81,6 +81,23 @@ export default {
         });
         this.gameSettings.selectedRoles[target1Index].player = this.secondTarget;
         this.gameSettings.selectedRoles[target2Index].player = this.firstTarget;
+        let roles = JSON.parse(JSON.stringify(this.gameSettings.selectedRoles));
+        this.gameSettings.selectedRoles = roles.sort(function(a, b) {
+          const aIsSpecial = a.id === 101 || a.id === 201;
+          const bIsSpecial = b.id === 101 || b.id === 201;
+          if (aIsSpecial && !bIsSpecial) {
+            return 1;
+          } else if (!aIsSpecial && bIsSpecial) {
+            return -1;
+          }
+          if (a.solo !== b.solo) {
+            return a.solo ? -1 : 1;
+          }
+          if (a.mafia !== b.mafia) {
+            return a.mafia ? -1 : 1;
+          }
+          return a.id - b.id;
+        });
         this.SetGameSettings(this.gameSettings);
         this.$emit("close");
         this.firstTarget = "";
